@@ -241,3 +241,77 @@ h3 {
     box-shadow: 0 0 20px #C72C8C88;
     transform: scale(1.05);
 }
+
+/* ------------------------------
+   Gothic Events Page Styling
+------------------------------ */
+
+.events-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: #0A0A0A; /* gothic black */
+}
+
+.events-page h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #D8B4F8; /* soft lavender */
+    text-shadow: 0 0 8px #7A1CAC;
+}
+
+.events-page .intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #CCCCCC;
+    margin-bottom: 50px;
+}
+
+/* Event Grid */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Event Card */
+.event-card {
+    background-color: #2A003E; /* deep gothic purple */
+    border: 2px solid #7A1CAC; /* glowing violet */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 12px rgba(122, 28, 172, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(199, 44, 140, 0.6); /* magenta glow */
+}
+
+.event-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #D8B4F8;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.event-card .date {
+    font-size: 0.95rem;
+    color: #C72C8C; /* magenta highlight */
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.event-card .details {
+    font-size: 1rem;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* Active Nav Link */
+nav a.active {
+    color: #C72C8C;
+    text-shadow: 0 0 6px #C72C8C;
+}
