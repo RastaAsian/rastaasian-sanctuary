@@ -76,14 +76,8 @@ nav a.active {
     background-color: var(--purple-deep);
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+.hero h2 { font-size: 2.5rem; }
+.hero p { font-size: 1.2rem; margin-bottom: 20px; }
 
 .btn {
     background-color: var(--violet);
@@ -95,9 +89,7 @@ nav a.active {
     transition: 0.3s ease;
 }
 
-.btn:hover {
-    background-color: var(--magenta);
-}
+.btn:hover { background-color: var(--magenta); }
 
 /* ------------------------------
    Features Section
@@ -125,9 +117,7 @@ nav a.active {
     text-decoration: none;
 }
 
-.link:hover {
-    color: var(--magenta);
-}
+.link:hover { color: var(--magenta); }
 
 /* ------------------------------
    Footer
@@ -146,16 +136,9 @@ footer {
 /* ------------------------------
    Contact Form
 ------------------------------ */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+form { display: flex; flex-direction: column; gap: 15px; }
 
-label {
-    font-weight: bold;
-    color: var(--lavender);
-}
+label { font-weight: bold; color: var(--lavender); }
 
 input, textarea {
     padding: 12px;
@@ -171,10 +154,7 @@ input:focus, textarea:focus {
     border-color: var(--magenta);
 }
 
-button.btn {
-    cursor: pointer;
-    border: none;
-}
+button.btn { cursor: pointer; border: none; }
 
 /* ------------------------------
    Social Icons
@@ -200,71 +180,27 @@ button.btn {
 }
 
 /* ------------------------------
-   Game Card Images
+   Event & Service Cards
 ------------------------------ */
-.game-card img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px #7A1CAC55;
-    transition: 0.3s ease;
-}
-
-.game-card img:hover {
-    box-shadow: 0 0 20px #C72C8C88;
-    transform: scale(1.05);
-}
-
-/* ------------------------------
-   Shared Card Base
------------------------------- */
-.card {
+.event-card,
+.service-card {
     background-color: var(--purple-deep);
     border: 2px solid var(--violet);
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 0 12px rgba(122, 28, 172, 0.4);
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
-.card:hover {
+.event-card:hover,
+.service-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 18px rgba(199, 44, 140, 0.6);
 }
 
-/* ------------------------------
-   Events Page
------------------------------- */
-.events-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.events-page h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.events-page .intro {
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--gray-light);
-    margin-bottom: 50px;
-}
-
-.event-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.event-card {
-    composes: card;
-}
-
-.event-card h3 {
+.event-card h3,
+.service-card h3 {
     font-family: 'Montserrat', sans-serif;
     color: var(--lavender);
 }
@@ -276,8 +212,21 @@ button.btn {
     font-weight: bold;
 }
 
-.event-card .details {
-    font-size: 1rem;
+.event-card .details { font-size: 1rem; min-height: 80px; }
+
+/* ------------------------------
+   Events Page Layout
+------------------------------ */
+.events-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 /* ------------------------------
@@ -289,24 +238,12 @@ button.btn {
     padding: 60px 20px;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
+.section-header { text-align: center; margin-bottom: 40px; }
+.section-header h2 { font-size: 2.5rem; }
 
-.section-header h2 {
-    font-size: 2.5rem;
-}
+.section-subtitle { color: var(--gray-light); font-size: 1.1rem; }
 
-.section-subtitle {
-    color: var(--gray-light);
-    font-size: 1.1rem;
-}
-
-.gothic-divider {
-    position: relative;
-    padding-bottom: 20px;
-}
+.gothic-divider { position: relative; padding-bottom: 20px; }
 
 .gothic-divider::after {
     content: "";
@@ -336,10 +273,6 @@ button.btn {
     gap: 25px;
 }
 
-.service-card {
-    composes: card;
-}
-
 .price {
     color: var(--magenta);
     font-weight: bold;
@@ -347,13 +280,28 @@ button.btn {
     text-shadow: 0 0 6px var(--magenta);
 }
 
-.service-card ul {
-    padding-left: 20px;
-    margin: 10px 0;
+.service-card ul { padding-left: 20px; margin: 10px 0; }
+.service-card li { margin-bottom: 6px; }
+
+/* ------------------------------
+   Game & Setup Icons (FINAL)
+------------------------------ */
+.game-header,
+.setup-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
-.service-card li {
-    margin-bottom: 6px;
+.game-icon,
+.setup-icon {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(122, 28, 172, 0.5);
 }
 
 /* ------------------------------
@@ -365,7 +313,27 @@ button.btn {
         align-items: center;
     }
 
-    .hero h2 {
-        font-size: 2rem;
-    }
+    .hero h2 { font-size: 2rem; }
+}
+/* ------------------------------
+   Center Page Intros (Match Services Page)
+------------------------------ */
+
+/* Center titles + intro paragraphs on all main pages */
+.events-page h1,
+.events-page .intro,
+.setup-page h1,
+.setup-page .intro,
+.games-page h1,
+.games-page .intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center category titles too */
+.category-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

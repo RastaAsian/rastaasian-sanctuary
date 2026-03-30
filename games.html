@@ -4,91 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Games & Streams | RastaAsian Sanctuary</title>
-
-    <!-- Fonts + Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-<header>
-    <h1>RastaAsian Sanctuary</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="games.html" class="active">Games & Streams</a></li>
-            <li><a href="setup.html">Setup & Gear</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<section class="events-page games-page">
+    <h1>Games & Streams</h1>
+    <p class="intro">The worlds I explore and the vibes I bring.</p>
 
-<main>
+    <!-- GAME GRID -->
+    <div class="event-list">
 
-    <!-- Hero Banner -->
-    <section class="hero" style="background-image: url('images/games-hero.jpg');">
-        <h2>Games & Streams</h2>
-        <p>The worlds I explore and the vibes I bring.</p>
-    </section>
-
-    <div class="gothic-divider"></div>
-
-    <!-- Grid Layout Section -->
-    <section style="padding: 40px 20px; max-width: 1100px; margin: auto;">
-        <h2 style="text-align:center;">What I Stream</h2>
-
-        <div class="game-grid">
-
-            <article class="game-card">
-                <img src="images/game--marvel-rivals.jpg" alt="Marvel Rivals" class="game-img">
-                <h3>Multiplayer Madness</h3>
-                <p>Community games, chaos with friends, and unforgettable moments.</p>
-            </article>
-
-            <article class="game-card">
-                <img src="images/gta-5-shooter.jpg" alt="GTA 5 Shooter" class="game-img">
-                <h3>Shooter Chaos</h3>
-                <p>Fast-paced action, clutch moments, and pure hype energy.</p>
-            </article>
-
-            <article class="game-card">
-                <img src="images/coral-island.jpg" alt="Coral Island" class="game-img">
-                <h3>Cozy Indie Games</h3>
-                <p>Chill vibes, cute art styles, and wholesome gameplay to unwind.</p>
-            </article>
-
-            <article class="game-card">
-                <img src="images/league-of-legends.jpg" alt="League of Legends" class="game-img">
-                <h3>MOBA Mayhem (Newly)</h3>
-                <p>Strategic battles, clutch teamfights, and nonstop lane domination — the heart of competitive chaos.</p>
-            </article>
-
-            <article class="game-card horror-card">
-                <img src="images/horror-game.jpg" alt="Horror Game" class="game-img">
-                <h3>Horror Experience</h3>
-                <p>Uneasy silence, creeping dread, and the constant feeling that something is watching from the dark.</p>
-            </article>
-
+        <div class="event-card">
+            <div class="game-header">
+                <img src="css/images/game--marvel-rivals.jpg" alt="Marvel Rivals" class="game-icon">
+                <h3>Marvel Rivals</h3>
+            </div>
+            <p class="date">Multiplayer Madness</p>
+            <p class="details">Community games, chaos with friends, and unforgettable moments.</p>
         </div>
-    </section>
 
-    <!-- Optional Clips Section -->
-    <section style="padding: 40px 20px; max-width: 900px; margin: auto;">
-        <h2 style="text-align:center;">Stream Highlights</h2>
-        <p style="text-align:center;">Coming soon — clips, funny moments, and epic wins.</p>
-    </section>
+        <div class="event-card">
+            <div class="game-header">
+                <img src="css/images/gta 5 shooter.jpg" alt="GTA 5" class="game-icon">
+                <h3>GTA 5</h3>
+            </div>
+            <p class="date">Shooter Chaos</p>
+            <p class="details">Fast-paced action, clutch moments, and pure hype energy.</p>
+        </div>
 
-</main>
+        <div class="event-card">
+            <div class="game-header">
+                <img src="css/images/coral island.jpg" alt="Coral Island" class="game-icon">
+                <h3>Coral Island</h3>
+            </div>
+            <p class="date">Cozy Indie Games</p>
+            <p class="details">Chill vibes, cute art styles, and wholesome gameplay to unwind.</p>
+        </div>
 
-<footer>
-    <p>&copy; 2025 RastaAsian Sanctuary. All rights reserved.</p>
-    <p>Follow me on social media!</p>
-</footer>
+        <div class="event-card">
+            <div class="game-header">
+                <img src="css/images/league-of-legends.jpg" alt="League of Legends" class="game-icon">
+                <h3>League of Legends</h3>
+            </div>
+            <p class="date">MOBA Mayhem (Newly)</p>
+            <p class="details">Strategic battles, clutch teamfights, and nonstop lane domination.</p>
+        </div>
+
+        <div class="event-card">
+            <div class="game-header">
+                <img src="css/images/download.jpg" alt="Horror Game" class="game-icon">
+                <h3>Horror Game</h3>
+            </div>
+            <p class="date">Horror Experience</p>
+            <p class="details">Uneasy silence, creeping dread, and the constant feeling something is watching.</p>
+        </div>
+
+    </div>
+
+    <!-- STREAM HIGHLIGHTS -->
+    <h2 class="category-title gothic-accent">Stream Highlights</h2>
+    <div class="event-card">
+        <p class="details">Coming soon — clips, funny moments, and epic wins.</p>
+    </div>
+
+</section>
 
 </body>
 </html>
-
