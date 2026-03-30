@@ -315,3 +315,118 @@ nav a.active {
     color: #C72C8C;
     text-shadow: 0 0 6px #C72C8C;
 }
+
+.event-range {
+    display: block;
+    font-size: 0.9rem;
+    color: #D8B4F8; /* lavender */
+    margin-top: 5px;
+    text-shadow: 0 0 6px #7A1CAC;
+}
+/* ------------------------------
+   Services Page Styling (Blended Gothic)
+------------------------------ */
+
+.services {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #D8B4F8;
+    text-shadow: 0 0 10px #7A1CAC;
+}
+
+.section-subtitle {
+    color: #CCCCCC;
+    font-size: 1.1rem;
+}
+
+/* Gothic Divider */
+.gothic-divider {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.gothic-divider::after {
+    content: "";
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #7A1CAC, transparent);
+    display: block;
+    margin: 20px auto 0;
+    box-shadow: 0 0 10px #7A1CAC;
+}
+
+/* Category Titles */
+.category-title {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: #D8B4F8;
+    text-shadow: 0 0 8px #7A1CAC;
+}
+
+/* Gothic Accent Line */
+.category-title.gothic-accent {
+    position: relative;
+}
+
+.category-title.gothic-accent::before {
+    content: "✦";
+    color: #C72C8C;
+    margin-right: 10px;
+    text-shadow: 0 0 8px #C72C8C;
+}
+
+/* Service Grid */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Service Cards */
+.service-card {
+    background-color: #2A003E;
+    border: 2px solid #7A1CAC;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 12px rgba(122, 28, 172, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(199, 44, 140, 0.6);
+}
+
+/* Prices */
+.price {
+    color: #C72C8C;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 6px #C72C8C;
+}
+
+/* Lists */
+.service-card ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.service-card li {
+    margin-bottom: 6px;
+    color: #FFFFFF;
+}
+
+/* Price List (inline style) */
+.price-list li {
+    margin-bottom: 8px;
+}
