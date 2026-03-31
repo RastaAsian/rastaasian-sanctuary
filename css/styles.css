@@ -362,3 +362,15 @@ button.btn { cursor: pointer; border: none; }
         0 0 14px rgba(160, 80, 255, 0.6),
         0 0 22px rgba(140, 60, 255, 0.5);
 }
+.premium-divider {
+    display: block;            /* ensures it behaves like a centered block */
+    width: 140px;
+    height: 2px;
+    margin: 10px auto 25px;    /* centers it */
+    background: #c8a2ff;
+    box-shadow: 
+        0 0 8px #b478ff,
+        0 0 14px #a050ff,
+        0 0 22px #8c3cff;
+    border-radius: 2px;
+}
