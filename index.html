@@ -15,10 +15,20 @@
 </audio>
 
 <header>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <h1>RastaAsian Sanctuary</h1>
+
+    <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="home.html" target="content-frame">Home</a></li>
+        <ul class="mobile-hidden">
+            <li><a href="home.html" target="content-frame" class="active">Home</a></li>
             <li><a href="about.html" target="content-frame">About</a></li>
             <li><a href="games.html" target="content-frame">Games & Streams</a></li>
             <li><a href="setup.html" target="content-frame">Setup & Gear</a></li>
@@ -27,6 +37,7 @@
             <li><a href="contact.html" target="content-frame">Contact</a></li>
         </ul>
     </nav>
+
 </header>
 
 <!-- This is where all your pages load -->
@@ -44,6 +55,26 @@
         <span class="icon">💜</span>
     </div>
 </footer>
+
+<!-- Mobile Menu Script -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('nav ul');
+
+// Toggle mobile menu
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('mobile-hidden');
+});
+
+// Close menu after clicking a link (mobile UX best practice)
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.add('mobile-hidden');
+        hamburger.classList.remove('active');
+    });
+});
+</script>
 
 </body>
 </html>

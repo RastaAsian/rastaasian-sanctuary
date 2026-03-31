@@ -9,6 +9,30 @@
 
 <body>
 
+<header>
+
+    <!-- Mobile Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul class="mobile-hidden">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="setup.html" class="active">Setup</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
 <section class="events-page">
     <h1>Setup & Gear</h1>
     <p class="intro">The tools behind the Sanctuary.</p>
@@ -116,6 +140,17 @@
     </div>
 
 </section>
+
+<!-- Mobile Menu Script -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('mobile-hidden');
+});
+</script>
 
 </body>
 </html>

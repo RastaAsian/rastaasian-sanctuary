@@ -44,6 +44,35 @@ header {
     text-align: center;
 }
 
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: var(--lavender);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* NAVIGATION */
 nav ul {
     list-style: none;
     padding: 0;
@@ -51,6 +80,14 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 25px;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hidden mobile menu */
+nav ul.mobile-hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 nav a {
@@ -305,21 +342,8 @@ button.btn { cursor: pointer; border: none; }
 }
 
 /* ------------------------------
-   Responsive
+   Center Page Intros
 ------------------------------ */
-@media (max-width: 768px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h2 { font-size: 2rem; }
-}
-/* ------------------------------
-   Center Page Intros (Match Services Page)
------------------------------- */
-
-/* Center titles + intro paragraphs on all main pages */
 .events-page h1,
 .events-page .intro,
 .setup-page h1,
@@ -331,12 +355,15 @@ button.btn { cursor: pointer; border: none; }
     margin-right: auto;
 }
 
-/* Center category titles too */
 .category-title {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ------------------------------
+   Sanctuary Socials
+------------------------------ */
 .sanctuary-socials {
     display: flex;
     gap: 1.4rem;
@@ -346,7 +373,7 @@ button.btn { cursor: pointer; border: none; }
 }
 
 .sanctuary-socials a {
-    color: #c8a2ff; /* lavender base */
+    color: #c8a2ff;
     font-size: 1.8rem;
     transition:
         color 0.25s ease,
@@ -355,22 +382,184 @@ button.btn { cursor: pointer; border: none; }
 }
 
 .sanctuary-socials a:hover {
-    color: #e5c7ff; /* brighter purple */
+    color: #e5c7ff;
     transform: translateY(-3px);
     text-shadow:
         0 0 8px rgba(180, 120, 255, 0.8),
         0 0 14px rgba(160, 80, 255, 0.6),
         0 0 22px rgba(140, 60, 255, 0.5);
 }
+
 .premium-divider {
-    display: block;            /* ensures it behaves like a centered block */
+    display: block;
     width: 140px;
     height: 2px;
-    margin: 10px auto 25px;    /* centers it */
+    margin: 10px auto 25px;
     background: #c8a2ff;
     box-shadow: 
         0 0 8px #b478ff,
         0 0 14px #a050ff,
         0 0 22px #8c3cff;
     border-radius: 2px;
+}
+
+/* ------------------------------
+   RESPONSIVE — Phones + Tablets
+------------------------------ */
+
+/* Phones (iPhone + Android) */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Hamburger visible */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Mobile nav layout */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    nav ul.mobile-hidden {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    nav ul:not(.mobile-hidden) {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+
+    /* HERO MOBILE OPTIMIZATION */
+    .hero {
+        background-size: cover;
+        background-position: top center;
+        padding: 50px 15px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    /* SPACING REFINEMENTS */
+    section,
+    .events-page,
+    .services,
+    .setup-page,
+    .games-page {
+        padding: 40px 15px;
+    }
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    .category-title {
+        margin: 25px 0 15px;
+        font-size: 1.5rem;
+    }
+
+    .premium-divider {
+        margin: 5px auto 20px;
+        width: 120px;
+    }
+
+    /* FEATURES */
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .features article {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    /* GRIDS */
+    .event-list,
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* ICONS */
+    .game-header,
+    .setup-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-icon,
+    .setup-icon {
+        width: 90px;
+        height: 60px;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+
+    /* SOCIALS */
+    .sanctuary-socials {
+        gap: 1rem;
+        padding: 30px 0 40px;
+    }
+
+    .sanctuary-socials a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablets (iPad, Android tablets, small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    body {
+        font-size: 1.05rem;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .hero {
+        padding: 70px 30px;
+    }
+
+    .features {
+        gap: 25px;
+    }
+
+    .event-list,
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .game-icon,
+    .setup-icon {
+        width: 110px;
+        height: 75px;
+    }
 }
