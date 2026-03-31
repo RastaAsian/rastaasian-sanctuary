@@ -10,13 +10,26 @@
 
     <style>
         /* Purple Glow Divider */
-        .premium-divider {
-            width: 120px;
+        .premium-divider,
+        .dyson-divider {
+            display: block;
+            width: 140px;
             height: 2px;
-            margin: 10px 0 25px;
+            margin: 10px auto 25px;
             background: #c8a2ff;
-            box-shadow: 0 0 8px #b478ff, 0 0 14px #a050ff, 0 0 22px #8c3cff;
+            box-shadow:
+                0 0 8px #b478ff,
+                0 0 14px #a050ff,
+                0 0 22px #8c3cff;
             border-radius: 2px;
+        }
+
+        /* Dyson Icon (vacuum silhouette) */
+        .dyson-icon {
+            font-size: 2.2rem;
+            color: var(--magenta);
+            text-shadow: 0 0 10px var(--violet);
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -206,6 +219,39 @@
                     </ul>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- 🌪️ DYSON VACUUM CLEANING -->
+        <div class="service-category">
+            <h3 class="category-title gothic-accent">
+                <span class="dyson-icon">🧹</span> Dyson Vacuum Cleaning & Maintenance
+            </h3>
+
+            <!-- Purple Glow Divider -->
+            <div class="dyson-divider"></div>
+
+            <div class="service-card">
+                <p class="price">$60 – $140 CAD</p>
+
+                <ul>
+                    <li>Full internal dust removal</li>
+                    <li>Filter wash + deep clean</li>
+                    <li>Clog removal (hose, wand, cyclone)</li>
+                    <li>Brush bar cleaning + hair removal</li>
+                    <li>Motor housing dust extraction</li>
+                    <li>Seal + gasket check</li>
+                </ul>
+
+                <p><strong>Add‑ons:</strong></p>
+                <ul>
+                    <li>Replacement filter install: +$20–$40</li>
+                    <li>Brush bar replacement: +$25–$60</li>
+                    <li>Battery health check: +$10</li>
+                    <li>Full suction test + performance report: +$10</li>
+                </ul>
+
+                <p><strong>Notes:</strong> Pricing varies by model (V6–V15, Outsize, Ball, Animal, etc.) and condition.</p>
             </div>
         </div>
 
