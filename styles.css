@@ -1373,3 +1373,16 @@ button.btn { cursor: pointer; border: none; }
         display: none;
     }
 }
+/* Make mobile menu appear above iframe */
+nav ul {
+    position: relative;
+    z-index: 9999;
+}
+iframe {
+    position: relative;
+    z-index: 1;
+}
+nav ul {
+    position: relative;
+    z-index: 9999;
+}
