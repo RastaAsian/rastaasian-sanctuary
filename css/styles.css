@@ -337,3 +337,28 @@ button.btn { cursor: pointer; border: none; }
     margin-left: auto;
     margin-right: auto;
 }
+.sanctuary-socials {
+    display: flex;
+    gap: 1.4rem;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 60px;
+}
+
+.sanctuary-socials a {
+    color: #c8a2ff; /* lavender base */
+    font-size: 1.8rem;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.sanctuary-socials a:hover {
+    color: #e5c7ff; /* brighter purple */
+    transform: translateY(-3px);
+    text-shadow:
+        0 0 8px rgba(180, 120, 255, 0.8),
+        0 0 14px rgba(160, 80, 255, 0.6),
+        0 0 22px rgba(140, 60, 255, 0.5);
+}

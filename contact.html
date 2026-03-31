@@ -7,6 +7,35 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Purple Glow Social Icons */
+        .sanctuary-socials {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0 60px;
+        }
+
+        .sanctuary-socials a {
+            color: #c8a2ff; /* lavender base */
+            font-size: 1.8rem;
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease,
+                text-shadow 0.25s ease;
+        }
+
+        .sanctuary-socials a:hover {
+            color: #e5c7ff; /* brighter purple */
+            transform: translateY(-3px);
+            text-shadow:
+                0 0 8px rgba(180, 120, 255, 0.8),
+                0 0 14px rgba(160, 80, 255, 0.6),
+                0 0 22px rgba(140, 60, 255, 0.5);
+        }
+    </style>
 </head>
 
 <body>
@@ -41,6 +70,37 @@
 
         </form>
     </section>
+
+    <!-- Social Icons -->
+   <div class="sanctuary-socials">
+
+    <a href="https://www.youtube.com/@rastaasian" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@rastaasian" target="_blank" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+
+    <a href="https://www.instagram.com/rastaasian888" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://github.com/rastaasian" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="https://www.twitch.tv/rastaasian" target="_blank" aria-label="Twitch">
+        <i class="fa-brands fa-twitch"></i>
+    </a>
+
+    <a href="https://discord.gg/EQh4h47R" target="_blank" aria-label="Discord Server">
+        <i class="fa-brands fa-discord"></i>
+    </a>
+
+</div>
+
+
 
 </main>
 
