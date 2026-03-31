@@ -1,6 +1,6 @@
-/* ------------------------------
-   Root Variables (Brand System)
------------------------------- */
+/* --------------------------------------------------
+   ROOT VARIABLES — Sanctuary Brand System
+-------------------------------------------------- */
 :root {
     --black: #0A0A0A;
     --purple-deep: #2A003E;
@@ -11,9 +11,9 @@
     --gray-light: #CCCCCC;
 }
 
-/* ------------------------------
-   Global Styles
------------------------------- */
+/* --------------------------------------------------
+   GLOBAL STYLES
+-------------------------------------------------- */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -21,6 +21,12 @@ body {
     background-color: var(--black);
     color: var(--white);
     line-height: 1.6;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 h1, h2, h3 {
@@ -35,18 +41,18 @@ h1 { font-size: 3rem; }
 h2 { font-size: 2.2rem; }
 h3 { font-size: 1.6rem; }
 
-/* ------------------------------
-   Header & Navigation
------------------------------- */
+/* --------------------------------------------------
+   HEADER & NAVIGATION
+-------------------------------------------------- */
 header {
-    background-color: var(--purple-deep);
+    background: linear-gradient(to bottom, #2A003E, #15001F);
     padding: 20px;
     text-align: center;
 }
 
-/* HAMBURGER MENU */
+/* Hamburger */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
@@ -61,7 +67,6 @@ header {
     transition: 0.3s ease;
 }
 
-/* Hamburger animation */
 .hamburger.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -72,22 +77,24 @@ header {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* NAVIGATION */
+/* Nav */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 15px 0 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 25px;
     transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-
-/* Hidden mobile menu */
-nav ul.mobile-hidden {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+}
+
+nav ul.open {
+    max-height: 500px;
+    opacity: 1;
 }
 
 nav a {
@@ -103,13 +110,22 @@ nav a.active {
     text-shadow: 0 0 6px var(--magenta);
 }
 
-/* ------------------------------
-   Hero Section
------------------------------- */
+nav a.active {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 6px var(--magenta); }
+    50% { text-shadow: 0 0 14px var(--magenta); }
+    100% { text-shadow: 0 0 6px var(--magenta); }
+}
+
+/* --------------------------------------------------
+   HERO SECTION (base)
+-------------------------------------------------- */
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background: url('../images/hero.jpg') center/cover no-repeat;
     background-color: var(--purple-deep);
 }
 
@@ -126,11 +142,14 @@ nav a.active {
     transition: 0.3s ease;
 }
 
-.btn:hover { background-color: var(--magenta); }
+.btn:hover {
+    background-color: var(--magenta);
+    box-shadow: 0 0 12px var(--magenta);
+}
 
-/* ------------------------------
-   Features Section
------------------------------- */
+/* --------------------------------------------------
+   FEATURES
+-------------------------------------------------- */
 .features {
     display: flex;
     justify-content: space-around;
@@ -156,9 +175,9 @@ nav a.active {
 
 .link:hover { color: var(--magenta); }
 
-/* ------------------------------
-   Footer
------------------------------- */
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 footer {
     background-color: var(--purple-deep);
     text-align: center;
@@ -170,9 +189,9 @@ footer {
     text-shadow: 0 0 8px var(--violet);
 }
 
-/* ------------------------------
-   Contact Form
------------------------------- */
+/* --------------------------------------------------
+   CONTACT FORM
+-------------------------------------------------- */
 form { display: flex; flex-direction: column; gap: 15px; }
 
 label { font-weight: bold; color: var(--lavender); }
@@ -193,9 +212,9 @@ input:focus, textarea:focus {
 
 button.btn { cursor: pointer; border: none; }
 
-/* ------------------------------
-   Social Icons
------------------------------- */
+/* --------------------------------------------------
+   SOCIAL ICONS
+-------------------------------------------------- */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -216,9 +235,9 @@ button.btn { cursor: pointer; border: none; }
     transform: scale(1.2);
 }
 
-/* ------------------------------
-   Event & Service Cards
------------------------------- */
+/* --------------------------------------------------
+   EVENT & SERVICE CARDS
+-------------------------------------------------- */
 .event-card,
 .service-card {
     background-color: var(--purple-deep);
@@ -251,9 +270,9 @@ button.btn { cursor: pointer; border: none; }
 
 .event-card .details { font-size: 1rem; min-height: 80px; }
 
-/* ------------------------------
-   Events Page Layout
------------------------------- */
+/* --------------------------------------------------
+   EVENTS PAGE
+-------------------------------------------------- */
 .events-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -266,9 +285,9 @@ button.btn { cursor: pointer; border: none; }
     gap: 30px;
 }
 
-/* ------------------------------
-   Services Page
------------------------------- */
+/* --------------------------------------------------
+   SERVICES PAGE
+-------------------------------------------------- */
 .services {
     max-width: 1100px;
     margin: 0 auto;
@@ -280,7 +299,10 @@ button.btn { cursor: pointer; border: none; }
 
 .section-subtitle { color: var(--gray-light); font-size: 1.1rem; }
 
-.gothic-divider { position: relative; padding-bottom: 20px; }
+.gothic-divider {
+    position: relative;
+    padding-bottom: 20px;
+}
 
 .gothic-divider::after {
     content: "";
@@ -295,6 +317,7 @@ button.btn { cursor: pointer; border: none; }
 .category-title {
     font-size: 1.8rem;
     margin: 40px 0 20px;
+    text-align: center;
 }
 
 .category-title.gothic-accent::before {
@@ -320,9 +343,9 @@ button.btn { cursor: pointer; border: none; }
 .service-card ul { padding-left: 20px; margin: 10px 0; }
 .service-card li { margin-bottom: 6px; }
 
-/* ------------------------------
-   Game & Setup Icons (FINAL)
------------------------------- */
+/* --------------------------------------------------
+   GAME & SETUP ICONS
+-------------------------------------------------- */
 .game-header,
 .setup-header {
     display: flex;
@@ -341,127 +364,939 @@ button.btn { cursor: pointer; border: none; }
     box-shadow: 0 0 12px rgba(122, 28, 172, 0.5);
 }
 
-/* ------------------------------
-   Center Page Intros
------------------------------- */
-.events-page h1,
-.events-page .intro,
-.setup-page h1,
-.setup-page .intro,
-.games-page h1,
-.games-page .intro {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.category-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* ------------------------------
-   Sanctuary Socials
------------------------------- */
-.sanctuary-socials {
+/* --------------------------------------------------
+   MINI NAV (IFRAME PAGES)
+-------------------------------------------------- */
+.mini-nav {
     display: flex;
-    gap: 1.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 10px;
+    background: rgba(42, 0, 62, 0.4);
+    border-bottom: 2px solid var(--violet);
+    box-shadow: 0 0 12px rgba(122, 28, 172, 0.4);
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 25px;
+}
+
+.mini-nav a {
+    color: var(--lavender);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--violet);
+    background: rgba(42, 0, 62, 0.5);
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(122, 28, 172, 0.3);
+}
+
+.mini-nav a:hover {
+    color: var(--magenta);
+    border-color: var(--magenta);
+    box-shadow: 0 0 12px var(--magenta);
+    transform: translateY(-3px);
+}
+
+/* --------------------------------------------------
+   PREMIUM SCROLLBAR
+-------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--violet);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--magenta);
+}
+
+/* --------------------------------------------------
+   FLOATING MUSIC ORB
+-------------------------------------------------- */
+#music-orb {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--violet), var(--purple-deep));
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 60px;
+    box-shadow:
+        0 0 15px var(--violet),
+        0 0 25px rgba(199, 44, 140, 0.6);
+    cursor: pointer;
+    z-index: 9999;
+    animation: orbFloat 6s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+#music-orb:hover {
+    transform: scale(1.12);
+    box-shadow:
+        0 0 20px var(--magenta),
+        0 0 35px rgba(199, 44, 140, 0.8);
+}
+
+/* Crescent + Cat Ears Rune */
+#music-orb::before {
+    content: "";
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 4px solid var(--lavender);
+    border-color: var(--lavender) transparent transparent transparent;
+    transform: rotate(180deg);
+    opacity: 0.55;
+    filter: drop-shadow(0 0 6px var(--lavender));
+}
+
+/* Cat ears */
+#music-orb::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 14px solid var(--lavender);
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.55;
+    filter: drop-shadow(0 0 6px var(--lavender));
+}
+
+/* Visualizer bars */
+#visualizer {
+    display: flex;
+    gap: 4px;
+    z-index: 3;
+}
+
+#visualizer .bar {
+    width: 6px;
+    height: 20px;
+    background: var(--white);
+    border-radius: 3px;
+    animation: bounce 1s ease-in-out infinite;
+    opacity: 0.9;
+    box-shadow: 0 0 8px var(--lavender);
+}
+
+/* Wave timing */
+#visualizer .bar:nth-child(1) { animation-delay: 0s; }
+#visualizer .bar:nth-child(2) { animation-delay: 0.2s; }
+#visualizer .bar:nth-child(3) { animation-delay: 0.4s; }
+#visualizer .bar:nth-child(4) { animation-delay: 0.6s; }
+
+/* Bar animation */
+@keyframes bounce {
+    0%, 100% { height: 10px; }
+    50% { height: 28px; }
+}
+
+/* Orb floating animation */
+@keyframes orbFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Paused state */
+#music-orb.paused .bar {
+    animation-play-state: paused;
+    opacity: 0.4;
+}
+
+/* --------------------------------------------------
+   SANCTUARY SERVICE TABLES
+-------------------------------------------------- */
+.service-table-wrapper {
+    margin: 40px 0;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.service-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.service-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+    vertical-align: top;
+}
+
+.service-table tr:last-child td {
+    border-bottom: none;
+}
+
+.service-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* Gothic divider under category titles */
+.category-title + .gothic-table-divider {
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--violet), transparent);
+    margin: 10px auto 25px;
+    box-shadow: 0 0 10px var(--violet);
+}
+
+/* --------------------------------------------------
+   SANCTUARY EVENTS TABLES
+-------------------------------------------------- */
+.events-table-wrapper {
+    margin: 40px 0;
+    position: relative;
+}
+
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.events-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.events-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+    vertical-align: top;
+}
+
+.events-table tr:last-child td {
+    border-bottom: none;
+}
+
+.events-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* Weekly schedule highlight */
+.weekly-schedule-box {
+    background: rgba(42, 0, 62, 0.55);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 0 15px rgba(122, 28, 172, 0.4);
+    text-align: center;
+}
+
+.weekly-schedule-box h2 {
+    margin-bottom: 10px;
+    color: var(--lavender);
+    text-shadow: 0 0 10px var(--violet);
+}
+
+.weekly-schedule-box p {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+/* Past events faded style */
+.past-events {
+    opacity: 0.75;
+    filter: grayscale(20%);
+}
+
+.past-table tr:hover {
+    background: rgba(122, 28, 172, 0.1);
+}
+
+/* Animated runes around featured event */
+.category-title.gothic-accent {
+    position: relative;
+}
+
+.category-title.gothic-accent::before,
+.category-title.gothic-accent::after {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--magenta);
+    opacity: 0.6;
+    text-shadow: 0 0 12px var(--magenta);
+    animation: runeFloat 4s ease-in-out infinite;
+}
+
+.category-title.gothic-accent::before {
+    left: -25px;
+}
+
+.category-title.gothic-accent::after {
+    right: -25px;
+    animation-delay: 1.2s;
+}
+
+@keyframes runeFloat {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-60%) scale(1.15); }
+}
+
+/* Glowing sigil behind event tables */
+.events-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
+}
+
+@keyframes sigilPulse {
+    0%, 100% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.12; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* EVENTS PAGE FLOATING EFFECTS */
+.events-page {
+    animation: eventsFloat 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes eventsFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Float the event sections individually */
+.weekly-schedule-box,
+.service-category {
+    animation: eventSectionFloat 12s ease-in-out infinite;
+}
+
+@keyframes eventSectionFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.events-page::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* Shared aura pulse */
+@keyframes auraPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* --------------------------------------------------
+   CONTACT PAGE FLOATING EFFECTS
+-------------------------------------------------- */
+.contact-page {
+    animation: contactFloat 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes contactFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Floating sections */
+.contact-section,
+.contact-socials {
+    animation: contactSectionFloat 12s ease-in-out infinite;
+}
+
+@keyframes contactSectionFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Ambient aura */
+.contact-page::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* CONTACT FORM — PREMIUM SANCTUARY STYLE */
+.contact-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: var(--lavender);
+    text-shadow: 0 0 10px var(--violet);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact-section label {
+    display: block;
+    margin-top: 15px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    background: rgba(20, 0, 30, 0.6);
+    border: 1px solid var(--violet);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: var(--magenta);
+    box-shadow: 0 0 12px var(--magenta);
+}
+
+.contact-section .btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: var(--violet);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-section .btn:hover {
+    background: var(--magenta);
+    box-shadow: 0 0 14px var(--magenta);
+}
+
+/* CONTACT PAGE SOCIAL ICONS */
+.contact-socials {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sanctuary-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
 }
 
 .sanctuary-socials a {
-    color: #c8a2ff;
-    font-size: 1.8rem;
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease,
-        text-shadow 0.25s ease;
+    font-size: 2.4rem;
+    color: var(--lavender);
+    text-shadow: 0 0 12px var(--violet);
+    transition: 0.3s ease;
 }
 
 .sanctuary-socials a:hover {
-    color: #e5c7ff;
-    transform: translateY(-3px);
-    text-shadow:
-        0 0 8px rgba(180, 120, 255, 0.8),
-        0 0 14px rgba(160, 80, 255, 0.6),
-        0 0 22px rgba(140, 60, 255, 0.5);
+    color: var(--magenta);
+    text-shadow: 0 0 18px var(--magenta);
+    transform: scale(1.2);
 }
 
-.premium-divider {
+/* Runes around Contact title */
+.contact-section h2::before,
+.contact-section h2::after {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--magenta);
+    opacity: 0.6;
+    text-shadow: 0 0 12px var(--magenta);
+    animation: runeFloat 4s ease-in-out infinite;
+}
+
+.contact-section h2::before {
+    left: -25px;
+}
+
+.contact-section h2::after {
+    right: -25px;
+    animation-delay: 1.2s;
+}
+
+/* Sigil behind form */
+.contact-section::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
+}
+
+/* --------------------------------------------------
+   SETUP PAGE FLOATING EFFECTS
+-------------------------------------------------- */
+.setup-page {
+    animation: setupFloat 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes setupFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Floating sections */
+.setup-category {
+    animation: setupSectionFloat 12s ease-in-out infinite;
+}
+
+@keyframes setupSectionFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Ambient aura */
+.setup-page::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* SETUP TABLES */
+.setup-table-wrapper {
+    margin: 40px 0;
+    position: relative;
+}
+
+.setup-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.setup-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.setup-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+    vertical-align: top;
+}
+
+.setup-table tr:last-child td {
+    border-bottom: none;
+}
+
+.setup-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* GEAR IMAGES */
+.setup-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--violet);
+    box-shadow: 0 0 12px rgba(122, 28, 172, 0.5);
+    transition: 0.3s ease;
+}
+
+.setup-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px var(--magenta);
+}
+
+/* Runes around category titles (shared) */
+/* already defined via .category-title.gothic-accent */
+
+/* Sigil behind tables */
+.setup-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
+}
+
+/* --------------------------------------------------
+   ABOUT PAGE FLOATING EFFECTS & LORE
+-------------------------------------------------- */
+.about-page {
+    animation: aboutFloat 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes aboutFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.about-page::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* ABOUT LORE TABLE */
+.lore-table-wrapper {
+    margin: 40px auto;
+    max-width: 900px;
+    position: relative;
+}
+
+.lore-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.lore-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.lore-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+}
+
+.lore-table tr:last-child td {
+    border-bottom: none;
+}
+
+.lore-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* Sigil behind lore table */
+.lore-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
+}
+
+.about-section {
+    animation: aboutSectionFloat 12s ease-in-out infinite;
+}
+
+@keyframes aboutSectionFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.about-portrait {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--violet);
+    box-shadow: 0 0 20px rgba(122, 28, 172, 0.6);
+    margin: 0 auto 20px;
     display: block;
-    width: 140px;
-    height: 2px;
-    margin: 10px auto 25px;
-    background: #c8a2ff;
-    box-shadow: 
-        0 0 8px #b478ff,
-        0 0 14px #a050ff,
-        0 0 22px #8c3cff;
-    border-radius: 2px;
+    transition: 0.3s ease;
 }
 
-/* ------------------------------
-   RESPONSIVE — Phones + Tablets
------------------------------- */
+.about-portrait:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 28px var(--magenta);
+}
 
-/* Phones (iPhone + Android) */
+/* Runes around About section titles */
+.about-content h2 {
+    position: relative;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.about-content h2::before,
+.about-content h2::after {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--magenta);
+    opacity: 0.6;
+    text-shadow: 0 0 12px var(--magenta);
+    animation: runeFloat 4s ease-in-out infinite;
+}
+
+.about-content h2::before {
+    left: -25px;
+}
+
+.about-content h2::after {
+    right: -25px;
+    animation-delay: 1.2s;
+}
+
+.gothic-ornament {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--lavender);
+    margin: 25px 0;
+    text-shadow: 0 0 10px var(--violet);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    color: var(--white);
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.theme-song {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.theme-song audio {
+    margin-top: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* --------------------------------------------------
+   HOME PAGE — Sanctuary Upgrade
+-------------------------------------------------- */
+
+/* Gothic Ornament (home) */
+.gothic-ornament {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--lavender);
+    margin: 25px 0;
+    text-shadow: 0 0 12px var(--violet);
+}
+
+/* Hero Section Upgrade */
+.hero {
+    padding: 60px 20px !important;
+    min-height: 200px !important;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(122,28,172,0.25), transparent 70%);
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Home Navigation Grid */
+.home-navigation {
+    padding: 40px 20px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: gridFloat 10s ease-in-out infinite;
+}
+
+@keyframes gridFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Navigation Cards */
+.nav-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    background: rgba(42, 0, 62, 0.55);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--lavender);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.35s ease;
+    box-shadow: 0 0 14px rgba(122, 28, 172, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle rune accent */
+.nav-card::before {
+    content: "✦";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.2rem;
+    color: var(--magenta);
+    opacity: 0.4;
+    text-shadow: 0 0 10px var(--magenta);
+}
+
+/* Hover Effects */
+.nav-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--magenta);
+    color: var(--white);
+    box-shadow: 0 0 18px var(--magenta);
+}
+
+.nav-card:hover::before {
+    opacity: 0.8;
+    text-shadow: 0 0 14px var(--magenta);
+}
+
+/* --------------------------------------------------
+   IFRAME CONTENT FRAME
+-------------------------------------------------- */
+.content-frame {
+    width: 100%;
+    height: calc(100vh - 180px);
+    border: none;
+    background: var(--black);
+    overflow-y: auto;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE — PHONES
+-------------------------------------------------- */
 @media (max-width: 768px) {
 
-    body {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    /* Hamburger visible */
-    .hamburger {
-        display: flex;
-    }
-
-    /* Mobile nav layout */
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 20px;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-    }
-
-    nav ul.mobile-hidden {
-        max-height: 0;
-        opacity: 0;
-    }
-
-    nav ul:not(.mobile-hidden) {
-        max-height: 500px;
-        opacity: 1;
-    }
+    body { font-size: 1rem; padding: 0 10px; }
 
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    /* HERO MOBILE OPTIMIZATION */
     .hero {
-        background-size: cover;
-        background-position: top center;
-        padding: 50px 15px;
+        padding: 50px 15px !important;
     }
 
-    .hero h2 {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-
-    /* SPACING REFINEMENTS */
     section,
     .events-page,
     .services,
@@ -470,21 +1305,6 @@ button.btn { cursor: pointer; border: none; }
         padding: 40px 15px;
     }
 
-    .section-header {
-        margin-bottom: 25px;
-    }
-
-    .category-title {
-        margin: 25px 0 15px;
-        font-size: 1.5rem;
-    }
-
-    .premium-divider {
-        margin: 5px auto 20px;
-        width: 120px;
-    }
-
-    /* FEATURES */
     .features {
         flex-direction: column;
         align-items: center;
@@ -496,14 +1316,12 @@ button.btn { cursor: pointer; border: none; }
         max-width: 350px;
     }
 
-    /* GRIDS */
     .event-list,
     .service-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    /* ICONS */
     .game-header,
     .setup-header {
         flex-direction: column;
@@ -516,50 +1334,36 @@ button.btn { cursor: pointer; border: none; }
         height: 60px;
     }
 
-    /* FOOTER */
     footer {
         font-size: 1.1rem;
         padding: 15px;
     }
-
-    /* SOCIALS */
-    .sanctuary-socials {
-        gap: 1rem;
-        padding: 30px 0 40px;
-    }
-
-    .sanctuary-socials a {
-        font-size: 1.5rem;
-    }
 }
 
-/* Tablets (iPad, Android tablets, small laptops) */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-    body {
-        font-size: 1.05rem;
-    }
+/* --------------------------------------------------
+   RESPONSIVE — TABLETS & DESKTOP NAV LAYOUT
+-------------------------------------------------- */
+@media (min-width: 769px) {
 
     nav ul {
-        gap: 18px;
+        flex-direction: row;
     }
+}
+/* Make mini-nav always clickable and on top */
+.mini-nav {
+    position: relative;
+    z-index: 9999;
+}
 
-    .hero {
-        padding: 70px 30px;
-    }
+/* Ensure page wrappers sit below the mini-nav */
+.about-page,
+.setup-page,
+.hero {
+    position: relative;
+    z-index: 1;
+}
 
-    .features {
-        gap: 25px;
-    }
-
-    .event-list,
-    .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .game-icon,
-    .setup-icon {
-        width: 110px;
-        height: 75px;
-    }
+/* Just in case something disabled pointer events */
+.mini-nav a {
+    pointer-events: auto;
 }
