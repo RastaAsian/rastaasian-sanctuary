@@ -10,8 +10,8 @@
 <body>
 
 <!-- Persistent Music Player -->
-<audio id="bg-music" autoplay loop>
-    <source src="audio/ytmp3free.cc_gorillaz-dare-official-video-youtubemp3free.org.mp3" type="audio/mpeg">
+<audio id="bg-music" autoplay loop muted>
+    <source src="css/audio/ytmp3free.cc_gorillaz-dare-official-video-youtubemp3free.org.mp3" type="audio/mpeg">
 </audio>
 
 <header>
@@ -40,12 +40,22 @@
 
 </header>
 
-<!-- This is where all your pages load -->
+<!-- MAIN CONTENT FRAME -->
 <iframe 
     name="content-frame"
     src="home.html"
-    style="width: 100%; height: 85vh; border: none; background: var(--black);">
+    class="content-frame">
 </iframe>
+
+<!-- Floating Music Orb with Visualizer -->
+<div id="music-orb">
+    <div id="visualizer">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</div>
 
 <footer>
     © 2025 RastaAsian Sanctuary. All rights reserved.
@@ -67,12 +77,62 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('mobile-hidden');
 });
 
-// Close menu after clicking a link (mobile UX best practice)
+// Close menu after clicking a link
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.add('mobile-hidden');
         hamburger.classList.remove('active');
     });
+});
+</script>
+
+<!-- FINAL AUTO‑FADE MUSIC + ORB SCRIPT -->
+<script>
+const music = document.getElementById("bg-music");
+const orb = document.getElementById("music-orb");
+
+// Start muted (browser‑safe)
+music.volume = 0;
+
+// Auto‑fade after page load
+window.addEventListener("load", () => {
+    let vol = 0;
+    music.muted = false;
+    music.play().catch(() => {});
+
+    const fade = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.02; 
+            music.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 120);
+});
+
+// Orb toggle play/pause
+orb.addEventListener("click", () => {
+    if (music.paused) {
+        music.play().catch(() => {});
+        orb.classList.remove("paused");
+    } else {
+        music.pause();
+        orb.classList.add("paused");
+    }
+});
+
+// Resume when returning to tab
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && !orb.classList.contains("paused")) {
+        music.play().catch(() => {});
+    }
+});
+
+// Resume after iframe navigation or window refocus
+window.addEventListener("focus", () => {
+    if (!orb.classList.contains("paused")) {
+        music.play().catch(() => {});
+    }
 });
 </script>
 

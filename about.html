@@ -11,81 +11,80 @@
 
 <body>
 
-<header>
+<!-- MINI NAV -->
+<section class="mini-nav">
+    <a href="home.html" target="content-frame">Home</a>
+    <a href="about.html" target="content-frame">About</a>
+    <a href="games.html" target="content-frame">Games</a>
+    <a href="setup.html" target="content-frame">Setup</a>
+    <a href="events.html" target="content-frame">Events</a>
+    <a href="services.html" target="content-frame">Services</a>
+    <a href="contact.html" target="content-frame">Contact</a>
+</section>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<div class="gothic-ornament">✦</div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul class="mobile-hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="setup.html">Setup</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main>
+<!-- MAIN CONTENT STARTS HERE -->
+<main class="about-page">
 
     <!-- Hero Banner -->
-    <section class="hero" style="background-image: url('images/about-hero.jpg');">
+    <section class="hero" style="background-image: url('css/images/about-hero.jpg');">
         <h2>Hi, I'm RastaAsian</h2>
         <p>The story behind the Sanctuary.</p>
     </section>
 
     <div class="gothic-ornament">✦</div>
 
+    <!-- Portrait -->
+    <img src="css/images/profile.jpg" alt="RastaAsian Portrait" class="about-portrait">
+
     <!-- About Content -->
-    <section class="about-content" style="padding: 40px 20px; max-width: 900px; margin: auto;">
+    <section class="about-content about-section">
 
-        <h2>My Journey</h2>
+        <h2>Who I Am</h2>
         <p>
-            Welcome to the RastaAsian Sanctuary — a space built on good vibes, gaming energy, and a love for community.
-            I’m RastaAsian: a gamer, streamer, and creator who blends culture, personality, and passion into every stream.
-            I am 🌙🦉 a Neurodivergent (AuDHD) Night Owl with Beautiful Princess Disorder 🖤💫 navigating the world with a unique perspective.
-            Currently working toward becoming a Junior UI/UX Designer & Front-End Developer (Hybrid) while growing my streaming presence.
+            I’m RastaAsian — a creator, gamer, streamer, and designer in the making.  
+            I navigate the world as a 🌙🦉 Neurodivergent (AuDHD) Night Owl with Beautiful Princess Disorder (BPD), 
+            and I share that openly because it shapes my creativity, my humor, my resilience, and the way I connect with people.  
+            The Sanctuary exists because I needed a place where I could be fully myself — and now it’s a place where others can too.
         </p>
 
         <div class="gothic-ornament">❖</div>
 
-        <h2>My Streaming Style</h2>
+        <h2>What I Bring</h2>
         <p>
-            Whether I’m diving into RPGs, online team shooters, or exploring cozy indie titles, I bring a mix of humor,
-            chill energy, and hype moments. My goal is simple: create a space where everyone feels welcome, entertained,
-            and part of something bigger.
+            My content blends chaos, comfort, and charisma.  
+            Whether I’m clutching in shooters, vibing in RPGs, or exploring cozy indies, I bring a mix of humor, 
+            authenticity, and late‑night energy that feels like hanging out with a friend — not watching a performance.  
+            I’m also building my path as a hybrid UX/UI Designer & Front‑End Developer, bringing design thinking and 
+            creativity into everything I do.
         </p>
 
         <div class="gothic-ornament">❖</div>
 
-        <h2>The Night Owls Community</h2>
+        <h2>The Sanctuary</h2>
         <p>
-            The Sanctuary isn’t just a name — it’s a vibe. A place where people can unwind, laugh, connect, and enjoy
-            the world of gaming together. No judgment, no pressure — just pure gaming bliss.
+            The Sanctuary is more than a stream — it’s a vibe, a refuge, a late‑night digital living room.  
+            It’s home to the Night Owls: neurodivergent minds, gamers, creatives, and anyone who just wants a space 
+            where they can breathe, laugh, and exist without pressure.  
+            No judgment. No masks. Just connection, chaos, and community.
         </p>
 
         <div class="gothic-ornament">❖</div>
 
         <h2>My Mission</h2>
         <p>
-            I’m here to grow, learn, and build a community that supports each other. Streaming is more than gameplay —
-            it’s storytelling, connection, and shared experiences. I’m passionate about mental health advocacy and strive
-            to create a supportive environment for all my viewers. I'm also working toward becoming a Junior UX/UI Designer
-            to further enhance my skills and contribute to the digital world.
+            My mission is to grow, learn, and build a community where people feel seen, supported, and safe.  
+            Streaming is storytelling — it’s shared experiences, emotional honesty, and creating a space where people 
+            can show up exactly as they are.  
+            I’m passionate about mental health advocacy and committed to using my voice, my creativity, and my design 
+            journey to make a positive impact both online and in the digital world.
         </p>
 
     </section>
 
     <!-- Theme Song Section -->
-    <section class="theme-song" style="padding: 40px 20px; max-width: 900px; margin: auto;">
+    <section class="theme-song about-section">
         <h2>Theme Song</h2>
         <audio controls>
             <source src="audio/ytmp3free.cc_gorillaz-dare-official-video-youtubemp3free.org.mp3" type="audio/mpeg">
@@ -94,17 +93,7 @@
     </section>
 
 </main>
-
-<!-- Mobile Menu Script -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('mobile-hidden');
-});
-</script>
+<!-- MAIN CONTENT ENDS HERE -->
 
 </body>
 </html>

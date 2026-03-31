@@ -7,76 +7,29 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        /* Purple Glow Social Icons */
-        .sanctuary-socials {
-            display: flex;
-            gap: 1.4rem;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 0 60px;
-        }
-
-        .sanctuary-socials a {
-            color: #c8a2ff;
-            font-size: 1.8rem;
-            transition:
-                color 0.25s ease,
-                transform 0.25s ease,
-                text-shadow 0.25s ease;
-        }
-
-        .sanctuary-socials a:hover {
-            color: #e5c7ff;
-            transform: translateY(-3px);
-            text-shadow:
-                0 0 8px rgba(180, 120, 255, 0.8),
-                0 0 14px rgba(160, 80, 255, 0.6),
-                0 0 22px rgba(140, 60, 255, 0.5);
-        }
-    </style>
 </head>
 
 <body>
 
-<header>
+<section class="mini-nav">
+    <a href="home.html" target="content-frame">Home</a>
+    <a href="about.html" target="content-frame">About</a>
+    <a href="games.html" target="content-frame">Games</a>
+    <a href="setup.html" target="content-frame">Setup</a>
+    <a href="events.html" target="content-frame">Events</a>
+    <a href="services.html" target="content-frame">Services</a>
+    <a href="contact.html" target="content-frame">Contact</a>
+</section>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+<div class="gothic-ornament">✦</div>
 
-    <!-- Navigation -->
-    <nav>
-        <ul class="mobile-hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="setup.html">Setup</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<main>
-
-    <!-- Hero Banner -->
-    <section class="hero" style="background-image: url('images/contact-hero.jpg');">
-        <h2>Contact Me</h2>
-        <p>Have a question, collaboration idea, or just want to say hi?</p>
-    </section>
+<main class="contact-page">
 
     <!-- Contact Form -->
-    <section style="padding: 40px 20px; max-width: 700px; margin: auto;">
-        <h2 style="text-align:center;">Send a Message</h2>
+    <section class="contact-section">
+        <h2>Send a Message</h2>
 
-        <form action="https://formspree.io/f/mlgeazpj" method="POST" style="margin-top: 30px;">
+        <form action="https://formspree.io/f/mlgeazpj" method="POST">
 
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required>
@@ -90,52 +43,43 @@
             <label for="message">Your Message</label>
             <textarea id="message" name="message" rows="6" required></textarea>
 
-            <button type="submit" class="btn" style="margin-top: 15px;">Send Message</button>
+            <button type="submit" class="btn">Send Message</button>
 
         </form>
     </section>
 
     <!-- Social Icons -->
-    <div class="sanctuary-socials">
+    <section class="contact-socials">
+        <div class="sanctuary-socials">
 
-        <a href="https://www.youtube.com/@rastaasian" target="_blank" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
+            <a href="https://www.youtube.com/@rastaasian" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
 
-        <a href="https://www.tiktok.com/@rastaasian" target="_blank" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok"></i>
-        </a>
+            <a href="https://www.tiktok.com/@rastaasian" target="_blank" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
 
-        <a href="https://www.instagram.com/rastaasian888" target="_blank" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
+            <a href="https://www.instagram.com/rastaasian888" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
 
-        <a href="https://github.com/rastaasian" target="_blank" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-        </a>
+            <a href="https://github.com/rastaasian" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
 
-        <a href="https://www.twitch.tv/rastaasian" target="_blank" aria-label="Twitch">
-            <i class="fa-brands fa-twitch"></i>
-        </a>
+            <a href="https://www.twitch.tv/rastaasian" target="_blank" aria-label="Twitch">
+                <i class="fa-brands fa-twitch"></i>
+            </a>
 
-        <a href="https://discord.gg/EQh4h47R" target="_blank" aria-label="Discord Server">
-            <i class="fa-brands fa-discord"></i>
-        </a>
+            <a href="https://discord.gg/EQh4h47R" target="_blank" aria-label="Discord Server">
+                <i class="fa-brands fa-discord"></i>
+            </a>
 
-    </div>
+        </div>
+    </section>
 
 </main>
-
-<!-- Mobile Menu Script -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('mobile-hidden');
-});
-</script>
 
 </body>
 </html>

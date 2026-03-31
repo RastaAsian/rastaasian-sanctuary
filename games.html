@@ -9,33 +9,25 @@
 
 <body>
 
-<header>
+<!-- Mini Navigation -->
+<section class="mini-nav">
+    <a href="home.html" target="content-frame">Home</a>
+    <a href="about.html" target="content-frame">About</a>
+    <a href="games.html" target="content-frame">Games</a>
+    <a href="setup.html" target="content-frame">Setup</a>
+    <a href="events.html" target="content-frame">Events</a>
+    <a href="services.html" target="content-frame">Services</a>
+    <a href="contact.html" target="content-frame">Contact</a>
+</section>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <ul class="mobile-hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="games.html" class="active">Games</a></li>
-            <li><a href="setup.html">Setup</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-</header>
+<div class="gothic-ornament">✦</div>
 
 <section class="events-page games-page">
+
     <h1>Games & Streams</h1>
     <p class="intro">The worlds I explore and the vibes I bring.</p>
+
+    <div class="gothic-ornament">✦</div>
 
     <!-- GAME GRID -->
     <div class="event-list">
@@ -78,14 +70,24 @@
 
         <div class="event-card">
             <div class="game-header">
-                <img src="css/images/download.jpg" alt="Horror Game" class="game-icon">
-                <h3>Horror Game</h3>
+                <img src="css/images/minecraft-game.jpg" alt="Minecraft" class="game-icon">
+                <h3>Minecraft</h3>
             </div>
-            <p class="date">Horror Experience</p>
-            <p class="details">Uneasy silence, creeping dread, and the constant feeling something is watching.</p>
+            <p class="date">Building Adventures</p>
+            <p class="details">Endless creativity, blocky worlds, and the joy of construction.</p>
         </div>
 
+    <div class="event-card">
+    <div class="game-header">
+        <img src="css/images/fortnite.jpg" alt="Fortnite" class="game-icon">
+        <h3>Fortnite</h3>
     </div>
+    <p class="date">Battle Royale & Creative</p>
+    <p class="details">
+        Fast‑paced chaos, clutch moments, wild builds, and endless fun with the Night Owl squad.
+    </p>
+</div>
+
 
     <!-- STREAM HIGHLIGHTS -->
     <h2 class="category-title gothic-accent">Stream Highlights</h2>
@@ -94,17 +96,6 @@
     </div>
 
 </section>
-
-<!-- Mobile Menu Script -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('mobile-hidden');
-});
-</script>
 
 </body>
 </html>

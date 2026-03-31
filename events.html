@@ -9,29 +9,17 @@
 
 <body>
 
-<header>
+<section class="mini-nav">
+    <a href="home.html" target="content-frame">Home</a>
+    <a href="about.html" target="content-frame">About</a>
+    <a href="games.html" target="content-frame">Games</a>
+    <a href="setup.html" target="content-frame">Setup</a>
+    <a href="events.html" target="content-frame">Events</a>
+    <a href="services.html" target="content-frame">Services</a>
+    <a href="contact.html" target="content-frame">Contact</a>
+</section>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Navigation -->
-    <nav>
-        <ul class="mobile-hidden">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="events.html" class="active">Events</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="setup.html">Setup</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-</header>
+<div class="gothic-ornament">✦</div>
 
 <main class="events-page">
 
@@ -40,67 +28,59 @@
         Stay up to date with what I'm working on — streams, collabs, gaming sessions, community nights, and personal milestones.
     </p>
 
-    <section class="event-list">
+    <div class="gothic-ornament">✦</div>
 
-        <!-- WEEKLY STREAM SCHEDULE -->
-        <article class="event-card">
-            <section class="stream-bio">
-                <h2>🎮 Weekly Stream Schedule 🎮</h2>
+    <!-- WEEKLY STREAM SCHEDULE -->
+   <section class="weekly-schedule-box">
+    <h2>🌙 April Awakening Stream Schedule 🌙</h2>
+    <p>Live Mon/Wed/Fri/Sat — plus spontaneous Night Owl chaos sessions</p>
+    <p>
+        ✦ New month, new games, same unhinged energy ✦<br>
+        The Night Owl community thrives after dark — come vibe, laugh, and awaken the April chaos.
+    </p>
+</section>
 
-                <p class="stream-days">
-                    Live Mon/Wed/Fri/Sat & Surprise streams 🌙🦉 Never a dull moment 🤪
-                </p>
 
-                <p class="stream-tagline">
-                    🌙🦉 Just a <span class="highlight">Neurodivergent Night Owl</span> with 
-                    <span class="highlight">Beautiful Princess Disorder</span> 🖤💫<br>
-                    No filter, never a dull moment 🤪 — <strong>join the chaos!</strong> 😱🎮
-                </p>
-            </section>
-        </article>
+    <!-- FEATURED EVENT -->
+   <section class="service-category">
+    <h3 class="category-title gothic-accent">✦ Fool’s April Awakening: New Games, New Chaos ✦</h3>
+    <div class="gothic-table-divider"></div>
 
-        <!-- MARCH MADNESS EVENT -->
-        <article class="event-card">
+    <div class="events-table-wrapper">
+        <table class="events-table">
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Details</th>
+            </tr>
 
-            <h3>🔥🎮 March Madness: Suicide Squad x PoE2 Chaos 🎮🔥</h3>
-            <p class="date">Live All Month — March</p>
+            <tr>
+                <td>Fool’s April Awakening</td>
+                <td>Live All Month — April</td>
+                <td>
+                    A full month of chaotic variety gaming, Night‑Owl energy, and new adventures with the community.<br><br>
 
-            <p class="details">
-                Buckle up for a full month of unhinged co-op chaos, late-night grinding, and builds that probably shouldn’t work but absolutely will.<br><br>
-                March Madness brings together:
-            </p>
+                    Expect a rotating lineup of:
+                    <ul>
+                        <li>🎮 New game drops & surprise picks</li>
+                        <li>🌙 Late‑night community sessions</li>
+                        <li>🧨 Builds that make no sense but absolutely slap</li>
+                        <li>😂 Fool‑energy decisions & questionable choices</li>
+                        <li>🕸️ Cozy chaos with the Night Owl community</li>
+                        <li>💬 Chat steering the ship (poorly)</li>
+                    </ul>
 
-            <ul class="event-highlights">
-                <li>🧨 Suicide Squad: Kill the Justice League ft. Kvng Nate</li>
-                <li>⚔️ Path of Exile 2 no-sleep loot marathons</li>
-                <li>😂 Banter, clutch saves, and questionable decisions</li>
-                <li>📈 Builds optimized for vibes, not logic</li>
-                <li>🎤 Real-time reactions, salt, and hype moments</li>
-                <li>💬 Chat coaching like they’re on payroll</li>
-            </ul>
+                    April is all about awakening new vibes, new chaos, and new games —  
+                    <strong>variety, unpredictability, and pure Sanctuary energy.</strong>
+                </td>
+            </tr>
 
-            <p class="closing-remarks">
-                Whether you're here for the chaos, the collabs, or the grind, March is going to be wild.<br><br>
-                Grab your snacks, charge your devices, and get ready for a month of pure madness!<br><br>
-                See you on stream! 🚀
-            </p>
+        </table>
+    </div>
+</section>
 
-        </article>
-
-    </section>
 
 </main>
-
-<!-- Mobile Menu Script -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('mobile-hidden');
-});
-</script>
 
 </body>
 </html>
