@@ -1367,3 +1367,55 @@ button.btn { cursor: pointer; border: none; }
 .mini-nav a {
     pointer-events: auto;
 }
+/* Hide mini-nav on mobile */
+@media (max-width: 768px) {
+    .mini-nav {
+        display: none;
+    }
+}
+/* Make mobile menu appear above iframe */
+nav ul {
+    position: relative;
+    z-index: 9999;
+}
+iframe {
+    position: relative;
+    z-index: 1;
+}
+nav ul {
+    position: relative;
+    z-index: 9999;
+}
+/* --------------------------------------------------
+   RESPONSIVE — PHONES
+-------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Hide mini-nav on mobile */
+    .mini-nav {
+        display: none;
+    }
+
+    /* Make hamburger menu appear above iframe */
+    nav ul {
+        position: relative;
+        z-index: 9999;
+    }
+
+    /* Push iframe behind menu */
+    iframe {
+        position: relative;
+        z-index: 1;
+    }
+}
+.social-icon-img {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 8px var(--violet));
+    transition: 0.3s ease;
+}
+
+a:hover .social-icon-img {
+    filter: drop-shadow(0 0 12px var(--magenta));
+    transform: scale(1.15);
+}
