@@ -1419,3 +1419,526 @@ a:hover .social-icon-img {
     filter: drop-shadow(0 0 12px var(--magenta));
     transform: scale(1.15);
 }
+/* Global link color fix */
+a {
+    color: #b38bff; /* soft gothic purple */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #d8c2ff; /* lighter purple glow */
+}
+.btn-primary {
+    background-color: #6a0dad; /* deep gothic purple */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #8b2be2; /* brighter purple */
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px #b38bff;
+}
+.social-links a i {
+    color: #b38bff;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.social-links a i:hover {
+    color: #d8c2ff;
+    text-shadow: 0 0 8px #b38bff;
+}
+/* Primary Gothic Purple Button */
+.btn-primary,
+.btn-ghost {  /* make both use the same base */
+    background-color: #7a1cc4; /* deep gothic purple */
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Hover Glow */
+.btn-primary:hover,
+.btn-ghost:hover {
+    background-color: #9b3ff0;
+    box-shadow: 0 0 12px #c59bff;
+    transform: translateY(-2px);
+}
+.hero-actions {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 18px; /* perfect spacing between buttons */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center; /* center them nicely */
+}
+.quick-actions {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/* Featured Game */
+.featured-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #7a1cc4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px #7a1cc4;
+    margin-bottom: 30px;
+}
+
+.featured-box img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Game Cards Glow */
+.game-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #7a1cc4;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 18px #b38bff;
+    border-color: #b38bff;
+}
+
+.game-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.game-card h3 {
+    color: #c59bff;
+    text-shadow: 0 0 6px #7a1cc4;
+}
+.featured-game {
+    display: flex;
+    justify-content: center;
+}
+
+.featured-box {
+    max-width: 350px;   /* controls how small it becomes */
+    width: 100%;
+    margin: 0 auto;
+}
+.featured-game {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.featured-box {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+}
+.featured-game h2 {
+    text-align: center;
+    width: 100%;
+}
+.featured-box img {
+    display: block;
+    margin: 0 auto;
+}
+.featured-game {
+    margin-bottom: 30px;
+}
+/* --------------------------------------------------
+   FIX: Center Featured Game Section
+-------------------------------------------------- */
+
+.featured-game {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.featured-box {
+    max-width: 320px; /* Option B size */
+    width: 100%;
+    margin: 0 auto;
+}
+.featured-box img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 100%;
+    border-radius: 10px;
+}
+/* --------------------------------------------------
+   HOME PAGE — UPDATED LAYOUT & CENTERING
+-------------------------------------------------- */
+
+/* Center the entire home navigation section */
+.home-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Keep the grid centered and evenly spaced */
+.nav-grid {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* Improve hero spacing and centering */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Make nav cards feel more interactive and consistent */
+.nav-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    background: rgba(42, 0, 62, 0.55);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--lavender);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.35s ease;
+    box-shadow: 0 0 14px rgba(122, 28, 172, 0.4);
+}
+
+.nav-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--magenta);
+    color: var(--white);
+    box-shadow: 0 0 18px var(--magenta);
+}
+/* Floating rune behind hero */
+.hero::before {
+    content: "✧";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 8rem;
+    color: var(--violet);
+    opacity: 0.08;
+    pointer-events: none;
+    animation: heroRuneFloat 8s ease-in-out infinite;
+    text-shadow: 0 0 20px var(--violet);
+}
+
+@keyframes heroRuneFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+    50% { transform: translate(-50%, -52%) scale(1.15); opacity: 0.14; }
+}
+/* Floating rune behind hero */
+.hero::before {
+    content: "✧";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 8rem;
+    color: var(--violet);
+    opacity: 0.08;
+    pointer-events: none;
+    animation: heroRuneFloat 8s ease-in-out infinite;
+    text-shadow: 0 0 20px var(--violet);
+}
+
+@keyframes heroRuneFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+    50% { transform: translate(-50%, -52%) scale(1.15); opacity: 0.14; }
+}
+/* Animated sigils on nav cards */
+.nav-card::after {
+    content: "✦";
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-size: 1.2rem;
+    color: var(--magenta);
+    opacity: 0.4;
+    animation: sigilPulse 4s ease-in-out infinite;
+    text-shadow: 0 0 10px var(--magenta);
+}
+
+@keyframes sigilPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+/* Aura pulse behind hero text */
+.hero h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180%;
+    height: 180%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(122, 28, 172, 0.25), transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: heroAuraPulse 7s ease-in-out infinite;
+}
+
+@keyframes heroAuraPulse {
+    0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.75; transform: translate(-50%, -50%) scale(1.15); }
+}
+/* Subtle parallax background */
+body {
+    background: url('css/images/sanctuary-bg-stars.png'), var(--black);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* --------------------------------------------------
+   RASTAASIAN DATING PROFILE REDESIGN — FEATURED SERVICE
+-------------------------------------------------- */
+
+.dating-service {
+    position: relative;
+    border-color: var(--magenta) !important;
+    box-shadow: 0 0 20px rgba(199, 44, 140, 0.45) !important;
+    animation: datingGlow 8s ease-in-out infinite;
+}
+
+/* Title glow */
+.dating-service h3 {
+    color: var(--magenta) !important;
+    text-shadow: 0 0 12px var(--magenta);
+}
+
+/* Animated runes */
+.dating-service::before,
+.dating-service::after {
+    content: "✦";
+    position: absolute;
+    font-size: 1.6rem;
+    color: var(--magenta);
+    opacity: 0.55;
+    text-shadow: 0 0 12px var(--magenta);
+    animation: runeFloat 4s ease-in-out infinite;
+}
+
+.dating-service::before {
+    top: 10px;
+    left: 12px;
+}
+
+.dating-service::after {
+    bottom: 10px;
+    right: 12px;
+    animation-delay: 1.2s;
+}
+
+/* Aura pulse */
+@keyframes datingGlow {
+    0%, 100% { box-shadow: 0 0 18px rgba(199, 44, 140, 0.35); }
+    50% { box-shadow: 0 0 28px rgba(199, 44, 140, 0.65); }
+}
+/* --------------------------------------------------
+   SETUP & GEAR — SANCTUARY REVAMP
+-------------------------------------------------- */
+
+/* HERO SECTION */
+.setup-hero {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--accent);
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* SECTION WRAPPER */
+.setup-section {
+    margin: 50px 0;
+    animation: fadeInUp 1s ease;
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* BENEFITS LIST */
+.setup-benefits {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.setup-benefits li {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.setup-benefits li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+/* TABLES */
+.setup-table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.setup-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.setup-table th {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    text-align: left;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.setup-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.setup-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+/* ICON IMAGES */
+.setup-icon {
+    width: 80px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.setup-icon:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 18px var(--accent);
+}
+
+/* SOFTWARE LIST */
+.setup-software {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.setup-software li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.setup-software li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* FUTURE UPGRADES */
+.setup-upgrades {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.setup-upgrades li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.setup-upgrades li::before {
+    content: "✧";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

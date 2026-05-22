@@ -11,7 +11,8 @@
 
 <body>
 
-<section class="mini-nav">
+<!-- MINI NAV -->
+<section class="mini-nav fade-in">
     <a href="home.html" target="content-frame">Home</a>
     <a href="about.html" target="content-frame">About</a>
     <a href="games.html" target="content-frame">Games</a>
@@ -21,36 +22,117 @@
     <a href="contact.html" target="content-frame">Contact</a>
 </section>
 
-<div class="gothic-ornament">✦</div>
+<div class="gothic-ornament slide-up">✦</div>
 
-<main class="contact-page">
+<!-- MAIN CONTENT -->
+<main class="contact-page fade-in">
 
-    <!-- Contact Form -->
-    <section class="contact-section">
-        <h2>Send a Message</h2>
-
-        <form action="https://formspree.io/f/mlgeazpj" method="POST">
-
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
-
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-
-        </form>
+    <!-- Hero -->
+    <section class="hero slide-up" style="background-image: url('css/images/rastaasian-sanctuary-logo.png');">
+        <h2 class="slide-up">Contact the Sanctuary</h2>
+        <p class="slide-up">Reach out anytime. I’m here to help.</p>
     </section>
 
-    <!-- Social Icons -->
-    <section class="contact-socials">
-        <div class="sanctuary-socials">
+    <div class="gothic-ornament slide-up">✦</div>
+
+    <!-- Contact Info -->
+    <section class="contact-section about-section">
+
+        <h2 class="slide-up">Ways to Reach Me</h2>
+        <p class="fade-in">
+            Whether you need tech support, want to book a gaming session, or have questions about my services, 
+            here are the best ways to get in touch.
+        </p>
+
+        <ul class="fade-in contact-list">
+            <li>
+                <i class="fa-solid fa-envelope"></i> 
+                Email: <a href="mailto:rastaasiansanctuary@gmail.com">rastaasiansanctuary@gmail.com</a>
+            </li>
+
+            <li>
+                <i class="fa-brands fa-discord"></i> 
+                Discord: RastaAsian#0001
+            </li>
+
+            <li>
+                <i class="fa-brands fa-instagram"></i> 
+                Instagram: <a href="https://instagram.com/rastaasiansanctuary" target="_blank">@rastaasiansanctuary</a>
+            </li>
+
+            <li>
+                <i class="fa-solid fa-calendar-check"></i> 
+                Book a Session: 
+                <a href="https://calendly.com/therastaasian/30min" target="_blank">
+                    Schedule on Calendly
+                </a>
+            </li>
+        </ul>
+
+        <div class="gothic-ornament slide-up">❖</div>
+
+        <!-- Contact Form -->
+        <h2 class="slide-up">Send a Message</h2>
+        <p class="fade-in">Prefer to write it out? Send me a message below.</p>
+
+        <form class="contact-form fade-in">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com">
+
+            <label>Subject</label>
+            <input type="text" placeholder="What’s this about?">
+
+            <label>Message</label>
+            <textarea placeholder="Write your message here..."></textarea>
+
+            <button type="submit" class="btn-primary slide-up">Send Message</button>
+        </form>
+
+        <div class="gothic-ornament slide-up">❖</div>
+
+        <!-- Quick Actions -->
+        <h2 class="slide-up">Quick Actions</h2>
+
+        <div class="hero-actions fade-in">
+            <a href="https://calendly.com/therastaasian/30min" 
+               target="_blank" 
+               class="btn-primary">
+               Book a 30‑Minute Session
+            </a>
+
+            <a href="mailto:rastaasiansanctuary@gmail.com" class="btn-primary">
+                Email Me Directly
+            </a>
+        </div>
+
+        <div class="gothic-ornament slide-up">❖</div>
+
+        <!-- Gaming Sessions -->
+        <h2 class="slide-up">Gaming Sessions</h2>
+
+        <div class="hero-actions fade-in">
+            <a href="https://calendly.com/therastaasian/competitive-gaming-companion" 
+               target="_blank" 
+               class="btn-primary">
+               Competitive Gaming Session
+            </a>
+
+            <a href="https://calendly.com/therastaasian/gaming-companion-30-mins" 
+               target="_blank" 
+               class="btn-primary">
+               30‑Minute Gaming Companion
+            </a>
+        </div>
+
+        <div class="gothic-ornament slide-up">❖</div>
+
+        <!-- Social Bar -->
+        <h2 class="slide-up">Find Me Online</h2>
+
+        <div class="social-links fade-in">
 
             <a href="https://www.youtube.com/@rastaasian" target="_blank" aria-label="YouTube">
                 <i class="fa-brands fa-youtube"></i>
@@ -60,7 +142,7 @@
                 <i class="fa-brands fa-tiktok"></i>
             </a>
 
-            <a href="https://www.instagram.com/rastaasian888" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/rastaasiansanctuary" target="_blank" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
             </a>
 
@@ -75,11 +157,9 @@
             <a href="https://discord.gg/EQh4h47R" target="_blank" aria-label="Discord Server">
                 <i class="fa-brands fa-discord"></i>
             </a>
- 
-
-
 
         </div>
+
     </section>
 
 </main>
