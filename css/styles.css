@@ -1,3 +1,253 @@
+/* ------------------------------
+   MOBILE-FIRST BASE STYLES
+------------------------------ */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.sanctuary-body {
+    background: #0d0d0f;
+    color: #e6e6e6;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+/* Global spacing */
+section {
+    width: 92%;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* Gothic ornament */
+.gothic-ornament {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem 0;
+    opacity: 0.8;
+}
+
+/* Animations */
+.fade-in { opacity: 0; animation: fadeIn 1s forwards; }
+.slide-up { opacity: 0; transform: translateY(20px); animation: slideUp 0.9s forwards; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ------------------------------
+   HEADER (MOBILE FIRST)
+------------------------------ */
+
+.site-header {
+    background: #0b0b0d;
+    border-bottom: 1px solid #222;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-inner {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.site-logo {
+    width: 42px;
+    height: 42px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e6e6e6;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+    display: block;
+}
+
+.nav-toggle-label {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-toggle-label span {
+    width: 28px;
+    height: 3px;
+    background: #e6e6e6;
+    display: block;
+    position: relative;
+}
+
+.main-nav {
+    display: none;
+    flex-direction: column;
+    background: #0b0b0d;
+    width: 100%;
+    padding: 1rem 0;
+    border-top: 1px solid #222;
+}
+
+.main-nav a {
+    text-align: center;
+    padding: 0.8rem 0;
+    color: #e6e6e6;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav-toggle:checked ~ .main-nav {
+    display: flex;
+}
+
+/* ------------------------------
+   HERO (MOBILE FIRST)
+------------------------------ */
+
+.hero {
+    padding: 4rem 1rem;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    width: 92%;
+    margin: auto;
+}
+
+.hero h1,
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ------------------------------
+   CARDS / GRIDS (MOBILE FIRST)
+------------------------------ */
+
+.pillars-grid,
+.centered-grid,
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.pillar-card,
+.event-card,
+.game-card {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Game icons */
+.game-icon,
+.setup-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #a970ff;
+}
+
+/* Featured game */
+.featured-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ------------------------------
+   TABLES (MOBILE FIRST)
+------------------------------ */
+
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+    display: block;
+    width: 100%;
+}
+
+tr {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+th {
+    display: none;
+}
+
+td {
+    padding: 0.4rem 0;
+}
+
+/* ------------------------------
+   CONTACT FORM (MOBILE FIRST)
+------------------------------ */
+
+.contact-form {
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: #111;
+    border: 1px solid #333;
+    color: #e6e6e6;
+    border-radius: 6px;
+}
+
+/* ------------------------------
+   FOOTER (MOBILE FIRST)
+------------------------------ */
+
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #222;
+    background: #0b0b0d;
+}
+
 /* ✦-------------------------------------------------
    ROOT VARIABLES — Sanctuary Brand System
 --------------------------------------------------✦ */
@@ -1800,4 +2050,73 @@ body.sanctuary-body {
     border: 1px solid #222;
     max-width: 260px;
     text-align: center;
+}
+/* ------------------------------
+   DESKTOP OVERRIDES
+------------------------------ */
+@media (min-width: 768px) {
+
+    /* Header */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        border: none;
+    }
+
+    .main-nav a {
+        margin-left: 1.5rem;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .nav-toggle,
+    .nav-toggle-label {
+        display: none;
+    }
+
+    /* Hero */
+    .hero-overlay {
+        width: 60%;
+        padding: 3rem;
+    }
+
+    .hero h1,
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Grids */
+    .pillars-grid,
+    .centered-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pillar-card,
+    .event-card {
+        text-align: left;
+    }
+
+    /* Featured game */
+    .featured-box {
+        width: 60%;
+    }
+
+    /* Contact form */
+    .contact-form {
+        max-width: 600px;
+    }
 }
