@@ -1092,3 +1092,168 @@ td {
     color: #c0b3d6;
     font-size: 0.9rem;
 }
+/* --------------------------------------------------
+   HYBRID HERO (Option C)
+-------------------------------------------------- */
+.hybrid-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.hero-card {
+    position: relative;
+    display: inline-block;
+    padding: 25px 35px;
+    background: rgba(20, 20, 30, 0.75);
+    border: 1px solid rgba(150, 80, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(150, 80, 255, 0.4);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-card h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #e8d9ff;
+}
+
+.hero-card p {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    color: #cbb3ff;
+}
+
+/* --------------------------------------------------
+   GOTHIC PORTRAIT FRAME (Option D Twist)
+-------------------------------------------------- */
+.about-portrait-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.portrait-frame {
+    position: relative;
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(20, 20, 30, 0.85);
+    border: 1px solid rgba(150, 80, 255, 0.4);
+    box-shadow: 0 0 25px rgba(150, 80, 255, 0.4);
+}
+
+.portrait-frame::before,
+.portrait-frame::after {
+    content: "✦";
+    position: absolute;
+    font-size: 22px;
+    color: rgba(180, 120, 255, 0.7);
+}
+
+.portrait-frame::before {
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.portrait-frame::after {
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-portrait {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 10px;
+    display: block;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Mobile portrait scaling */
+@media (max-width: 600px) {
+    .about-portrait {
+        max-width: 280px;
+    }
+}
+
+/* --------------------------------------------------
+   GLOW CARDS (Matches Events + Services)
+-------------------------------------------------- */
+.glow-card {
+    background: rgba(20, 20, 30, 0.85);
+    border: 1px solid rgba(150, 80, 255, 0.35);
+    border-radius: 14px;
+    padding: 25px 30px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(150, 80, 255, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glow-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(170, 100, 255, 0.45);
+}
+
+/* --------------------------------------------------
+   ABOUT CONTENT SPACING
+-------------------------------------------------- */
+.about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section h2 {
+    color: #e8d9ff;
+    margin-bottom: 12px;
+}
+
+.about-section p,
+.about-section li {
+    color: #d8c9ff;
+    line-height: 1.6;
+}
+
+.about-section ul {
+    margin-left: 20px;
+}
+
+/* --------------------------------------------------
+   GOTHIC ORNAMENTS
+-------------------------------------------------- */
+.gothic-ornament {
+    text-align: center;
+    font-size: 28px;
+    color: rgba(180, 120, 255, 0.7);
+    margin: 25px 0;
+}
+
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
