@@ -16,15 +16,11 @@
                 <span class="logo-text">RastaAsian Sanctuary</span>
             </a>
 
-            <!-- Mobile toggle -->
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
 
-            <!-- Nav -->
             <nav class="main-nav">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="games.html">Games</a>
                 <a href="setup.html">Setup</a>
@@ -52,12 +48,13 @@
         <div class="gothic-ornament">❖</div>
 
         <!-- Pillars / Services teaser -->
-        <section class="home-section slide-up">
+        <section class="home-section slide-up" style="text-align: center;">
             <h2>What I Do</h2>
-            <p>
+            <p class="section-intro">
                 RastaAsian Sanctuary blends tech, design, and community into a space that feels safe, human, and judgment-free.
             </p>
-            <div class="pillars-grid">
+
+            <div class="pillars-grid centered-grid">
                 <article class="pillar-card">
                     <h3>Web Design &amp; UX/UI</h3>
                     <p>Accessible, mobile-first, ND-friendly websites that reflect the person behind the brand.</p>
@@ -87,10 +84,11 @@
         <div class="gothic-ornament">❖</div>
 
         <!-- Sanctuary vibe -->
-        <section class="home-section slide-up">
+        <section class="home-section slide-up" style="text-align: center;">
             <h2>The Sanctuary Vibe</h2>
             <p>
-                The Sanctuary is a late-night digital living room—chaotic, cozy, and honest. No masks. No judgment.
+                The Sanctuary is a late-night digital living room—chaotic, cozy, and honest.  
+                No masks. No judgment.  
                 Just connection, calm, and a place to breathe.
             </p>
             <a href="about.html" class="btn-ghost">Read more about the Sanctuary</a>
@@ -110,8 +108,8 @@
     </footer>
 
     <script>
-        // Simple year update, no SPA
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
