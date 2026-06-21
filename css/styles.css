@@ -1,6 +1,6 @@
-/* --------------------------------------------------
+/* ✦-------------------------------------------------
    ROOT VARIABLES — Sanctuary Brand System
--------------------------------------------------- */
+--------------------------------------------------✦ */
 :root {
     --black: #0A0A0A;
     --purple-deep: #2A003E;
@@ -11,9 +11,9 @@
     --gray-light: #CCCCCC;
 }
 
-/* --------------------------------------------------
-   GLOBAL STYLES
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   GLOBAL STYLES — Canvas of the Sanctuary
+--------------------------------------------------✦ */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -41,9 +41,19 @@ h1 { font-size: 3rem; }
 h2 { font-size: 2.2rem; }
 h3 { font-size: 1.6rem; }
 
-/* --------------------------------------------------
-   HEADER & NAVIGATION
--------------------------------------------------- */
+a {
+    color: var(--lavender);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--magenta);
+}
+
+/* ✦-------------------------------------------------
+   HEADER & NAVIGATION — Gateways
+--------------------------------------------------✦ */
 header {
     background: linear-gradient(to bottom, #2A003E, #15001F);
     padding: 20px;
@@ -120,18 +130,28 @@ nav a.active {
     100% { text-shadow: 0 0 6px var(--magenta); }
 }
 
-/* --------------------------------------------------
-   HERO SECTION (base)
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   HERO — Arcane Entry Gate
+--------------------------------------------------✦ */
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    background-color: var(--purple-deep);
+    padding: 60px 20px;
+    min-height: 200px;
+    background: radial-gradient(circle at center, rgba(122,28,172,0.25), transparent 70%);
+    animation: heroFloat 6s ease-in-out infinite;
 }
 
 .hero h2 { font-size: 2.5rem; }
 .hero p { font-size: 1.2rem; margin-bottom: 20px; }
 
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ✦-------------------------------------------------
+   BUTTONS — Sigils of Action
+--------------------------------------------------✦ */
 .btn {
     background-color: var(--violet);
     color: var(--white);
@@ -140,6 +160,8 @@ nav a.active {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -147,9 +169,9 @@ nav a.active {
     box-shadow: 0 0 12px var(--magenta);
 }
 
-/* --------------------------------------------------
-   FEATURES
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   FEATURES — Sanctuary Highlights
+--------------------------------------------------✦ */
 .features {
     display: flex;
     justify-content: space-around;
@@ -170,14 +192,13 @@ nav a.active {
 .link {
     color: var(--lavender);
     font-weight: bold;
-    text-decoration: none;
 }
 
 .link:hover { color: var(--magenta); }
 
-/* --------------------------------------------------
-   FOOTER
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   FOOTER — Closing Runes
+--------------------------------------------------✦ */
 footer {
     background-color: var(--purple-deep);
     text-align: center;
@@ -189,14 +210,22 @@ footer {
     text-shadow: 0 0 8px var(--violet);
 }
 
-/* --------------------------------------------------
-   CONTACT FORM
--------------------------------------------------- */
-form { display: flex; flex-direction: column; gap: 15px; }
+/* ✦-------------------------------------------------
+   FORMS — Contact & Communion
+--------------------------------------------------✦ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-label { font-weight: bold; color: var(--lavender); }
+label {
+    font-weight: bold;
+    color: var(--lavender);
+}
 
-input, textarea {
+input,
+textarea {
     padding: 12px;
     border-radius: 6px;
     border: 2px solid var(--violet);
@@ -205,16 +234,15 @@ input, textarea {
     font-size: 1rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--magenta);
 }
 
-button.btn { cursor: pointer; border: none; }
-
-/* --------------------------------------------------
-   SOCIAL ICONS
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   SOCIAL ICONS — Signals in the Void
+--------------------------------------------------✦ */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -235,9 +263,9 @@ button.btn { cursor: pointer; border: none; }
     transform: scale(1.2);
 }
 
-/* --------------------------------------------------
-   EVENT & SERVICE CARDS
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   EVENT & SERVICE CARDS — Offerings
+--------------------------------------------------✦ */
 .event-card,
 .service-card {
     background-color: var(--purple-deep);
@@ -268,15 +296,25 @@ button.btn { cursor: pointer; border: none; }
     font-weight: bold;
 }
 
-.event-card .details { font-size: 1rem; min-height: 80px; }
+.event-card .details {
+    font-size: 1rem;
+    min-height: 80px;
+}
 
-/* --------------------------------------------------
-   EVENTS PAGE
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   EVENTS PAGE — Ritual Listings
+--------------------------------------------------✦ */
 .events-page {
     max-width: 1100px;
     margin: 0 auto;
     padding: 60px 20px;
+    animation: eventsFloat 10s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes eventsFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .event-list {
@@ -285,19 +323,182 @@ button.btn { cursor: pointer; border: none; }
     gap: 30px;
 }
 
-/* --------------------------------------------------
-   SERVICES PAGE
--------------------------------------------------- */
+/* Weekly schedule highlight */
+.weekly-schedule-box {
+    background: rgba(42, 0, 62, 0.55);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 0 15px rgba(122, 28, 172, 0.4);
+    text-align: center;
+}
+
+.weekly-schedule-box h2 {
+    margin-bottom: 10px;
+    color: var(--lavender);
+    text-shadow: 0 0 10px var(--violet);
+}
+
+.weekly-schedule-box p {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+/* Past events faded style */
+.past-events {
+    opacity: 0.75;
+    filter: grayscale(20%);
+}
+
+.past-table tr:hover {
+    background: rgba(122, 28, 172, 0.1);
+}
+
+/* Animated runes around featured event */
+.category-title.gothic-accent {
+    position: relative;
+}
+
+.category-title.gothic-accent::before,
+.category-title.gothic-accent::after {
+    content: "✦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--magenta);
+    opacity: 0.6;
+    text-shadow: 0 0 12px var(--magenta);
+    animation: runeFloat 4s ease-in-out infinite;
+}
+
+.category-title.gothic-accent::before {
+    left: -25px;
+}
+
+.category-title.gothic-accent::after {
+    right: -25px;
+    animation-delay: 1.2s;
+}
+
+@keyframes runeFloat {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-60%) scale(1.15); }
+}
+
+/* Glowing sigil behind event tables */
+.events-table-wrapper {
+    margin: 40px 0;
+    position: relative;
+}
+
+.events-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
+}
+
+@keyframes sigilPulse {
+    0%, 100% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.12; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* Events tables */
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.events-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.events-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+    vertical-align: top;
+}
+
+.events-table tr:last-child td {
+    border-bottom: none;
+}
+
+.events-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* Float the event sections individually */
+.weekly-schedule-box,
+.service-category {
+    animation: eventSectionFloat 12s ease-in-out infinite;
+}
+
+@keyframes eventSectionFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.events-page::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 120%;
+    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
+    z-index: -1;
+    animation: auraPulse 8s ease-in-out infinite;
+}
+
+/* Shared aura pulse */
+@keyframes auraPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* ✦-------------------------------------------------
+   SERVICES PAGE — Offerings & Paths
+--------------------------------------------------✦ */
 .services {
     max-width: 1100px;
     margin: 0 auto;
     padding: 60px 20px;
 }
 
-.section-header { text-align: center; margin-bottom: 40px; }
-.section-header h2 { font-size: 2.5rem; }
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-.section-subtitle { color: var(--gray-light); font-size: 1.1rem; }
+.section-header h2 {
+    font-size: 2.5rem;
+}
+
+.section-subtitle {
+    color: var(--gray-light);
+    font-size: 1.1rem;
+}
 
 .gothic-divider {
     position: relative;
@@ -340,12 +541,68 @@ button.btn { cursor: pointer; border: none; }
     text-shadow: 0 0 6px var(--magenta);
 }
 
-.service-card ul { padding-left: 20px; margin: 10px 0; }
-.service-card li { margin-bottom: 6px; }
+.service-card ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
 
-/* --------------------------------------------------
-   GAME & SETUP ICONS
--------------------------------------------------- */
+.service-card li {
+    margin-bottom: 6px;
+}
+
+/* Sanctuary service tables */
+.service-table-wrapper {
+    margin: 40px 0;
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(42, 0, 62, 0.45);
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+}
+
+.service-table th {
+    background: rgba(122, 28, 172, 0.25);
+    color: var(--lavender);
+    padding: 14px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--violet);
+    text-shadow: 0 0 8px var(--violet);
+}
+
+.service-table td {
+    padding: 14px;
+    color: var(--white);
+    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
+    vertical-align: top;
+}
+
+.service-table tr:last-child td {
+    border-bottom: none;
+}
+
+.service-table tr:hover {
+    background: rgba(199, 44, 140, 0.15);
+    transition: 0.3s ease;
+}
+
+/* Gothic divider under category titles */
+.category-title + .gothic-table-divider {
+    width: 180px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--violet), transparent);
+    margin: 10px auto 25px;
+    box-shadow: 0 0 10px var(--violet);
+}
+
+/* ✦-------------------------------------------------
+   GAME & SETUP ICONS — Tools of Play
+--------------------------------------------------✦ */
 .game-header,
 .setup-header {
     display: flex;
@@ -364,9 +621,9 @@ button.btn { cursor: pointer; border: none; }
     box-shadow: 0 0 12px rgba(122, 28, 172, 0.5);
 }
 
-/* --------------------------------------------------
-   MINI NAV (IFRAME PAGES)
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   MINI NAV (IFRAME PAGES) — Sub-Gates
+--------------------------------------------------✦ */
 .mini-nav {
     display: flex;
     justify-content: center;
@@ -382,7 +639,6 @@ button.btn { cursor: pointer; border: none; }
 
 .mini-nav a {
     color: var(--lavender);
-    text-decoration: none;
     font-weight: bold;
     padding: 8px 14px;
     border-radius: 6px;
@@ -399,9 +655,9 @@ button.btn { cursor: pointer; border: none; }
     transform: translateY(-3px);
 }
 
-/* --------------------------------------------------
-   PREMIUM SCROLLBAR
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   PREMIUM SCROLLBAR — Veins of the Void
+--------------------------------------------------✦ */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -419,9 +675,9 @@ button.btn { cursor: pointer; border: none; }
     background: var(--magenta);
 }
 
-/* --------------------------------------------------
-   FLOATING MUSIC ORB
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   FLOATING MUSIC ORB — Resonant Familiar
+--------------------------------------------------✦ */
 #music-orb {
     position: fixed;
     bottom: 25px;
@@ -521,228 +777,9 @@ button.btn { cursor: pointer; border: none; }
     opacity: 0.4;
 }
 
-/* --------------------------------------------------
-   SANCTUARY SERVICE TABLES
--------------------------------------------------- */
-.service-table-wrapper {
-    margin: 40px 0;
-}
-
-.service-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(42, 0, 62, 0.45);
-    border: 2px solid var(--violet);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
-}
-
-.service-table th {
-    background: rgba(122, 28, 172, 0.25);
-    color: var(--lavender);
-    padding: 14px;
-    font-size: 1.2rem;
-    text-align: left;
-    border-bottom: 2px solid var(--violet);
-    text-shadow: 0 0 8px var(--violet);
-}
-
-.service-table td {
-    padding: 14px;
-    color: var(--white);
-    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
-    vertical-align: top;
-}
-
-.service-table tr:last-child td {
-    border-bottom: none;
-}
-
-.service-table tr:hover {
-    background: rgba(199, 44, 140, 0.15);
-    transition: 0.3s ease;
-}
-
-/* Gothic divider under category titles */
-.category-title + .gothic-table-divider {
-    width: 180px;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--violet), transparent);
-    margin: 10px auto 25px;
-    box-shadow: 0 0 10px var(--violet);
-}
-
-/* --------------------------------------------------
-   SANCTUARY EVENTS TABLES
--------------------------------------------------- */
-.events-table-wrapper {
-    margin: 40px 0;
-    position: relative;
-}
-
-.events-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(42, 0, 62, 0.45);
-    border: 2px solid var(--violet);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
-}
-
-.events-table th {
-    background: rgba(122, 28, 172, 0.25);
-    color: var(--lavender);
-    padding: 14px;
-    font-size: 1.2rem;
-    text-align: left;
-    border-bottom: 2px solid var(--violet);
-    text-shadow: 0 0 8px var(--violet);
-}
-
-.events-table td {
-    padding: 14px;
-    color: var(--white);
-    border-bottom: 1px solid rgba(122, 28, 172, 0.3);
-    vertical-align: top;
-}
-
-.events-table tr:last-child td {
-    border-bottom: none;
-}
-
-.events-table tr:hover {
-    background: rgba(199, 44, 140, 0.15);
-    transition: 0.3s ease;
-}
-
-/* Weekly schedule highlight */
-.weekly-schedule-box {
-    background: rgba(42, 0, 62, 0.55);
-    border: 2px solid var(--violet);
-    border-radius: 12px;
-    padding: 25px;
-    margin: 30px 0;
-    box-shadow: 0 0 15px rgba(122, 28, 172, 0.4);
-    text-align: center;
-}
-
-.weekly-schedule-box h2 {
-    margin-bottom: 10px;
-    color: var(--lavender);
-    text-shadow: 0 0 10px var(--violet);
-}
-
-.weekly-schedule-box p {
-    color: var(--white);
-    font-size: 1.1rem;
-}
-
-/* Past events faded style */
-.past-events {
-    opacity: 0.75;
-    filter: grayscale(20%);
-}
-
-.past-table tr:hover {
-    background: rgba(122, 28, 172, 0.1);
-}
-
-/* Animated runes around featured event */
-.category-title.gothic-accent {
-    position: relative;
-}
-
-.category-title.gothic-accent::before,
-.category-title.gothic-accent::after {
-    content: "✦";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--magenta);
-    opacity: 0.6;
-    text-shadow: 0 0 12px var(--magenta);
-    animation: runeFloat 4s ease-in-out infinite;
-}
-
-.category-title.gothic-accent::before {
-    left: -25px;
-}
-
-.category-title.gothic-accent::after {
-    right: -25px;
-    animation-delay: 1.2s;
-}
-
-@keyframes runeFloat {
-    0%, 100% { transform: translateY(-50%) scale(1); }
-    50% { transform: translateY(-60%) scale(1.15); }
-}
-
-/* Glowing sigil behind event tables */
-.events-table-wrapper::before {
-    content: "✧";
-    position: absolute;
-    font-size: 5rem;
-    color: var(--violet);
-    opacity: 0.08;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    animation: sigilPulse 6s ease-in-out infinite;
-}
-
-@keyframes sigilPulse {
-    0%, 100% { opacity: 0.05; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 0.12; transform: translate(-50%, -50%) scale(1.15); }
-}
-
-/* EVENTS PAGE FLOATING EFFECTS */
-.events-page {
-    animation: eventsFloat 10s ease-in-out infinite;
-    position: relative;
-}
-
-@keyframes eventsFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Float the event sections individually */
-.weekly-schedule-box,
-.service-category {
-    animation: eventSectionFloat 12s ease-in-out infinite;
-}
-
-@keyframes eventSectionFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-.events-page::before {
-    content: "";
-    position: absolute;
-    top: -10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 120%;
-    background: radial-gradient(circle at center, rgba(122, 28, 172, 0.15), transparent 70%);
-    z-index: -1;
-    animation: auraPulse 8s ease-in-out infinite;
-}
-
-/* Shared aura pulse */
-@keyframes auraPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.7; }
-}
-
-/* --------------------------------------------------
-   CONTACT PAGE FLOATING EFFECTS
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   CONTACT PAGE — Channels & Sigils
+--------------------------------------------------✦ */
 .contact-page {
     animation: contactFloat 10s ease-in-out infinite;
     position: relative;
@@ -778,7 +815,7 @@ button.btn { cursor: pointer; border: none; }
     animation: auraPulse 8s ease-in-out infinite;
 }
 
-/* CONTACT FORM — PREMIUM SANCTUARY STYLE */
+/* Contact form — premium sanctuary style */
 .contact-section {
     max-width: 700px;
     margin: 0 auto;
@@ -787,6 +824,7 @@ button.btn { cursor: pointer; border: none; }
     border: 2px solid var(--violet);
     border-radius: 12px;
     box-shadow: 0 0 18px rgba(122, 28, 172, 0.4);
+    position: relative;
 }
 
 .contact-section h2 {
@@ -829,19 +867,11 @@ button.btn { cursor: pointer; border: none; }
     padding: 12px;
     background: var(--violet);
     color: var(--white);
-    border: none;
     border-radius: 8px;
     font-size: 1.1rem;
-    cursor: pointer;
-    transition: 0.3s ease;
 }
 
-.contact-section .btn:hover {
-    background: var(--magenta);
-    box-shadow: 0 0 14px var(--magenta);
-}
-
-/* CONTACT PAGE SOCIAL ICONS */
+/* Contact page socials */
 .contact-socials {
     margin-top: 40px;
     text-align: center;
@@ -903,9 +933,9 @@ button.btn { cursor: pointer; border: none; }
     animation: sigilPulse 6s ease-in-out infinite;
 }
 
-/* --------------------------------------------------
-   SETUP PAGE FLOATING EFFECTS
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   SETUP PAGE — Gear & Altars
+--------------------------------------------------✦ */
 .setup-page {
     animation: setupFloat 10s ease-in-out infinite;
     position: relative;
@@ -940,10 +970,23 @@ button.btn { cursor: pointer; border: none; }
     animation: auraPulse 8s ease-in-out infinite;
 }
 
-/* SETUP TABLES */
+/* Setup tables */
 .setup-table-wrapper {
     margin: 40px 0;
     position: relative;
+}
+
+.setup-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
 }
 
 .setup-table {
@@ -982,7 +1025,7 @@ button.btn { cursor: pointer; border: none; }
     transition: 0.3s ease;
 }
 
-/* GEAR IMAGES */
+/* Gear images */
 .setup-icon {
     width: 80px;
     height: 80px;
@@ -998,26 +1041,9 @@ button.btn { cursor: pointer; border: none; }
     box-shadow: 0 0 18px var(--magenta);
 }
 
-/* Runes around category titles (shared) */
-/* already defined via .category-title.gothic-accent */
-
-/* Sigil behind tables */
-.setup-table-wrapper::before {
-    content: "✧";
-    position: absolute;
-    font-size: 5rem;
-    color: var(--violet);
-    opacity: 0.08;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    animation: sigilPulse 6s ease-in-out infinite;
-}
-
-/* --------------------------------------------------
-   ABOUT PAGE FLOATING EFFECTS & LORE
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   ABOUT PAGE — Lore & Origin
+--------------------------------------------------✦ */
 .about-page {
     animation: aboutFloat 10s ease-in-out infinite;
     position: relative;
@@ -1041,11 +1067,24 @@ button.btn { cursor: pointer; border: none; }
     animation: auraPulse 8s ease-in-out infinite;
 }
 
-/* ABOUT LORE TABLE */
+/* About lore table */
 .lore-table-wrapper {
     margin: 40px auto;
     max-width: 900px;
     position: relative;
+}
+
+.lore-table-wrapper::before {
+    content: "✧";
+    position: absolute;
+    font-size: 5rem;
+    color: var(--violet);
+    opacity: 0.08;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: sigilPulse 6s ease-in-out infinite;
 }
 
 .lore-table {
@@ -1081,20 +1120,6 @@ button.btn { cursor: pointer; border: none; }
 .lore-table tr:hover {
     background: rgba(199, 44, 140, 0.15);
     transition: 0.3s ease;
-}
-
-/* Sigil behind lore table */
-.lore-table-wrapper::before {
-    content: "✧";
-    position: absolute;
-    font-size: 5rem;
-    color: var(--violet);
-    opacity: 0.08;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    animation: sigilPulse 6s ease-in-out infinite;
 }
 
 .about-section {
@@ -1154,10 +1179,10 @@ button.btn { cursor: pointer; border: none; }
 
 .gothic-ornament {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     color: var(--lavender);
     margin: 25px 0;
-    text-shadow: 0 0 10px var(--violet);
+    text-shadow: 0 0 12px var(--violet);
 }
 
 .about-content {
@@ -1180,34 +1205,9 @@ button.btn { cursor: pointer; border: none; }
     max-width: 500px;
 }
 
-/* --------------------------------------------------
-   HOME PAGE — Sanctuary Upgrade
--------------------------------------------------- */
-
-/* Gothic Ornament (home) */
-.gothic-ornament {
-    text-align: center;
-    font-size: 2.2rem;
-    color: var(--lavender);
-    margin: 25px 0;
-    text-shadow: 0 0 12px var(--violet);
-}
-
-/* Hero Section Upgrade */
-.hero {
-    padding: 60px 20px !important;
-    min-height: 200px !important;
-    text-align: center;
-    background: radial-gradient(circle at center, rgba(122,28,172,0.25), transparent 70%);
-    animation: heroFloat 6s ease-in-out infinite;
-}
-
-@keyframes heroFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-/* Home Navigation Grid */
+/* ✦-------------------------------------------------
+   HOME PAGE — Navigation Grid
+--------------------------------------------------✦ */
 .home-navigation {
     padding: 40px 20px;
 }
@@ -1271,674 +1271,174 @@ button.btn { cursor: pointer; border: none; }
     text-shadow: 0 0 14px var(--magenta);
 }
 
-/* --------------------------------------------------
-   IFRAME CONTENT FRAME
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   IFRAME CONTENT FRAME — Inner Realms
+--------------------------------------------------✦ */
 .content-frame {
     width: 100%;
     height: calc(100vh - 180px);
     border: none;
     background: var(--black);
     overflow-y: auto;
+    position: relative;
+    z-index: 1;
 }
 
-/* --------------------------------------------------
-   RESPONSIVE — PHONES
--------------------------------------------------- */
+/* ✦-------------------------------------------------
+   RESPONSIVE — PHONES (Unified, Clean)
+--------------------------------------------------✦ */
 @media (max-width: 768px) {
 
-    body { font-size: 1rem; padding: 0 10px; }
+    /* Global */
+    body {
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
 
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    .hero {
-        padding: 50px 15px !important;
-    }
-
-    section,
-    .events-page,
-    .services,
-    .setup-page,
-    .games-page {
-        padding: 40px 15px;
-    }
-
-    .features {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .features article {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    .event-list,
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .game-header,
-    .setup-header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .game-icon,
-    .setup-icon {
-        width: 90px;
-        height: 60px;
-    }
-
-    footer {
-        font-size: 1.1rem;
+    header {
         padding: 15px;
     }
-}
 
-/* --------------------------------------------------
-   RESPONSIVE — TABLETS & DESKTOP NAV LAYOUT
--------------------------------------------------- */
-@media (min-width: 769px) {
+    /* Nav */
+    .hamburger {
+        margin: 0 auto;
+    }
 
     nav ul {
-        flex-direction: row;
-    }
-}
-/* Make mini-nav always clickable and on top */
-.mini-nav {
-    position: relative;
-    z-index: 9999;
-}
-
-/* Ensure page wrappers sit below the mini-nav */
-.about-page,
-.setup-page,
-.hero {
-    position: relative;
-    z-index: 1;
-}
-
-/* Just in case something disabled pointer events */
-.mini-nav a {
-    pointer-events: auto;
-}
-/* Hide mini-nav on mobile */
-@media (max-width: 768px) {
-    .mini-nav {
-        display: none;
-    }
-}
-/* Make mobile menu appear above iframe */
-nav ul {
-    position: relative;
-    z-index: 9999;
-}
-iframe {
-    position: relative;
-    z-index: 1;
-}
-nav ul {
-    position: relative;
-    z-index: 9999;
-}
-/* --------------------------------------------------
-   RESPONSIVE — PHONES
--------------------------------------------------- */
-@media (max-width: 768px) {
-
-    /* Hide mini-nav on mobile */
-    .mini-nav {
-        display: none;
-    }
-
-    /* Make hamburger menu appear above iframe */
-    nav ul {
+        flex-direction: column;
+        gap: 18px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
         position: relative;
         z-index: 9999;
     }
 
-    /* Push iframe behind menu */
-    iframe {
+    nav ul.open {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 40px 15px;
+        min-height: 160px;
+        animation: none;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Features */
+    .features {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .features article {
+        width: 90%;
+    }
+
+    /* Nav grid */
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 10px;
+        animation: none;
+    }
+
+    .nav-card {
+        padding: 25px 15px;
+        font-size: 1.2rem;
+    }
+
+    /* Mini nav */
+    .mini-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .mini-nav a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Iframe / content frame */
+    iframe,
+    .content-frame {
         position: relative;
         z-index: 1;
+        height: calc(100vh - 140px);
     }
-}
-.social-icon-img {
-    width: 32px;
-    height: 32px;
-    filter: drop-shadow(0 0 8px var(--violet));
-    transition: 0.3s ease;
-}
 
-a:hover .social-icon-img {
-    filter: drop-shadow(0 0 12px var(--magenta));
-    transform: scale(1.15);
-}
-/* Global link color fix */
-a {
-    color: #b38bff; /* soft gothic purple */
-    text-decoration: none;
-    transition: 0.3s ease;
-}
+    /* Contact */
+    .contact-section {
+        padding: 25px 20px;
+        width: 92%;
+    }
 
-a:hover {
-    color: #d8c2ff; /* lighter purple glow */
-}
-.btn-primary {
-    background-color: #6a0dad; /* deep gothic purple */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
+    .contact-section .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
 
-.btn-primary:hover {
-    background-color: #8b2be2; /* brighter purple */
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px #b38bff;
-}
-.social-links a i {
-    color: #b38bff;
-    font-size: 1.8rem;
-    margin: 0 10px;
-    transition: 0.3s ease;
-}
+    /* Tables */
+    .service-table,
+    .events-table,
+    .setup-table,
+    .lore-table {
+        font-size: 0.9rem;
+    }
 
-.social-links a i:hover {
-    color: #d8c2ff;
-    text-shadow: 0 0 8px #b38bff;
-}
-/* Primary Gothic Purple Button */
-.btn-primary,
-.btn-ghost {  /* make both use the same base */
-    background-color: #7a1cc4; /* deep gothic purple */
-    color: white;
-    padding: 12px 22px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
-    display: inline-block;
-    text-align: center;
-}
+    .service-table th,
+    .events-table th,
+    .setup-table th,
+    .lore-table th {
+        font-size: 1rem;
+        padding: 10px;
+    }
 
-/* Hover Glow */
-.btn-primary:hover,
-.btn-ghost:hover {
-    background-color: #9b3ff0;
-    box-shadow: 0 0 12px #c59bff;
-    transform: translateY(-2px);
-}
-.hero-actions {
-    display: flex;
-    flex-direction: column; /* stack vertically */
-    gap: 18px; /* perfect spacing between buttons */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    align-items: center; /* center them nicely */
-}
-.quick-actions {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-/* Featured Game */
-.featured-box {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #7a1cc4;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 15px #7a1cc4;
-    margin-bottom: 30px;
-}
+    .service-table td,
+    .events-table td,
+    .setup-table td,
+    .lore-table td {
+        padding: 10px;
+    }
 
-.featured-box img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
+    /* Reduce floating animations on mobile */
+    .hero,
+    .events-page,
+    .contact-page,
+    .setup-page,
+    .about-page,
+    .weekly-schedule-box,
+    .contact-section,
+    .setup-category,
+    .about-section {
+        animation: none !important;
+    }
 
-/* Game Cards Glow */
-.game-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #7a1cc4;
-    border-radius: 10px;
-    padding: 15px;
-    transition: 0.3s ease;
-}
+    /* Music orb */
+    #music-orb {
+        width: 65px;
+        height: 65px;
+        bottom: 18px;
+        right: 18px;
+    }
 
-.game-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 0 18px #b38bff;
-    border-color: #b38bff;
-}
-
-.game-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 8px;
-    margin-right: 10px;
-}
-
-.game-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.game-card h3 {
-    color: #c59bff;
-    text-shadow: 0 0 6px #7a1cc4;
-}
-.featured-game {
-    display: flex;
-    justify-content: center;
-}
-
-.featured-box {
-    max-width: 350px;   /* controls how small it becomes */
-    width: 100%;
-    margin: 0 auto;
-}
-.featured-game {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-}
-.featured-box {
-    max-width: 350px;
-    width: 100%;
-    margin: 0 auto;
-}
-.featured-game h2 {
-    text-align: center;
-    width: 100%;
-}
-.featured-box img {
-    display: block;
-    margin: 0 auto;
-}
-.featured-game {
-    margin-bottom: 30px;
-}
-/* --------------------------------------------------
-   FIX: Center Featured Game Section
--------------------------------------------------- */
-
-.featured-game {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.featured-box {
-    max-width: 320px; /* Option B size */
-    width: 100%;
-    margin: 0 auto;
-}
-.featured-box img {
-    display: block;
-    margin: 0 auto 15px auto;
-    width: 100%;
-    border-radius: 10px;
-}
-/* --------------------------------------------------
-   HOME PAGE — UPDATED LAYOUT & CENTERING
--------------------------------------------------- */
-
-/* Center the entire home navigation section */
-.home-navigation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-/* Keep the grid centered and evenly spaced */
-.nav-grid {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-}
-
-/* Improve hero spacing and centering */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    margin: 0 auto;
-    max-width: 900px;
-}
-
-/* Make nav cards feel more interactive and consistent */
-.nav-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 35px 20px;
-    background: rgba(42, 0, 62, 0.55);
-    border: 2px solid var(--violet);
-    border-radius: 12px;
-    text-decoration: none;
-    color: var(--lavender);
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.35s ease;
-    box-shadow: 0 0 14px rgba(122, 28, 172, 0.4);
-}
-
-.nav-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    border-color: var(--magenta);
-    color: var(--white);
-    box-shadow: 0 0 18px var(--magenta);
-}
-/* Floating rune behind hero */
-.hero::before {
-    content: "✧";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    font-size: 8rem;
-    color: var(--violet);
-    opacity: 0.08;
-    pointer-events: none;
-    animation: heroRuneFloat 8s ease-in-out infinite;
-    text-shadow: 0 0 20px var(--violet);
-}
-
-@keyframes heroRuneFloat {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
-    50% { transform: translate(-50%, -52%) scale(1.15); opacity: 0.14; }
-}
-/* Floating rune behind hero */
-.hero::before {
-    content: "✧";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    font-size: 8rem;
-    color: var(--violet);
-    opacity: 0.08;
-    pointer-events: none;
-    animation: heroRuneFloat 8s ease-in-out infinite;
-    text-shadow: 0 0 20px var(--violet);
-}
-
-@keyframes heroRuneFloat {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
-    50% { transform: translate(-50%, -52%) scale(1.15); opacity: 0.14; }
-}
-/* Animated sigils on nav cards */
-.nav-card::after {
-    content: "✦";
-    position: absolute;
-    bottom: 10px;
-    left: 12px;
-    font-size: 1.2rem;
-    color: var(--magenta);
-    opacity: 0.4;
-    animation: sigilPulse 4s ease-in-out infinite;
-    text-shadow: 0 0 10px var(--magenta);
-}
-
-@keyframes sigilPulse {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.2); }
-}
-/* Aura pulse behind hero text */
-.hero h2 {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h2::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 180%;
-    height: 180%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(122, 28, 172, 0.25), transparent 70%);
-    border-radius: 50%;
-    z-index: -1;
-    animation: heroAuraPulse 7s ease-in-out infinite;
-}
-
-@keyframes heroAuraPulse {
-    0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 0.75; transform: translate(-50%, -50%) scale(1.15); }
-}
-/* Subtle parallax background */
-body {
-    background: url('css/images/sanctuary-bg-stars.png'), var(--black);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-/* --------------------------------------------------
-   RASTAASIAN DATING PROFILE REDESIGN — FEATURED SERVICE
--------------------------------------------------- */
-
-.dating-service {
-    position: relative;
-    border-color: var(--magenta) !important;
-    box-shadow: 0 0 20px rgba(199, 44, 140, 0.45) !important;
-    animation: datingGlow 8s ease-in-out infinite;
-}
-
-/* Title glow */
-.dating-service h3 {
-    color: var(--magenta) !important;
-    text-shadow: 0 0 12px var(--magenta);
-}
-
-/* Animated runes */
-.dating-service::before,
-.dating-service::after {
-    content: "✦";
-    position: absolute;
-    font-size: 1.6rem;
-    color: var(--magenta);
-    opacity: 0.55;
-    text-shadow: 0 0 12px var(--magenta);
-    animation: runeFloat 4s ease-in-out infinite;
-}
-
-.dating-service::before {
-    top: 10px;
-    left: 12px;
-}
-
-.dating-service::after {
-    bottom: 10px;
-    right: 12px;
-    animation-delay: 1.2s;
-}
-
-/* Aura pulse */
-@keyframes datingGlow {
-    0%, 100% { box-shadow: 0 0 18px rgba(199, 44, 140, 0.35); }
-    50% { box-shadow: 0 0 28px rgba(199, 44, 140, 0.65); }
-}
-/* --------------------------------------------------
-   SETUP & GEAR — SANCTUARY REVAMP
--------------------------------------------------- */
-
-/* HERO SECTION */
-.setup-hero {
-    text-align: center;
-    padding: 40px 20px;
-    animation: fadeIn 1.2s ease;
-}
-
-.hero-title {
-    font-size: 3rem;
-    color: var(--accent);
-    text-shadow: 0 0 12px var(--accent);
-    margin-bottom: 10px;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.85;
-    margin-bottom: 20px;
-}
-
-/* SECTION WRAPPER */
-.setup-section {
-    margin: 50px 0;
-    animation: fadeInUp 1s ease;
-}
-
-.section-description {
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-    text-align: center;
-    opacity: 0.9;
-}
-
-/* BENEFITS LIST */
-.setup-benefits {
-    max-width: 700px;
-    margin: 0 auto;
-    padding-left: 20px;
-    list-style: none;
-}
-
-.setup-benefits li {
-    margin: 8px 0;
-    position: relative;
-    padding-left: 20px;
-}
-
-.setup-benefits li::before {
-    content: "✦";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    text-shadow: 0 0 8px var(--accent);
-}
-
-/* TABLES */
-.setup-table-wrapper {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-.setup-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.setup-table th {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 12px;
-    text-align: left;
-    color: var(--accent);
-    font-weight: bold;
-}
-
-.setup-table td {
-    padding: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.setup-table tr:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transition: 0.3s ease;
-}
-
-/* ICON IMAGES */
-.setup-icon {
-    width: 80px;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.setup-icon:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 18px var(--accent);
-}
-
-/* SOFTWARE LIST */
-.setup-software {
-    max-width: 700px;
-    margin: 0 auto;
-    list-style: none;
-    padding-left: 0;
-}
-
-.setup-software li {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.setup-software li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 1.4rem;
-    line-height: 1;
-}
-
-/* FUTURE UPGRADES */
-.setup-upgrades {
-    max-width: 700px;
-    margin: 0 auto;
-    list-style: none;
-    padding-left: 0;
-}
-
-.setup-upgrades li {
-    margin: 10px 0;
-    padding-left: 20px;
-    position: relative;
-}
-
-.setup-upgrades li::before {
-    content: "✧";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    text-shadow: 0 0 8px var(--accent);
-}
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    #visualizer .bar {
+        width: 4px;
+        height: 14px;
+    }
 }

@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RastaAsian Sanctuary</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Fade transition for SPA content */
+        #content {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            min-height: 60vh;
+        }
+        #content.fade-in {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,25 +39,21 @@
 
     <!-- Navigation -->
     <nav>
-        <ul class="mobile-hidden">
-            <li><a href="home.html" target="content-frame" class="active">Home</a></li>
-            <li><a href="about.html" target="content-frame">About</a></li>
-            <li><a href="games.html" target="content-frame">Games & Streams</a></li>
-            <li><a href="setup.html" target="content-frame">Setup & Gear</a></li>
-            <li><a href="events.html" target="content-frame">Events</a></li>
-            <li><a href="services.html" target="content-frame">Services</a></li>
-            <li><a href="contact.html" target="content-frame">Contact</a></li>
+        <ul id="nav-links">
+            <li><a href="home.html" data-page="home.html" class="active">Home</a></li>
+            <li><a href="about.html" data-page="about.html">About</a></li>
+            <li><a href="games.html" data-page="games.html">Games & Streams</a></li>
+            <li><a href="setup.html" data-page="setup.html">Setup & Gear</a></li>
+            <li><a href="events.html" data-page="events.html">Events</a></li>
+            <li><a href="services.html" data-page="services.html">Services</a></li>
+            <li><a href="contact.html" data-page="contact.html">Contact</a></li>
         </ul>
     </nav>
 
 </header>
 
-<!-- MAIN CONTENT FRAME -->
-<iframe 
-    name="content-frame"
-    src="home.html"
-    class="content-frame">
-</iframe>
+<!-- MAIN CONTENT AREA (no iframe) -->
+<main id="content"></main>
 
 <!-- Floating Music Orb with Visualizer -->
 <div id="music-orb">
@@ -66,27 +74,47 @@
     </div>
 </footer>
 
-<!-- Mobile Menu Script -->
+<!-- SPA LOADER SCRIPT -->
 <script>
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('nav ul');
+const content = document.getElementById("content");
+const links = document.querySelectorAll("nav a");
 
-// Toggle mobile menu
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('mobile-hidden');
-});
+// Load page with fade transition
+async function loadPage(page) {
+    content.classList.remove("fade-in");
 
-// Close menu after clicking a link
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.add('mobile-hidden');
-        hamburger.classList.remove('active');
+    const response = await fetch(page);
+    let html = await response.text();
+
+    // Strip full HTML wrapper if present
+    html = html.replace(/<!DOCTYPE[\s\S]*?<body.*?>/i, "")
+               .replace(/<\/body>[\s\S]*?<\/html>/i, "");
+
+    content.innerHTML = html;
+
+    setTimeout(() => {
+        content.classList.add("fade-in");
+    }, 50);
+}
+
+// Handle nav clicks
+links.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        const page = link.getAttribute("data-page");
+        loadPage(page);
     });
 });
+
+// Load default page
+loadPage("home.html");
 </script>
 
-<!-- FINAL AUTO‑FADE MUSIC + ORB SCRIPT -->
+<!-- MUSIC ORB SCRIPT (unchanged) -->
 <script>
 const music = document.getElementById("bg-music");
 const orb = document.getElementById("music-orb");
@@ -128,7 +156,7 @@ document.addEventListener("visibilitychange", () => {
     }
 });
 
-// Resume after iframe navigation or window refocus
+// Resume after window refocus
 window.addEventListener("focus", () => {
     if (!orb.classList.contains("paused")) {
         music.play().catch(() => {});
