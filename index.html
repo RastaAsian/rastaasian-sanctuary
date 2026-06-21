@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RastaAsian Sanctuary</title>
+
+    <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
@@ -40,19 +42,19 @@
     <!-- Navigation -->
     <nav>
         <ul id="nav-links">
-            <li><a href="home.html" data-page="home.html" class="active">Home</a></li>
-            <li><a href="about.html" data-page="about.html">About</a></li>
-            <li><a href="games.html" data-page="games.html">Games & Streams</a></li>
-            <li><a href="setup.html" data-page="setup.html">Setup & Gear</a></li>
-            <li><a href="events.html" data-page="events.html">Events</a></li>
-            <li><a href="services.html" data-page="services.html">Services</a></li>
-            <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+            <li><a href="#home" data-page="home.html" class="active">Home</a></li>
+            <li><a href="#about" data-page="about.html">About</a></li>
+            <li><a href="#games" data-page="games.html">Games & Streams</a></li>
+            <li><a href="#setup" data-page="setup.html">Setup & Gear</a></li>
+            <li><a href="#events" data-page="events.html">Events</a></li>
+            <li><a href="#services" data-page="services.html">Services</a></li>
+            <li><a href="#contact" data-page="contact.html">Contact</a></li>
         </ul>
     </nav>
 
 </header>
 
-<!-- MAIN CONTENT AREA (no iframe) -->
+<!-- MAIN CONTENT AREA -->
 <main id="content"></main>
 
 <!-- Floating Music Orb with Visualizer -->
@@ -77,13 +79,12 @@
 <!-- SPA LOADER SCRIPT -->
 <script>
 const content = document.getElementById("content");
-const links = document.querySelectorAll("nav a");
 
 // Load page with fade transition
 async function loadPage(page) {
     content.classList.remove("fade-in");
 
-    const response = await fetch(page);
+    const response = await fetch("partials/" + page);
     let html = await response.text();
 
     // Strip full HTML wrapper if present
@@ -97,24 +98,20 @@ async function loadPage(page) {
     }, 50);
 }
 
-// Handle nav clicks
-links.forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
+// Handle hash routing
+function handleHash() {
+    const page = location.hash.replace("#", "") || "home";
+    loadPage(page + ".html");
+}
 
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
+// Listen for hash changes
+window.addEventListener("hashchange", handleHash);
 
-        const page = link.getAttribute("data-page");
-        loadPage(page);
-    });
-});
-
-// Load default page
-loadPage("home.html");
+// Initial load
+handleHash();
 </script>
 
-<!-- MUSIC ORB SCRIPT (unchanged) -->
+<!-- MUSIC ORB SCRIPT -->
 <script>
 const music = document.getElementById("bg-music");
 const orb = document.getElementById("music-orb");
