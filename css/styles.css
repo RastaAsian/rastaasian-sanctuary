@@ -2120,3 +2120,145 @@ body.sanctuary-body {
         max-width: 600px;
     }
 }
+/* Fix giant hero space on mobile */
+.hero {
+    min-height: 40vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+.hero {
+    min-height: 30vh;
+}
+/* Mobile nav toggle fix */
+.nav-toggle:checked ~ .main-nav {
+    display: flex !important;
+}
+.main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #0b0b0d;
+    padding: 1rem 0;
+}
+@media (min-width: 768px) {
+    .nav-toggle,
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+    }
+}
+/* Fix hero black space on mobile */
+.hero {
+    min-height: 35vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+/* MOBILE NAV FIX */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: #e6e6e6;
+    height: 3px;
+    width: 28px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle-label span::before { top: -8px; }
+.nav-toggle-label span::after { top: 8px; }
+
+/* Hide nav by default on mobile */
+.main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #0b0b0d;
+    padding: 1rem 0;
+    border-top: 1px solid #222;
+}
+
+/* Show nav when toggled */
+#nav-toggle:checked ~ .main-nav {
+    display: flex !important;
+}
+@media (min-width: 768px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .main-nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        padding: 0;
+        border: none;
+    }
+
+    .main-nav a {
+        margin-left: 1.5rem;
+        padding: 0;
+        font-size: 1rem;
+    }
+}
+/* Mobile grid fix */
+.pillars-grid,
+.centered-grid,
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+/* Mobile table fix */
+table,
+thead,
+tbody,
+th,
+td,
+tr {
+    display: block;
+    width: 100%;
+}
+
+tr {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+th {
+    display: none;
+}
+.contact-form {
+    width: 100%;
+    margin: 1rem auto;
+}
+.site-footer {
+    padding: 2rem 0;
+}
