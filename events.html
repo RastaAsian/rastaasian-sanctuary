@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events · RastaAsian Sanctuary</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- LINK YOUR CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="sanctuary-body">
 
-    <!-- Header -->
+    <!-- ⭐ FULL NAVIGATION HEADER ⭐ -->
     <header class="site-header">
         <div class="header-inner">
+
             <a href="index.html" class="logo-wrap">
                 <img src="css/images/rastaasian-sanctuary-logo.png" alt="RastaAsian Sanctuary Logo" class="site-logo">
                 <span class="logo-text">RastaAsian Sanctuary</span>
             </a>
 
+            <!-- Mobile toggle -->
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
 
+            <!-- Nav -->
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -29,89 +36,57 @@
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
             </nav>
+
         </div>
         <div class="gothic-ornament">✦</div>
     </header>
 
+    <!-- ⭐ MAIN CONTENT ⭐ -->
     <main class="events-page fade-in">
 
-        <h1 class="slide-up">Upcoming & Recent Events</h1>
-        <p class="intro slide-up">
-            Stay up to date with what I'm working on — streams, collabs, gaming sessions, community nights, and personal milestones.
-        </p>
+        <h1 class="page-title gothic-ornament">✦ Events ✦</h1>
+
+        <!-- Featured Event -->
+        <section class="event-card glow-animate ripple-hover">
+            <h2 class="event-title">June Journey</h2>
+            <p class="event-date">Live All Month · June</p>
+
+            <p class="event-desc">
+                A month of steady energy, cozy games, and gentle Sanctuary flow.
+                Expect a calm but playful rotation of comfort games, Night Owl late sessions,
+                chat-guided choices, and cozy chaos with a softer tone.
+            </p>
+
+            <ul class="event-list">
+                <li>🎮 Comfort games & soft adventure picks</li>
+                <li>🌙 Night Owl late sessions</li>
+                <li>💬 Chat-guided choices</li>
+                <li>🔥 Light challenge nights (fun, not stress)</li>
+                <li>🌿 Cozy chaos with a softer tone</li>
+                <li>✨ Flexible streams tuned to what feels good</li>
+            </ul>
+        </section>
 
         <div class="gothic-ornament">✦</div>
 
-        <!-- WEEKLY STREAM SCHEDULE -->
-        <section class="weekly-schedule-box slide-up">
-            <h2>🌙 June Sanctuary Stream Schedule 🌙</h2>
-            <p>Live Mon/Wed/Fri/Sat plus spontaneous Night Owl chaos sessions</p>
-            <p>
-                ✦ June brings steady energy, cozy games, and a calm but playful flow ✦<br>
-                Streams this month will stay relaxed, flexible, and easy to vibe with. 
-                Still cozy, still chaotic, just moving at a pace that feels good.
-                <br><br>
-                The Night Owl community thrives after dark. Come hang out, unwind, and enjoy the June Sanctuary vibes.
+        <!-- Footer note -->
+        <section class="event-card glow-animate ripple-hover">
+            <p class="event-footer">
+                ✦ © 2026 RastaAsian Sanctuary · Events, vibes, and Night Owl energy.
             </p>
         </section>
 
-        <div class="gothic-ornament">✦</div>
-
-        <!-- FEATURED EVENT -->
-        <section class="service-category slide-up">
-            <h3 class="category-title gothic-accent">✦ June Journey: Flow, Focus, Flourish ✦</h3>
-            <div class="gothic-table-divider"></div>
-
-            <div class="events-table-wrapper">
-                <table class="events-table">
-                    <tr>
-                        <th>Event</th>
-                        <th>Date</th>
-                        <th>Details</th>
-                    </tr>
-
-                    <tr>
-                        <td>June Journey</td>
-                        <td>Live All Month June</td>
-                        <td>
-                            A month of steady energy, cozy games, and gentle Sanctuary flow.<br><br>
-
-                            Expect a calm but playful rotation of:
-                            <ul>
-                                <li>🎮 Comfort games and soft adventure picks</li>
-                                <li>🌙 Night Owl late sessions with relaxed pacing</li>
-                                <li>💬 Chat guided choices and community moments</li>
-                                <li>🔥 Light challenge nights for fun, not stress</li>
-                                <li>🌿 Cozy chaos with a softer tone</li>
-                                <li>✨ Flexible streams tuned to what feels good</li>
-                            </ul>
-
-                            June is all about <strong>flow, focus, and flourishing at your own pace</strong> — 
-                            gentle energy, cozy chaos, and the same Sanctuary spirit.
-                        </td>
-                    </tr>
-
-                </table>
-            </div>
-        </section>
-
-        <div class="gothic-ornament">✦</div>
-
     </main>
 
-    <!-- Footer -->
+    <!-- ⭐ FOOTER ⭐ -->
     <footer class="site-footer">
-        <div class="gothic-ornament">✦</div>
-        <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Events, vibes, and Night Owl energy.</p>
-        <p class="footer-links">
-            <a href="contact.html">Contact</a> ·
-            <a href="games.html">Night Owls</a>
-        </p>
+        <p>© 2026 RastaAsian Sanctuary</p>
+        <div class="footer-links">
+            <a href="contact.html">Contact</a>
+            <a href="services.html">Services</a>
+            <a href="games.html">Games</a>
+        </div>
     </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 
 </body>
 </html>
