@@ -1,125 +1,202 @@
-<section class="mini-nav">
-    <a href="#home" data-page="home.html">Home</a>
-    <a href="#about" data-page="about.html">About</a>
-    <a href="#games" data-page="games.html">Games</a>
-    <a href="#setup" data-page="setup.html">Setup</a>
-    <a href="#events" data-page="events.html">Events</a>
-    <a href="#services" data-page="services.html">Services</a>
-    <a href="#contact" data-page="contact.html">Contact</a>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup · RastaAsian Sanctuary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-<div class="gothic-ornament">✦</div>
+<body class="sanctuary-body">
 
-<main class="setup-page">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-wrap">
+                <img src="css/images/rastaasian-sanctuary-logo.png" alt="RastaAsian Sanctuary Logo" class="site-logo">
+                <span class="logo-text">RastaAsian Sanctuary</span>
+            </a>
 
-    <section class="setup-hero">
-        <h1 class="hero-title">Setup & Gear</h1>
-        <p class="hero-subtitle">The tools behind the Sanctuary — built for calm, focus, and creation.</p>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="games.html">Games</a>
+                <a href="setup.html" class="active">Setup</a>
+                <a href="events.html">Events</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
         <div class="gothic-ornament">✦</div>
-    </section>
+    </header>
 
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">Why This Setup Works</h2>
-        <p class="section-description">
-            My setup is intentionally built for neurodivergent comfort — low latency, low overwhelm, high clarity.
-            Every piece of gear supports smoother streams, calmer workflows, and a sensory-friendly environment.
+    <main class="setup-page fade-in">
+
+        <!-- Hero -->
+        <section class="setup-hero slide-up">
+            <h1 class="hero-title">Setup & Gear</h1>
+            <p class="hero-subtitle">The tools behind the Sanctuary — built for calm, focus, and creation.</p>
+            <div class="gothic-ornament">✦</div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Why This Setup Works -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">Why This Setup Works</h2>
+            <p class="section-description">
+                My setup is intentionally built for neurodivergent comfort — low latency, low overwhelm, high clarity.
+                Every piece of gear supports smoother streams, calmer workflows, and a sensory-friendly environment.
+            </p>
+            <ul class="setup-benefits">
+                <li>Low-latency hardware reduces overwhelm during fast gameplay.</li>
+                <li>Clean audio helps with sensory comfort and communication.</li>
+                <li>Stream Deck automation reduces cognitive load.</li>
+                <li>Lighting and layout designed for focus and calm.</li>
+            </ul>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Main Machine -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">💻 Main Machine — ASUS ROG Strix G18 (2023)</h2>
+            <p class="section-description">
+                This laptop is the heart of the Sanctuary — gaming, streaming, design, editing, and everything in between.
+            </p>
+
+            <div class="setup-table-wrapper">
+                <table class="setup-table">
+                    <tr><th>Component</th><th>Description</th></tr>
+                    <tr><td>Intel I9 13th Gen i9‑13980HX</td><td>High-performance CPU for gaming, design, and multitasking.</td></tr>
+                    <tr><td>NVIDIA RTX 4080 Laptop GPU</td><td>High FPS, crisp visuals, and reliable performance.</td></tr>
+                    <tr><td>32GB RAM</td><td>Perfect for streaming, editing, and running multiple apps.</td></tr>
+                    <tr><td>SSD + HDD</td><td>Fast load times with long-term storage.</td></tr>
+                    <tr><td>18" QHD+ 240Hz Display</td><td>Large, smooth, and immersive screen.</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Streaming Gear -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">🎙️ Streaming Gear</h2>
+
+            <div class="setup-table-wrapper">
+                <table class="setup-table">
+                    <tr><th>Gear</th><th>Description</th><th>Image</th></tr>
+
+                    <tr>
+                        <td>Shure MV7+</td>
+                        <td>Clear, crisp audio for the best viewer experience.</td>
+                        <td><img src="css/images/shure mv7+.jpg" class="setup-icon"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Jinx Magnus XL Slider</td>
+                        <td>A sturdy, spacious setup built for comfort.</td>
+                        <td><img src="css/images/jinx-magnus-slider-mb.jpg" class="setup-icon"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Elgato Stream Deck XL</td>
+                        <td>Quick controls for scenes, sound effects, and automation.</td>
+                        <td><img src="css/images/elgato xl.jpg" class="setup-icon"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Razer Kraken Kitty V3 Pro</td>
+                        <td>Comfortable audio monitoring for long sessions.</td>
+                        <td><img src="css/images/Rzaer Kraken Kitty V3 Pro BT.jpg" class="setup-icon"></td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Software -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">🧩 Software I Use</h2>
+            <ul class="setup-software">
+                <li>OBS Studio — streaming & scene management</li>
+                <li>Adobe Audition — audio cleanup & enhancement</li>
+                <li>Figma — UI/UX design & layouts</li>
+                <li>VS Code — development & coding</li>
+                <li>Canva — quick graphics & templates</li>
+                <li>DaVinci Resolve — video editing</li>
+                <li>StreamElements — overlays & alerts</li>
+            </ul>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Consoles -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">🎮 Consoles & Accessories</h2>
+
+            <div class="setup-table-wrapper">
+                <table class="setup-table">
+                    <tr><th>Console / Accessory</th><th>Description</th><th>Image</th></tr>
+
+                    <tr>
+                        <td>PS5 Pro</td>
+                        <td>Cinematic gameplay and exclusive titles.</td>
+                        <td><img src="css/images/ps5 pro.jpg" class="setup-icon"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Nintendo Switch 2</td>
+                        <td>Perfect for cozy games, indies, and handheld adventures.</td>
+                        <td><img src="css/images/switch 2.jpg" class="setup-icon"></td>
+                    </tr>
+
+                    <tr>
+                        <td>DualSense Edge Controller</td>
+                        <td>Custom controllers for comfort, precision, and style.</td>
+                        <td><img src="css/images/playstion dualsense edge.jpg" class="setup-icon"></td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- Future Upgrades -->
+        <section class="setup-section slide-up">
+            <h2 class="category-title gothic-accent">✨ Future Upgrades</h2>
+            <ul class="setup-upgrades">
+                <li>Dedicated pen plotter workstation</li>
+                <li>Dual‑PC streaming setup</li>
+                <li>Custom controller mods</li>
+                <li>New lighting system</li>
+                <li>VR setup</li>
+            </ul>
+        </section>
+
+        <div class="gothic-ornament">✦</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="gothic-ornament">✦</div>
+        <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p>
+        <p class="footer-links">
+            <a href="contact.html">Contact</a> ·
+            <a href="games.html">Night Owls</a>
         </p>
-        <ul class="setup-benefits">
-            <li>Low-latency hardware reduces overwhelm during fast gameplay.</li>
-            <li>Clean audio helps with sensory comfort and communication.</li>
-            <li>Stream Deck automation reduces cognitive load.</li>
-            <li>Lighting and layout designed for focus and calm.</li>
-        </ul>
-    </section>
+    </footer>
 
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">💻 Streaming PC Specs</h2>
-        <div class="setup-table-wrapper">
-            <table class="setup-table">
-                <tr><th>Component</th><th>Description</th></tr>
-                <tr><td>Intel I9 13th Gen i9‑13980HX</td><td>Built for smooth gameplay and streaming.</td></tr>
-                <tr><td>NVIDIA RTX 4070 Laptop GPU</td><td>High FPS, crisp visuals, reliable performance.</td></tr>
-                <tr><td>32GB RAM</td><td>Multitasking, streaming, and running multiple apps.</td></tr>
-                <tr><td>SSD + HDD</td><td>Fast load times and long‑term storage.</td></tr>
-            </table>
-        </div>
-    </section>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">🎙️ Streaming Gear</h2>
-        <div class="setup-table-wrapper">
-            <table class="setup-table">
-                <tr><th>Gear</th><th>Description</th><th>Image</th></tr>
-                <tr>
-                    <td>Shure MV7+</td>
-                    <td>Clear, crisp audio for the best viewer experience.</td>
-                    <td><img src="css/images/shure mv7+.jpg" class="setup-icon"></td>
-                </tr>
-                <tr>
-                    <td>Jinx Magnus XL Slider</td>
-                    <td>A sturdy, spacious setup built for comfort.</td>
-                    <td><img src="css/images/jinx-magnus-slider-mb.jpg" class="setup-icon"></td>
-                </tr>
-                <tr>
-                    <td>Elgato Stream Deck XL</td>
-                    <td>Quick controls for scenes, sound effects, and automation.</td>
-                    <td><img src="css/images/elgato xl.jpg" class="setup-icon"></td>
-                </tr>
-                <tr>
-                    <td>Razer Kraken Kitty V3 Pro</td>
-                    <td>Comfortable audio monitoring for long sessions.</td>
-                    <td><img src="css/images/Rzaer Kraken Kitty V3 Pro BT.jpg" class="setup-icon"></td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">🧩 Software I Use</h2>
-        <ul class="setup-software">
-            <li>OBS Studio — streaming & scene management</li>
-            <li>Adobe Audition — audio cleanup & enhancement</li>
-            <li>Figma — UI/UX design & layouts</li>
-            <li>VS Code — development & coding</li>
-            <li>Canva — quick graphics & templates</li>
-            <li>DaVinci Resolve — video editing</li>
-            <li>StreamElements — overlays & alerts</li>
-        </ul>
-    </section>
-
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">🎮 Consoles & Accessories</h2>
-        <div class="setup-table-wrapper">
-            <table class="setup-table">
-                <tr><th>Console / Accessory</th><th>Description</th><th>Image</th></tr>
-                <tr>
-                    <td>PS5 Pro</td>
-                    <td>Cinematic gameplay and exclusive titles.</td>
-                    <td><img src="css/images/ps5 pro.jpg" class="setup-icon"></td>
-                </tr>
-                <tr>
-                    <td>Nintendo Switch 2</td>
-                    <td>Perfect for cozy games, indies, and handheld adventures.</td>
-                    <td><img src="css/images/switch 2.jpg" class="setup-icon"></td>
-                </tr>
-                <tr>
-                    <td>DualSense Edge Controller</td>
-                    <td>Custom controllers for comfort, precision, and style.</td>
-                    <td><img src="css/images/playstion dualsense edge.jpg" class="setup-icon"></td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section class="setup-section">
-        <h2 class="category-title gothic-accent">✨ Future Upgrades</h2>
-        <ul class="setup-upgrades">
-            <li>Dedicated pen plotter workstation</li>
-            <li>Dual‑PC streaming setup</li>
-            <li>Custom controller mods</li>
-            <li>New lighting system</li>
-            <li>VR setup</li>
-        </ul>
-    </section>
-
-</main>
+</body>
+</html>

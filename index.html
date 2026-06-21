@@ -2,164 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RastaAsian Sanctuary</title>
-
-    <!-- GLOBAL CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        /* Fade transition for SPA content */
-        #content {
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            min-height: 60vh;
-        }
-        #content.fade-in {
-            opacity: 1;
-        }
-    </style>
 </head>
+<body class="sanctuary-body">
 
-<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-wrap">
+                <img src="css/images/rastaasian-sanctuary-logo.png" alt="RastaAsian Sanctuary Logo" class="site-logo">
+                <span class="logo-text">RastaAsian Sanctuary</span>
+            </a>
 
-<!-- Persistent Music Player -->
-<audio id="bg-music" autoplay loop muted>
-    <source src="css/audio/ytmp3free.cc_gorillaz-dare-official-video-youtubemp3free.org.mp3" type="audio/mpeg">
-</audio>
+            <!-- Mobile toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
 
-<header>
+            <!-- Nav -->
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="games.html">Games</a>
+                <a href="setup.html">Setup</a>
+                <a href="events.html">Events</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="gothic-ornament">✦</div>
+    </header>
 
-    <!-- Mobile Hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <main class="home-page fade-in">
 
-    <h1>RastaAsian Sanctuary</h1>
+        <!-- Hero -->
+        <section class="hero slide-up" style="background-image: url('css/images/rastaasian-sanctuary-logo.png');">
+            <div class="hero-overlay">
+                <h1 class="slide-up">Welcome to the Sanctuary</h1>
+                <p class="slide-up">
+                    A late-night digital refuge for neurodivergent minds, gamers, and anyone who needs calm, patient support.
+                </p>
+                <a href="about.html" class="btn-primary slide-up">Learn My Story</a>
+            </div>
+        </section>
 
-    <!-- Navigation -->
-    <nav>
-        <ul id="nav-links">
-            <li><a href="#home" data-page="home.html" class="active">Home</a></li>
-            <li><a href="#about" data-page="about.html">About</a></li>
-            <li><a href="#games" data-page="games.html">Games & Streams</a></li>
-            <li><a href="#setup" data-page="setup.html">Setup & Gear</a></li>
-            <li><a href="#events" data-page="events.html">Events</a></li>
-            <li><a href="#services" data-page="services.html">Services</a></li>
-            <li><a href="#contact" data-page="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        <div class="gothic-ornament">❖</div>
 
-</header>
+        <!-- Pillars / Services teaser -->
+        <section class="home-section slide-up">
+            <h2>What I Do</h2>
+            <p>
+                RastaAsian Sanctuary blends tech, design, and community into a space that feels safe, human, and judgment-free.
+            </p>
+            <div class="pillars-grid">
+                <article class="pillar-card">
+                    <h3>Web Design &amp; UX/UI</h3>
+                    <p>Accessible, mobile-first, ND-friendly websites that reflect the person behind the brand.</p>
+                    <a href="services.html" class="text-link">Explore design services →</a>
+                </article>
 
-<!-- MAIN CONTENT AREA -->
-<main id="content"></main>
+                <article class="pillar-card">
+                    <h3>Tech Support</h3>
+                    <p>Calm, patient, jargon-free help for individuals, seniors, and overwhelmed clients.</p>
+                    <a href="services.html" class="text-link">See tech support options →</a>
+                </article>
 
-<!-- Floating Music Orb with Visualizer -->
-<div id="music-orb">
-    <div id="visualizer">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-</div>
+                <article class="pillar-card">
+                    <h3>Dyson Deep Cleaning</h3>
+                    <p>Full teardown, restoration, and maintenance for Dyson vacuums with meticulous care.</p>
+                    <a href="services.html" class="text-link">View Dyson services →</a>
+                </article>
 
-<footer>
-    © 2025 RastaAsian Sanctuary. All rights reserved.
-    <div class="social-icons">
-        <span class="icon">🌙</span>
-        <span class="icon">🕸️</span>
-        <span class="icon">💜</span>
-    </div>
-</footer>
+                <article class="pillar-card">
+                    <h3>Gaming Companion Sessions</h3>
+                    <p>Zero-toxicity, anxiety-friendly co-op play for night owls and cozy gamers.</p>
+                    <a href="games.html" class="text-link">Join the Night Owls →</a>
+                </article>
+            </div>
+        </section>
 
-<!-- SPA LOADER SCRIPT -->
-<script>
-const content = document.getElementById("content");
+        <div class="gothic-ornament">❖</div>
 
-// Load page with fade transition
-async function loadPage(page) {
-    content.classList.remove("fade-in");
+        <!-- Sanctuary vibe -->
+        <section class="home-section slide-up">
+            <h2>The Sanctuary Vibe</h2>
+            <p>
+                The Sanctuary is a late-night digital living room—chaotic, cozy, and honest. No masks. No judgment.
+                Just connection, calm, and a place to breathe.
+            </p>
+            <a href="about.html" class="btn-ghost">Read more about the Sanctuary</a>
+        </section>
 
-    const response = await fetch("partials/" + page);
-    let html = await response.text();
+    </main>
 
-    // Strip full HTML wrapper if present
-    html = html.replace(/<!DOCTYPE[\s\S]*?<body.*?>/i, "")
-               .replace(/<\/body>[\s\S]*?<\/html>/i, "");
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="gothic-ornament">✦</div>
+        <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p>
+        <p class="footer-links">
+            <a href="contact.html">Contact</a> ·
+            <a href="services.html">Services</a> ·
+            <a href="games.html">Night Owls</a>
+        </p>
+    </footer>
 
-    content.innerHTML = html;
-
-    setTimeout(() => {
-        content.classList.add("fade-in");
-    }, 50);
-}
-
-// Handle hash routing
-function handleHash() {
-    const page = location.hash.replace("#", "") || "home";
-    loadPage(page + ".html");
-}
-
-// Listen for hash changes
-window.addEventListener("hashchange", handleHash);
-
-// Initial load
-handleHash();
-</script>
-
-<!-- MUSIC ORB SCRIPT -->
-<script>
-const music = document.getElementById("bg-music");
-const orb = document.getElementById("music-orb");
-
-// Start muted (browser‑safe)
-music.volume = 0;
-
-// Auto‑fade after page load
-window.addEventListener("load", () => {
-    let vol = 0;
-    music.muted = false;
-    music.play().catch(() => {});
-
-    const fade = setInterval(() => {
-        if (vol < 1) {
-            vol += 0.02; 
-            music.volume = vol;
-        } else {
-            clearInterval(fade);
-        }
-    }, 120);
-});
-
-// Orb toggle play/pause
-orb.addEventListener("click", () => {
-    if (music.paused) {
-        music.play().catch(() => {});
-        orb.classList.remove("paused");
-    } else {
-        music.pause();
-        orb.classList.add("paused");
-    }
-});
-
-// Resume when returning to tab
-document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && !orb.classList.contains("paused")) {
-        music.play().catch(() => {});
-    }
-});
-
-// Resume after window refocus
-window.addEventListener("focus", () => {
-    if (!orb.classList.contains("paused")) {
-        music.play().catch(() => {});
-    }
-});
-</script>
-
+    <script>
+        // Simple year update, no SPA
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
