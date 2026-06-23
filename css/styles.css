@@ -1442,3 +1442,397 @@ td {
     margin: 0 auto 25px;
     line-height: 1.6;
 }
+/* --------------------------------------------------
+   SANCTUARY SERVICES PAGE — GLOW CARD GRID
+-------------------------------------------------- */
+
+.glow-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* Desktop: two-column layout */
+@media (min-width: 900px) {
+    .glow-card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --------------------------------------------------
+   GLOW CARD BASE STYLE (SPACIOUS EDITION)
+-------------------------------------------------- */
+
+.glow-card {
+    background: rgba(20, 10, 30, 0.55);
+    border: 1px solid rgba(180, 120, 255, 0.25);
+    border-radius: 18px;
+    padding: 2.2rem 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 22px rgba(150, 80, 255, 0.25);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeSlideUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Hover glow */
+.glow-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 32px rgba(180, 120, 255, 0.45);
+}
+
+/* --------------------------------------------------
+   CARD TITLES & DIVIDERS
+-------------------------------------------------- */
+
+.card-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px rgba(200, 150, 255, 0.6);
+}
+
+.gothic-card-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(200, 150, 255, 0.6),
+        transparent
+    );
+    margin: 1rem 0 1.5rem;
+}
+
+/* --------------------------------------------------
+   SERVICE LISTS
+-------------------------------------------------- */
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed rgba(200, 150, 255, 0.25);
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.service-list strong {
+    font-size: 1.1rem;
+    color: #e8d9ff;
+}
+
+.service-list .price {
+    float: right;
+    font-weight: 600;
+    color: #d8b4ff;
+    text-shadow: 0 0 6px rgba(180, 120, 255, 0.5);
+}
+
+.service-list .details {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    color: #cbb7e8;
+    line-height: 1.4;
+}
+
+/* Clear floats */
+.service-list li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* --------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* --------------------------------------------------
+   SOFT PURPLE SHIMMER ON HOVER
+-------------------------------------------------- */
+
+.glow-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer layer */
+.glow-card::before {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -120%;
+    width: 250%;
+    height: 250%;
+    background: radial-gradient(
+        circle at center,
+        rgba(200, 150, 255, 0.18),
+        transparent 60%
+    );
+    opacity: 0;
+    transform: rotate(25deg);
+    transition: opacity 0.5s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+
+.glow-card:hover::before {
+    opacity: 1;
+    transform: rotate(25deg) translate(15%, 15%);
+}
+
+
+/* --------------------------------------------------
+   ANIMATED CORNER GLOW PULSES
+-------------------------------------------------- */
+
+.glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(200, 150, 255, 0.4),
+        rgba(150, 80, 255, 0.15),
+        rgba(200, 150, 255, 0.4)
+    );
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    animation: cornerPulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cornerPulse {
+    0% {
+        opacity: 0.25;
+        box-shadow: 0 0 12px rgba(180, 120, 255, 0.25);
+    }
+    50% {
+        opacity: 0.55;
+        box-shadow: 0 0 22px rgba(200, 150, 255, 0.45);
+    }
+    100% {
+        opacity: 0.25;
+        box-shadow: 0 0 12px rgba(180, 120, 255, 0.25);
+    }
+}
+/* --------------------------------------------------
+   SETUP PAGE — MATCH SERVICES GLOW-CARD SYSTEM
+-------------------------------------------------- */
+
+/* GRID */
+.setup-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+    .setup-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* GLOW CARD BASE */
+.setup-card {
+    background: rgba(20, 10, 30, 0.55);
+    border: 1px solid rgba(180, 120, 255, 0.25);
+    border-radius: 18px;
+    padding: 2.2rem 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 22px rgba(150, 80, 255, 0.25);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeSlideUp 0.8s ease forwards;
+    opacity: 1; /* FIXED — no more invisible cards */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover glow */
+.setup-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 32px rgba(180, 120, 255, 0.45);
+}
+
+/* --------------------------------------------------
+   SOFT PURPLE SHIMMER ON HOVER
+-------------------------------------------------- */
+
+.setup-card::before {
+    content: "";
+    position: absolute;
+    top: -120%;
+    left: -120%;
+    width: 250%;
+    height: 250%;
+    background: radial-gradient(
+        circle at center,
+        rgba(200, 150, 255, 0.18),
+        transparent 60%
+    );
+    opacity: 0; /* FIXED — shimmer now starts invisible */
+    transform: rotate(25deg);
+    transition: opacity 0.5s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+
+.setup-card:hover::before {
+    opacity: 1;
+    transform: rotate(25deg) translate(15%, 15%);
+}
+
+/* --------------------------------------------------
+   CORNER GLOW PULSE
+-------------------------------------------------- */
+
+.setup-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(200, 150, 255, 0.4),
+        rgba(150, 80, 255, 0.15),
+        rgba(200, 150, 255, 0.4)
+    );
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    animation: cornerPulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cornerPulse {
+    0% { opacity: 0.25; box-shadow: 0 0 12px rgba(180, 120, 255, 0.25); }
+    50% { opacity: 0.55; box-shadow: 0 0 22px rgba(200, 150, 255, 0.45); }
+    100% { opacity: 0.25; box-shadow: 0 0 12px rgba(180, 120, 255, 0.25); }
+}
+
+/* --------------------------------------------------
+   TITLES & DIVIDERS
+-------------------------------------------------- */
+
+.setup-card .card-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 8px rgba(200, 150, 255, 0.6);
+}
+
+.gothic-card-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(200, 150, 255, 0.6),
+        transparent
+    );
+    margin: 1rem 0 1.5rem;
+}
+
+/* --------------------------------------------------
+   LISTS (BENEFITS, SOFTWARE, UPGRADES)
+-------------------------------------------------- */
+
+.setup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.setup-list li {
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed rgba(200, 150, 255, 0.25);
+    color: #d8c9f0;
+}
+
+.setup-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --------------------------------------------------
+   TABLES (MATCH SERVICES STYLE)
+-------------------------------------------------- */
+
+.setup-table-wrapper {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+}
+
+.setup-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(30, 15, 45, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.setup-table th {
+    background: rgba(180, 120, 255, 0.15);
+    padding: 0.9rem;
+    text-align: left;
+    font-weight: 600;
+    color: #e8d9ff;
+    border-bottom: 1px solid rgba(200, 150, 255, 0.25);
+}
+
+.setup-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(200, 150, 255, 0.15);
+    color: #d8c9f0;
+}
+
+.setup-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* --------------------------------------------------
+   IMAGES
+-------------------------------------------------- */
+
+.setup-icon {
+    width: 70px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(180, 120, 255, 0.35);
+}
+
+/* --------------------------------------------------
+   ANIMATION
+-------------------------------------------------- */
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
