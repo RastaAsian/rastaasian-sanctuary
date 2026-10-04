@@ -8,6 +8,13 @@
 
     <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* Ensures button text stays crisp black */
+        .btn-primary {
+            color: #000000 !important;
+        }
+    </style>
 </head>
 
 <body class="sanctuary-body">
@@ -30,6 +37,7 @@
                 <a href="setup.html">Setup</a>
                 <a href="events.html">Events</a>
                 <a href="services.html">Services</a>
+                <a href="promos.html">Promos</a>
                 <a href="contact.html" class="active">Contact</a>
             </nav>
         </div>
@@ -38,11 +46,92 @@
 
     <!-- MAIN CONTENT -->
     <main class="contact-page fade-in">
+        <!-- Custom Gothic Glow & Hover Styles -->
+        <style>
+          /* Hero Container Base & Transitions */
+          .gothic-hero {
+            position: relative;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(10, 5, 15, 0.9)), 
+                        url('css/images/rastaasian-sanctuary-logo.png') center/cover no-repeat;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.9);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          }
 
-        <!-- Hero -->
-        <section class="hero slide-up" style="background-image: url('css/images/rastaasian-sanctuary-logo.png');">
-            <h2 class="slide-up">Contact the Sanctuary</h2>
-            <p class="slide-up">Reach out anytime. I’m here to help.</p>
+          /* Deep Violet Ambient Glow on Hover */
+          .gothic-hero:hover {
+            border-color: rgba(186, 85, 211, 0.5);
+            box-shadow: 0 0 35px rgba(138, 43, 226, 0.45), 
+                        0 0 70px rgba(186, 85, 211, 0.25),
+                        inset 0 0 40px rgba(0, 0, 0, 0.8);
+            transform: translateY(-3px);
+          }
+
+          /* Glowing Gothic Title */
+          .gothic-hero h2 {
+            font-family: 'Cinzel Decorative', 'Georgia', serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                         0 0 20px rgba(186, 85, 211, 0.8),
+                         0 0 35px rgba(138, 43, 226, 0.6);
+            transition: text-shadow 0.4s ease, color 0.4s ease;
+          }
+
+          .gothic-hero:hover h2 {
+            color: #f8f0ff;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
+                         0 0 25px rgba(186, 85, 211, 1),
+                         0 0 45px rgba(138, 43, 226, 0.8);
+          }
+
+          /* Subtitle Text Glow */
+          .gothic-hero p {
+            color: #dcd6e8;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+            transition: color 0.4s ease, text-shadow 0.4s ease;
+          }
+
+          .gothic-hero:hover p {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
+          }
+
+          /* Glowing Button inside Hero - Purple Glow */
+          .gothic-hero .hero-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.75rem;
+            color: #000000 !important;
+            background: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+          }
+
+          .gothic-hero .hero-btn:hover {
+            background: #ba55d3;
+            color: #000000 !important;
+            box-shadow: 0 0 20px rgba(186, 85, 211, 0.9), 0 0 40px rgba(138, 43, 226, 0.6);
+            transform: scale(1.04);
+          }
+        </style>
+
+        <!-- Hero Section HTML -->
+        <section class="hero gothic-hero slide-up">
+            <h2 class="slide-up gothic-accent">Enter the Sanctuary</h2>
+            <p class="slide-up">Step into the shadows, speak your mind, or seek guidance. My door is always open.</p>
+            <a href="#contact-form" class="hero-btn slide-up">Send a Whisper</a>
         </section>
 
         <div class="gothic-ornament slide-up">✦</div>
@@ -84,7 +173,7 @@
             <div class="gothic-ornament slide-up">❖</div>
 
             <!-- Contact Form -->
-            <h2 class="slide-up">Send a Message</h2>
+            <h2 class="slide-up" id="contact-form">Send a Message</h2>
             <p class="fade-in">Prefer to write it out? Send me a message below.</p>
 
             <form class="contact-form fade-in">
@@ -100,7 +189,7 @@
                 <label>Message</label>
                 <textarea placeholder="Write your message here..."></textarea>
 
-                <button type="submit" class="btn-primary slide-up">Send Message</button>
+                <button type="submit" class="btn-primary slide-up" style="color: #000000;">Send Message</button>
             </form>
 
             <div class="gothic-ornament slide-up">❖</div>
@@ -111,11 +200,11 @@
             <div class="hero-actions fade-in">
                 <a href="https://calendly.com/therastaasian/30min" 
                 target="_blank" 
-                class="btn-primary">
+                class="btn-primary" style="color: #000000;">
                 Book a 30‑Minute Session
                 </a>
 
-                <a href="mailto:rastaasiansanctuary@gmail.com" class="btn-primary">
+                <a href="mailto:rastaasiansanctuary@gmail.com" class="btn-primary" style="color: #000000;">
                     Email Me Directly
                 </a>
             </div>
@@ -128,13 +217,13 @@
             <div class="hero-actions fade-in">
                 <a href="https://calendly.com/therastaasian/competitive-gaming-companion" 
                 target="_blank" 
-                class="btn-primary">
+                class="btn-primary" style="color: #000000;">
                 Competitive Gaming Session
                 </a>
 
                 <a href="https://calendly.com/therastaasian/gaming-companion-30-mins" 
                 target="_blank" 
-                class="btn-primary">
+                class="btn-primary" style="color: #000000;">
                 30‑Minute Gaming Companion
                 </a>
             </div>
@@ -183,6 +272,7 @@
         <p class="footer-links">
             <a href="index.html">Home</a> ·
             <a href="services.html">Services</a> ·
+            <a href="promos.html">Promos</a> ·
             <a href="games.html">Night Owls</a>
         </p>
     </footer>

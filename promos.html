@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RastaAsian Sanctuary – Promos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Force visibility override for troubleshooting */
+        main, section, div, article, h1, h2, h3, p {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+        main {
+            padding-top: 40px;
+        }
+
+        /* =========================================================
+           GTA VI VICE CITY PULSING NEON BORDER STYLES
+           ========================================================= */
+        @keyframes viceNeonPulse {
+            0% {
+                border-color: #ff2a85;
+                box-shadow: 0 0 15px rgba(255, 42, 133, 0.5),
+                            0 0 30px rgba(0, 240, 255, 0.3),
+                            inset 0 0 15px rgba(255, 42, 133, 0.2);
+            }
+            50% {
+                border-color: #00f0ff;
+                box-shadow: 0 0 30px rgba(0, 240, 255, 0.8),
+                            0 0 50px rgba(255, 42, 133, 0.6),
+                            inset 0 0 25px rgba(0, 240, 255, 0.4);
+            }
+            100% {
+                border-color: #ff2a85;
+                box-shadow: 0 0 15px rgba(255, 42, 133, 0.5),
+                            0 0 30px rgba(0, 240, 255, 0.3),
+                            inset 0 0 15px rgba(255, 42, 133, 0.2);
+            }
+        }
+
+        .gta6-vice-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(20, 10, 30, 0.95), rgba(40, 10, 50, 0.95));
+            border: 2px solid #ff2a85;
+            border-radius: 16px;
+            padding: 24px;
+            overflow: hidden;
+            animation: viceNeonPulse 2.5s infinite ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .gta6-vice-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* Vice City Neon Gradient Header */
+        .gta6-vice-card h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ff2a85, #ff7300, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            text-shadow: 0 0 12px rgba(255, 42, 133, 0.5);
+        }
+
+        /* Stylized Badge Tag */
+        .vice-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff2a85, #9b00e8);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            box-shadow: 0 0 10px rgba(255, 42, 133, 0.5);
+        }
+
+        /* Image Glow Wrap */
+        .gta6-vice-card .promo-glow-image-wrap {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 240, 255, 0.5);
+            margin: 12px 0 18px 0;
+            box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .gta6-vice-card .promo-glow-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            transition: filter 0.3s ease;
+        }
+
+        .gta6-vice-card:hover .promo-glow-image {
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        /* Price Highlight & Text Details */
+        .vice-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #00f0ff;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .gta6-vice-card p {
+            color: #e2d9f3;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Neon Action Button */
+        .vice-btn {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 10px 22px;
+            background: linear-gradient(90deg, #ff2a85, #00f0ff);
+            color: #0d0614 !important;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(255, 42, 133, 0.5);
+            transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .vice-btn:hover {
+            background: linear-gradient(90deg, #00f0ff, #ff2a85);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body class="sanctuary-body">
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-wrap">
+                <img src="css/images/rastaasian-sanctuary-logo.png" alt="RastaAsian Sanctuary Logo" class="site-logo">
+                <span class="logo-text">RastaAsian Sanctuary</span>
+            </a>
+
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="games.html">Games</a>
+                <a href="setup.html">Setup</a>
+                <a href="events.html">Events</a>
+                <a href="services.html">Services</a>
+                <a href="promos.html" class="active">Promos</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <div class="gothic-ornament">✦</div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero hybrid-hero">
+            <div class="hero-card glow-card">
+                <h1>Current Promos</h1>
+                <p>Seasonal deals, hype drops, countdown events, and limited-time specials.</p>
+            </div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- PROMO GRID -->
+        <section class="home-section" style="text-align: center;">
+            <h2>Featured Promotions</h2>
+            <p class="section-intro">
+                All active Sanctuary promos — updated as new events, countdowns, and specials go live.
+            </p>
+
+            <div class="pillars-grid centered-grid">
+
+                <!-- GTA 6 VICE CITY STYLED PROMO CARD WITH PULSING BORDER -->
+                <article class="gta6-vice-card">
+                    <span class="vice-badge">Limited Time drop 🌴</span>
+                    <h3>GTA VI Countdown Promo 🔥🎮</h3>
+                    
+                    <div class="promo-glow-image-wrap">
+                        <img src="css/images/gta6-console-promo.png" alt="GTA VI Promo" class="promo-glow-image">
+                    </div>
+
+                    <div class="vice-price">$80 Deep Console Clean · Same Day Pickup</div>
+                    
+                    <p>
+                        Seton SE Location<br>
+                        Dust Removal · Fan Detailing · Quiet Performance<br>
+                        <strong>Get your rig silent and ready before Vice City drops!</strong>
+                    </p>
+                    
+                    <a href="contact.html" class="vice-btn">Book Your Cleaning →</a>
+                </article>
+
+                <!-- DYSON PROMO -->
+                <article class="pillar-card glow-card">
+                    <h3>Dyson Deep Clean Special ✨</h3>
+                    <p>
+                        Full teardown · Motor cleaning · Filter restoration<br>
+                        Perfect for fall reset season.
+                    </p>
+                    <a href="services.html" class="text-link">View Dyson services →</a>
+                </article>
+
+                <!-- TECH SUPPORT PROMO -->
+                <article class="pillar-card glow-card">
+                    <h3>Tech Support Autumn Deal 🍂</h3>
+                    <p>
+                        Calm, patient troubleshooting for laptops, PCs, phones, and home tech.<br>
+                        ND-friendly, zero judgment.
+                    </p>
+                    <a href="services.html" class="text-link">Explore tech support →</a>
+                </article>
+
+                <!-- GAMING PROMO -->
+                <article class="pillar-card glow-card">
+                    <h3>Night Owl Gaming Companion 🦉</h3>
+                    <p>
+                        Cozy co-op sessions · Anxiety-friendly · No toxicity<br>
+                        Perfect for late-night October vibes.
+                    </p>
+                    <a href="games.html" class="text-link">Join the Night Owls →</a>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- EXTRA PROMO SECTION -->
+        <section class="home-section" style="text-align: center;">
+            <h2>Seasonal & Limited-Time Offers</h2>
+            <p>
+                New promos appear throughout the month — check back often for fresh drops.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="gothic-ornament">✦</div>
+        <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p>
+        <p class="footer-links">
+            <a href="promos.html">Promos</a> ·
+            <a href="services.html">Services</a> ·
+            <a href="contact.html">Contact</a> ·
+            <a href="games.html">Night Owls</a>
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

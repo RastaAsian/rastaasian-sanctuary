@@ -1845,3 +1845,121 @@ td {
     display: block;
     background: #0a0a0a;            /* ensures seamless dark mode */
 }
+/* ----------------------------------------------------
+   PROMO GLOW CARD — RastaAsian Sanctuary Style
+---------------------------------------------------- */
+
+.promo-glow-card {
+    background: rgba(0,0,0,0.45);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 0 25px rgba(217,179,255,0.25),
+        0 0 40px rgba(255,215,0,0.25);
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    animation: promoCardPulse 6s ease-in-out infinite;
+}
+
+@keyframes promoCardPulse {
+    0% {
+        box-shadow:
+            0 0 25px rgba(217,179,255,0.25),
+            0 0 40px rgba(255,215,0,0.25);
+    }
+    50% {
+        box-shadow:
+            0 0 45px rgba(217,179,255,0.55),
+            0 0 65px rgba(255,215,0,0.45);
+    }
+    100% {
+        box-shadow:
+            0 0 25px rgba(217,179,255,0.25),
+            0 0 40px rgba(255,215,0,0.25);
+    }
+}
+
+/* IMAGE WRAPPER */
+.promo-glow-image-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* GLOWING PROMO IMAGE */
+.promo-glow-image {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 18px;
+    border: 3px solid rgba(255,215,0,0.7);
+
+    box-shadow:
+        0 0 20px rgba(217,179,255,0.6),
+        0 0 40px rgba(255,215,0,0.4),
+        0 0 60px rgba(217,179,255,0.3);
+
+    animation: promoImageGlow 4s ease-in-out infinite;
+}
+
+@keyframes promoImageGlow {
+    0% {
+        box-shadow:
+            0 0 20px rgba(217,179,255,0.6),
+            0 0 40px rgba(255,215,0,0.4);
+    }
+    50% {
+        box-shadow:
+            0 0 35px rgba(217,179,255,1),
+            0 0 55px rgba(255,215,0,0.8);
+    }
+    100% {
+        box-shadow:
+            0 0 20px rgba(217,179,255,0.6),
+            0 0 40px rgba(255,215,0,0.4);
+    }
+}
+/* =========================================================
+   GTA VI VICE CITY PULSING NEON BORDER STYLES
+   ========================================================= */
+
+/* Keyframe animation for the glowing pulse effect */
+@keyframes viceNeonPulse {
+    0% {
+        border-color: #ff2a85;
+        box-shadow: 0 0 15px rgba(255, 42, 133, 0.5),
+                    0 0 30px rgba(0, 240, 255, 0.3),
+                    inset 0 0 15px rgba(255, 42, 133, 0.2);
+    }
+    50% {
+        border-color: #00f0ff;
+        box-shadow: 0 0 30px rgba(0, 240, 255, 0.8),
+                    0 0 50px rgba(255, 42, 133, 0.6),
+                    inset 0 0 25px rgba(0, 240, 255, 0.4);
+    }
+    100% {
+        border-color: #ff2a85;
+        box-shadow: 0 0 15px rgba(255, 42, 133, 0.5),
+                    0 0 30px rgba(0, 240, 255, 0.3),
+                    inset 0 0 15px rgba(255, 42, 133, 0.2);
+    }
+}
+
+.gta6-vice-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(20, 10, 30, 0.95), rgba(40, 10, 50, 0.95));
+    border: 2px solid #ff2a85;
+    border-radius: 16px;
+    padding: 24px;
+    overflow: hidden;
+    
+    /* Attach the continuous pulsing animation (2.5 seconds infinite loop) */
+    animation: viceNeonPulse 2.5s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle extra zoom on hover while maintaining the pulse */
+.gta6-vice-card:hover {
+    transform: translateY(-6px);
+}
