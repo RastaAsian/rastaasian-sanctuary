@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <title>RastaAsian Sanctuary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fallback styles -->
+    <style>
+        body.sanctuary-body {
+            background-color: #0f0f12;
+            color: #e0e0e0;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .fade-in, .slide-up {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+    </style>
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="sanctuary-body">
 
-    <!-- Header -->
+    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3"></audio><!-- Header -->
     <header class="site-header">
         <div class="header-inner">
             <a href="index.html" class="logo-wrap">
@@ -19,6 +35,7 @@
 
             <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
             <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
 
             <nav class="main-nav">
                 <a href="index.html" class="active">Home</a>
@@ -53,32 +70,33 @@
         <section class="home-section slide-up text-center">
             <h2>What I Do</h2>
             <p class="section-intro">
-                RastaAsian Sanctuary blends tech, design, and community into a space that feels safe, human, and judgment-free.
+                RastaAsian Sanctuary blends tech, design, and community into a soft‑gothic refuge —
+                a place shaped by moonlight, patience, and neurodivergent clarity.
             </p>
 
             <div class="pillars-grid centered-grid">
 
                 <article class="pillar-card glow-card">
                     <h3>Web Design &amp; UX/UI</h3>
-                    <p>Accessible, mobile-first, ND-friendly websites that reflect the person behind the brand.</p>
+                    <p>Accessible, mobile‑first designs crafted with calm structure, intuitive flow, and a touch of gothic elegance.</p>
                     <a href="services.html" class="text-link">Explore design services →</a>
                 </article>
 
                 <article class="pillar-card glow-card">
                     <h3>Tech Support</h3>
-                    <p>Calm, patient, jargon-free help for individuals, seniors, and overwhelmed clients.</p>
+                    <p>Gentle, judgment‑free guidance for overwhelmed minds, seniors, and anyone who needs patient late‑night help.</p>
                     <a href="services.html" class="text-link">See tech support options →</a>
                 </article>
 
                 <article class="pillar-card glow-card">
                     <h3>Dyson Deep Cleaning</h3>
-                    <p>Full teardown, restoration, and maintenance for Dyson vacuums with meticulous care.</p>
+                    <p>Full teardown restoration powered by hyperfocus — precision, detail, and mechanical clarity in every step.</p>
                     <a href="services.html" class="text-link">View Dyson services →</a>
                 </article>
 
                 <article class="pillar-card glow-card">
                     <h3>Gaming Companion Sessions</h3>
-                    <p>Zero-toxicity, anxiety-friendly co-op play for night owls and cozy gamers.</p>
+                    <p>Zero‑toxicity co‑op sessions built for night owls — cozy, safe, and wrapped in that signature Sanctuary vibe.</p>
                     <a href="games.html" class="text-link">Join the Night Owls →</a>
                 </article>
 
@@ -91,11 +109,44 @@
         <section class="home-section slide-up text-center">
             <h2>The Sanctuary Vibe</h2>
             <p>
-                The Sanctuary is a late-night digital living room—chaotic, cozy, and honest.<br>
-                No masks. No judgment.<br>
-                Just connection, calm, and a place to breathe.
+                The Sanctuary is a late‑night digital living room — soft‑gothic, cozy, and honest.<br>
+                A place where masks fall away, where neurodivergent minds can breathe,<br>
+                and where connection feels gentle instead of overwhelming.
             </p>
             <a href="about.html" class="btn-ghost">Read more about the Sanctuary</a>
+        </section>
+
+        <div class="gothic-ornament">❖</div>
+
+        <!-- 🎵 MUSIC VISUALIZER SECTION -->
+        <section class="home-section slide-up text-center">
+            <h2>Sanctuary Music Visualizer</h2>
+            <p class="section-intro">Explore the Sanctuary with a full-song visualizer — atmospheric, reactive, and gothic‑coded.</p>
+
+            <p id="track-title" style="margin-bottom: 1rem; color:#e8ddff; font-size:1.2rem;">
+                $UICIDEBOY$ & Night Lovell – Carried Away
+            </p>
+
+            <a id="spotify-link" href="https://open.spotify.com/track/1IWDzlzjmhKZQp3dqXfv6W?si=9ce60f4dd51e4ddb" target="_blank" class="btn-ghost">
+                Listen on Spotify
+            </a>
+
+            <canvas id="visualizer-canvas" style="
+                width: 100%;
+                max-width: 900px;
+                height: 260px;
+                margin: 2rem auto;
+                border-radius: 16px;
+                background: rgba(10, 5, 20, 0.9);
+                box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+            "></canvas>
+
+            <audio id="audio-player" 
+       src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3"
+       controls 
+       style="margin-top:1rem;">
+</audio>
+
         </section>
 
     </main>
@@ -111,11 +162,23 @@
         </p>
     </footer>
 
-    <!-- Main JavaScript Link for Scroll Animations & Interactivity -->
+    <!-- Main JavaScript -->
     <script src="js/main.js"></script>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
+    <!-- Bats Script -->
+    <script src="bats.js"></script>
+    <script>
+        if (typeof spawnBat === 'function') {
+            spawnBat();
+        }
+    </script>
+
+    <!-- MUSIC VISUALIZER SCRIPT -->
+    <script src="visualizer.js"></script>
 
 </body>
 </html>

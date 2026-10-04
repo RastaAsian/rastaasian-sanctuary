@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Font Awesome (for icons) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
+    <!-- Fade-in transition -->
     <style>
-        /* Ensures button text stays crisp black */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
         .btn-primary {
             color: #000000 !important;
         }
@@ -18,6 +26,21 @@
 </head>
 
 <body class="sanctuary-body">
+
+    <!-- Persistent Audio + Visualizer -->
+    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3" autoplay></audio>
+
+    <canvas id="visualizer-canvas"
+        style="
+            width: 100%;
+            max-width: 900px;
+            height: 260px;
+            margin: 2rem auto;
+            border-radius: 16px;
+            background: rgba(10, 5, 20, 0.9);
+            box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+        ">
+    </canvas>
 
     <!-- Header -->
     <header class="site-header">
@@ -46,88 +69,8 @@
 
     <!-- MAIN CONTENT -->
     <main class="contact-page fade-in">
-        <!-- Custom Gothic Glow & Hover Styles -->
-        <style>
-          /* Hero Container Base & Transitions */
-          .gothic-hero {
-            position: relative;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(10, 5, 15, 0.9)), 
-                        url('css/images/rastaasian-sanctuary-logo.png') center/cover no-repeat;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 30px rgba(0, 0, 0, 0.9);
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-          }
 
-          /* Deep Violet Ambient Glow on Hover */
-          .gothic-hero:hover {
-            border-color: rgba(186, 85, 211, 0.5);
-            box-shadow: 0 0 35px rgba(138, 43, 226, 0.45), 
-                        0 0 70px rgba(186, 85, 211, 0.25),
-                        inset 0 0 40px rgba(0, 0, 0, 0.8);
-            transform: translateY(-3px);
-          }
-
-          /* Glowing Gothic Title */
-          .gothic-hero h2 {
-            font-family: 'Cinzel Decorative', 'Georgia', serif;
-            font-size: 2.5rem;
-            color: #ffffff;
-            margin-bottom: 0.75rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
-                         0 0 20px rgba(186, 85, 211, 0.8),
-                         0 0 35px rgba(138, 43, 226, 0.6);
-            transition: text-shadow 0.4s ease, color 0.4s ease;
-          }
-
-          .gothic-hero:hover h2 {
-            color: #f8f0ff;
-            text-shadow: 0 0 12px rgba(255, 255, 255, 0.9),
-                         0 0 25px rgba(186, 85, 211, 1),
-                         0 0 45px rgba(138, 43, 226, 0.8);
-          }
-
-          /* Subtitle Text Glow */
-          .gothic-hero p {
-            color: #dcd6e8;
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-            transition: color 0.4s ease, text-shadow 0.4s ease;
-          }
-
-          .gothic-hero:hover p {
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
-          }
-
-          /* Glowing Button inside Hero - Purple Glow */
-          .gothic-hero .hero-btn {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.75rem;
-            color: #000000 !important;
-            background: #ffffff;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-          }
-
-          .gothic-hero .hero-btn:hover {
-            background: #ba55d3;
-            color: #000000 !important;
-            box-shadow: 0 0 20px rgba(186, 85, 211, 0.9), 0 0 40px rgba(138, 43, 226, 0.6);
-            transform: scale(1.04);
-          }
-        </style>
-
-        <!-- Hero Section HTML -->
+        <!-- Gothic Hero -->
         <section class="hero gothic-hero slide-up">
             <h2 class="slide-up gothic-accent">Enter the Sanctuary</h2>
             <p class="slide-up">Step into the shadows, speak your mind, or seek guidance. My door is always open.</p>
@@ -277,8 +220,22 @@
         </p>
     </footer>
 
+    <!-- Year -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Bats -->
+    <script src="bats.js"></script>
+
+    <!-- Visualizer -->
+    <script src="visualizer.js"></script>
+
+    <!-- Fade-in activation -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
     </script>
 
 </body>

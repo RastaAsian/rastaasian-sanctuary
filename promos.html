@@ -5,8 +5,20 @@
     <title>RastaAsian Sanctuary – Promos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fade-in transition -->
     <style>
-        /* Force visibility override for troubleshooting */
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Your Vice City Neon Styles (unchanged) -->
+    <style>
         main, section, div, article, h1, h2, h3, p {
             opacity: 1 !important;
             visibility: visible !important;
@@ -16,9 +28,6 @@
             padding-top: 40px;
         }
 
-        /* =========================================================
-           GTA VI VICE CITY PULSING NEON BORDER STYLES
-           ========================================================= */
         @keyframes viceNeonPulse {
             0% {
                 border-color: #ff2a85;
@@ -55,7 +64,6 @@
             transform: translateY(-6px);
         }
 
-        /* Vice City Neon Gradient Header */
         .gta6-vice-card h3 {
             font-size: 1.6rem;
             font-weight: 800;
@@ -68,7 +76,6 @@
             text-shadow: 0 0 12px rgba(255, 42, 133, 0.5);
         }
 
-        /* Stylized Badge Tag */
         .vice-badge {
             display: inline-block;
             background: linear-gradient(90deg, #ff2a85, #9b00e8);
@@ -83,8 +90,7 @@
             box-shadow: 0 0 10px rgba(255, 42, 133, 0.5);
         }
 
-        /* Image Glow Wrap */
-        .gta6-vice-card .promo-glow-image-wrap {
+        .promo-glow-image-wrap {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
@@ -93,7 +99,7 @@
             box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.3);
         }
 
-        .gta6-vice-card .promo-glow-image {
+        .promo-glow-image {
             width: 100%;
             height: auto;
             display: block;
@@ -105,7 +111,6 @@
             filter: brightness(1.1) contrast(1.05);
         }
 
-        /* Price Highlight & Text Details */
         .vice-price {
             font-size: 1.25rem;
             font-weight: 700;
@@ -120,7 +125,6 @@
             font-size: 0.95rem;
         }
 
-        /* Neon Action Button */
         .vice-btn {
             display: inline-block;
             margin-top: 14px;
@@ -145,6 +149,21 @@
 </head>
 
 <body class="sanctuary-body">
+
+    <!-- Persistent Audio + Visualizer -->
+    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3" autoplay></audio>
+
+    <canvas id="visualizer-canvas"
+        style="
+            width: 100%;
+            max-width: 900px;
+            height: 260px;
+            margin: 2rem auto;
+            border-radius: 16px;
+            background: rgba(10, 5, 20, 0.9);
+            box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+        ">
+    </canvas>
 
     <!-- Header -->
     <header class="site-header">
@@ -192,7 +211,7 @@
 
             <div class="pillars-grid centered-grid">
 
-                <!-- GTA 6 VICE CITY STYLED PROMO CARD WITH PULSING BORDER -->
+                <!-- GTA 6 VICE CITY PROMO -->
                 <article class="gta6-vice-card">
                     <span class="vice-badge">Limited Time drop 🌴</span>
                     <h3>GTA VI Countdown Promo 🔥🎮</h3>
@@ -259,7 +278,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="gothic-ornament">✦</div>
+        <div class="gothic-ornment">✦</div>
         <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p>
         <p class="footer-links">
             <a href="promos.html">Promos</a> ·
@@ -269,8 +288,22 @@
         </p>
     </footer>
 
+    <!-- Year -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Bats -->
+    <script src="bats.js"></script>
+
+    <!-- Visualizer -->
+    <script src="visualizer.js"></script>
+
+    <!-- Fade-in activation -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
     </script>
 
 </body>

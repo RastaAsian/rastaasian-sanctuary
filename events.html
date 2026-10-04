@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events · RastaAsian Sanctuary</title>
 
-    <!-- LINK YOUR CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fade-in transition -->
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body class="sanctuary-body">
+
+    <!-- Persistent Audio + Visualizer -->
+    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3" autoplay></audio>
+
+    <canvas id="visualizer-canvas"
+        style="
+            width: 100%;
+            max-width: 900px;
+            height: 260px;
+            margin: 2rem auto;
+            border-radius: 16px;
+            background: rgba(10, 5, 20, 0.9);
+            box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+        ">
+    </canvas>
 
     <!-- ⭐ FULL NAVIGATION HEADER ⭐ -->
     <header class="site-header">
@@ -20,13 +45,11 @@
                 <span class="logo-text">RastaAsian Sanctuary</span>
             </a>
 
-            <!-- Mobile toggle -->
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
             </label>
 
-            <!-- Nav -->
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -91,6 +114,24 @@
             <a href="contact.html">Contact</a>
         </div>
     </footer>
+
+    <!-- Year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Bats -->
+    <script src="bats.js"></script>
+
+    <!-- Visualizer -->
+    <script src="visualizer.js"></script>
+
+    <!-- Fade-in activation -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
 
 </body>
 </html>

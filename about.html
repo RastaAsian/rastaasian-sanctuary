@@ -5,9 +5,35 @@
     <title>About · RastaAsian Sanctuary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fade-in transition -->
+    <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body class="sanctuary-body">
+
+    <!-- Persistent Audio + Visualizer -->
+    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3" autoplay></audio>
+
+    <canvas id="visualizer-canvas"
+        style="
+            width: 100%;
+            max-width: 900px;
+            height: 260px;
+            margin: 2rem auto;
+            border-radius: 16px;
+            background: rgba(10, 5, 20, 0.9);
+            box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+        ">
+    </canvas>
 
     <!-- Header -->
     <header class="site-header">
@@ -168,3 +194,43 @@
                     compassion, and the freedom to exist without masks. I’m dedicated to mental health advocacy and channel my
                     voice, creativity, and evolving design journey into creating environments that feel grounding, empowering,
                     and real. Everything I build — online or in the digital world — is driven by the belief that everyone deserves
+                    a place where they can exist without fear, without pressure, and without having to shrink themselves.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="gothic-ornament">✦</div>
+        <p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p>
+        <p class="footer-links">
+            <a href="index.html">Home</a> ·
+            <a href="services.html">Services</a> ·
+            <a href="promos.html">Promos</a> ·
+            <a href="games.html">Night Owls</a>
+        </p>
+    </footer>
+
+    <!-- Year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Bats -->
+    <script src="bats.js"></script>
+
+    <!-- Visualizer -->
+    <script src="visualizer.js"></script>
+
+    <!-- Fade-in activation -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+
+</body>
+</html>

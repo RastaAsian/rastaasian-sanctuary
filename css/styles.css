@@ -1963,3 +1963,177 @@ td {
 .gta6-vice-card:hover {
     transform: translateY(-6px);
 }
+
+.bat {
+    position: fixed;
+    left: -80px;
+    width: 130px;
+    
+    height: auto;
+    pointer-events: none;
+    z-index: 9999;
+    animation: flap 0.4s infinite alternate ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(169, 112, 255, 0.6));
+}
+
+@keyframes flap {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.85); }
+}
+.home-section h2 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    font-size: 2.2rem;
+    color: #dcd3ff; /* pale moonlight lavender */
+    text-shadow: 0 0 12px rgba(160, 120, 255, 0.6);
+    position: relative;
+}
+
+.home-section h2::after {
+    content: "✦";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #bfa8ff;
+    opacity: 0.7;
+}
+.section-intro {
+    color: #c7b9ff;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+.pillar-card {
+    background: rgba(20, 10, 35, 0.55); /* soft gothic purple-black */
+    border: 1px solid rgba(180, 140, 255, 0.25);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 18px rgba(120, 80, 180, 0.25);
+}
+
+.pillar-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #e8ddff;
+    text-shadow: 0 0 8px rgba(160, 120, 255, 0.5);
+}
+
+.pillar-card p {
+    color: #d5caff;
+    line-height: 1.5;
+}
+
+.pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(160, 120, 255, 0.45);
+    border-color: rgba(200, 160, 255, 0.45);
+}
+.gothic-ornament {
+    font-size: 1.4rem;
+    color: #cbb3ff;
+    text-align: center;
+    margin: 2rem 0;
+    opacity: 0.85;
+    text-shadow: 0 0 10px rgba(160, 120, 255, 0.5);
+}
+.home-section p {
+    color: #dcd3ff;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+.btn-ghost {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid rgba(200, 160, 255, 0.4);
+    border-radius: 8px;
+    color: #e8ddff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-ghost:hover {
+    background: rgba(200, 160, 255, 0.15);
+    box-shadow: 0 0 15px rgba(160, 120, 255, 0.4);
+    border-color: rgba(220, 180, 255, 0.6);
+}
+.text-link {
+    color: #c7a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.text-link:hover {
+    color: #e8ddff;
+    text-shadow: 0 0 8px rgba(180, 140, 255, 0.6);
+}
+.slide-up {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: slideUp 1s ease forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ============================
+   🎵 MUSIC VISUALIZER SECTION
+   ============================ */
+
+#visualizer-canvas {
+    width: 100%;
+    max-width: 900px;
+    height: 260px;
+    border-radius: 16px;
+
+    background: rgba(10, 5, 20, 0.9);
+    box-shadow: 0 0 25px rgba(160, 120, 255, 0.5);
+
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Track title styling */
+#track-title {
+    color: #e8ddff;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(160, 120, 255, 0.6);
+}
+
+/* Spotify link button */
+#spotify-link.btn-ghost {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid rgba(200, 160, 255, 0.4);
+    border-radius: 8px;
+    color: #e8ddff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+#spotify-link.btn-ghost:hover {
+    background: rgba(200, 160, 255, 0.15);
+    box-shadow: 0 0 15px rgba(160, 120, 255, 0.4);
+    border-color: rgba(220, 180, 255, 0.6);
+}
+
+/* Audio player styling */
+#audio-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
