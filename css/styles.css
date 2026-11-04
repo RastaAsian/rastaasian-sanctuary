@@ -1964,22 +1964,6 @@ td {
     transform: translateY(-6px);
 }
 
-.bat {
-    position: fixed;
-    left: -80px;
-    width: 130px;
-    
-    height: auto;
-    pointer-events: none;
-    z-index: 9999;
-    animation: flap 0.4s infinite alternate ease-in-out;
-    filter: drop-shadow(0 0 10px rgba(169, 112, 255, 0.6));
-}
-
-@keyframes flap {
-    from { transform: scaleY(1); }
-    to { transform: scaleY(0.85); }
-}
 .home-section h2 {
     font-family: 'Cinzel', serif;
     letter-spacing: 1px;

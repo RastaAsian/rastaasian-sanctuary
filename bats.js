@@ -1,43 +1,6 @@
 /* ============================================================
-   RASTAASIAN SANCTUARY — GOTHIC BATS + MUSIC VISUALIZER
+   RASTAASIAN SANCTUARY — MUSIC VISUALIZER
    ============================================================ */
-
-/* ============================
-   🦇 GOTHIC BAT ANIMATION
-   ============================ */
-
-function spawnBat() {
-    const bat = document.createElement("img");
-    bat.src = "css/images/gothic-bat.png";
-    bat.className = "bat";
-
-    let y = Math.random() * window.innerHeight;
-    bat.style.top = y + "px";
-
-    document.body.appendChild(bat);
-
-    let x = -120;
-    const speed = 2 + Math.random() * 3;
-
-    function fly() {
-        x += speed;
-        y += Math.sin(x / 50) * 2;
-
-        bat.style.left = x + "px";
-        bat.style.top = y + "px";
-
-        if (x < window.innerWidth + 150) {
-            requestAnimationFrame(fly);
-        } else {
-            bat.remove();
-        }
-    }
-
-    fly();
-}
-
-setInterval(spawnBat, 4000);
-
 
 /* ============================
    🎵 SANCTUARY MUSIC VISUALIZER
