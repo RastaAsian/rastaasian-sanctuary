@@ -3,77 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Sanctuary Library · RastaAsian Sanctuary</title>
+
     <link rel="stylesheet" href="css/styles.css">
+
     <style>
-        body { opacity: 0; transition: opacity 0.4s ease; }
-        body.loaded { opacity: 1; }
-        .library-page .book-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .library-page .book-card { text-align: center; }
-        .library-page .book-cover { width: 100%; max-width: 180px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 10px; margin: 0 auto 1rem; display: block; background: rgba(10, 5, 20, 0.9); box-shadow: 0 0 18px rgba(160, 120, 255, 0.45); }
-        .library-page .book-meta { color: #bfaee8; font-size: 0.95rem; margin-bottom: 0.75rem; }
-        .library-page .book-card::before, .library-page .book-card::after { pointer-events: none; }
-        .library-page .book-card a { position: relative; z-index: 5; }
-        .library-page .library-intro { max-width: 700px; margin: 0 auto 1rem; text-align: center; padding: 0 1rem; }
+        body {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        .library-page .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .library-page .book-card {
+            text-align: center;
+        }
+
+        .library-page .book-cover {
+            width: 100%;
+            max-width: 180px;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 auto 1rem;
+            display: block;
+            background: rgba(10, 5, 20, 0.9);
+            box-shadow: 0 0 18px rgba(160, 120, 255, 0.45);
+        }
+
+        .library-page .book-meta {
+            color: #bfaee8;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .library-page .book-card::before,
+        .library-page .book-card::after {
+            pointer-events: none;
+        }
+
+        .library-page .book-card a {
+            position: relative;
+            z-index: 5;
+        }
+
+        .library-page .library-intro {
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
     </style>
 </head>
+
 <body class="sanctuary-body">
-    <audio id="audio-player" src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3" autoplay></audio>
-    <canvas id="visualizer-canvas" style="width:100%;max-width:900px;height:260px;margin:2rem auto;border-radius:16px;background:rgba(10,5,20,.9);box-shadow:0 0 25px rgba(160,120,255,.5);"></canvas>
+
+    <audio
+        id="audio-player"
+        src="css/audio/$UICIDEBOY$ - Carried Away (Lyrics) ft. Night Lovell - Rap City (128k).mp3"
+        autoplay>
+    </audio>
+
+    <canvas
+        id="visualizer-canvas"
+        style="width:100%;max-width:900px;height:260px;margin:2rem auto;border-radius:16px;background:rgba(10,5,20,.9);box-shadow:0 0 25px rgba(160,120,255,.5);">
+    </canvas>
+
+
+    <!-- HEADER -->
     <header class="site-header">
+
         <div class="header-inner">
-            <a href="index.html" class="logo-wrap"><img src="css/images/rastaasian-sanctuary-logo.png" alt="RastaAsian Sanctuary Logo" class="site-logo"><span class="logo-text">RastaAsian Sanctuary</span></a>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
-            <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+
+            <a href="index.html" class="logo-wrap">
+                <img
+                    src="css/images/rastaasian-sanctuary-logo.png"
+                    alt="RastaAsian Sanctuary Logo"
+                    class="site-logo">
+
+                <span class="logo-text">RastaAsian Sanctuary</span>
+            </a>
+
+            <input
+                type="checkbox"
+                id="nav-toggle"
+                class="nav-toggle"
+                aria-label="Toggle navigation menu">
+
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+
             <nav class="main-nav">
-                <a href="index.html">Home</a><a href="about.html">About</a><a href="games.html">Games</a><a href="setup.html">Setup</a><a href="events.html">Events</a><a href="services.html">Services</a><a href="promos.html">Promos</a><a href="library.html" class="active">Library</a><a href="contact.html">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="games.html">Games</a>
+                <a href="setup.html">Setup</a>
+                <a href="events.html">Events</a>
+                <a href="services.html">Services</a>
+                <a href="promos.html">Promos</a>
+                <a href="library.html" class="active">Library</a>
+                <a href="contact.html">Contact</a>
             </nav>
+
         </div>
+
         <div class="gothic-ornament">✦</div>
+
     </header>
+
+
+    <!-- MAIN LIBRARY -->
     <main class="library-page fade-in">
-        <h1 class="page-title gothic-ornament">✦ The Sanctuary Library ✦</h1>
-        <p class="library-intro">A quiet shelf in the Sanctuary. Pull up a chair, dim the lights, and step into the stories.</p>
+
+        <h1 class="page-title gothic-ornament">
+            ✦ The Sanctuary Library ✦
+        </h1>
+
+        <p class="library-intro">
+            A quiet shelf in the Sanctuary. Pull up a chair, dim the lights,
+            and step into the stories.
+        </p>
+
         <div class="gothic-ornament">❖</div>
+
+
+        <!-- BOOK GRID -->
         <section class="book-grid">
+
+
+            <!-- BOOK 1 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
-                <img class="book-cover" src="css/images/MHM.jpeg" alt="Cover of RastaAsian Sanctuary Presents: Mental Health Matters">
-                <h2 class="event-title">RastaAsian Sanctuary Presents: Mental Health Matters</h2>
-                <p class="book-meta">Adult colouring book · by Chastity Chong</p>
-                <p class="event-desc">Step inside RastaAsian Sanctuary Presents: Mental Health Matters, a meaningful adult colouring journey created to celebrate neurodivergent minds, mental health, healing, and self-expression.</p>
-                <a href="https://www.amazon.com/dp/B0HQCP4D81" target="_blank" rel="noopener" class="btn-ghost">Get it on Amazon</a>
-                <p class="book-meta">Also on Amazon: <a href="https://www.amazon.ca/dp/B0HQCP4D81" target="_blank" rel="noopener">Canada</a> · <a href="https://www.amazon.co.uk/dp/B0HQCP4D81" target="_blank" rel="noopener">United Kingdom</a> · <a href="https://www.amazon.de/dp/B0HQCP4D81" target="_blank" rel="noopener">Germany</a> · <a href="https://www.amazon.fr/dp/B0HQCP4D81" target="_blank" rel="noopener">France</a> · <a href="https://www.amazon.es/dp/B0HQCP4D81" target="_blank" rel="noopener">Spain</a> · <a href="https://www.amazon.it/dp/B0HQCP4D81" target="_blank" rel="noopener">Italy</a> · <a href="https://www.amazon.com.au/dp/B0HQCP4D81" target="_blank" rel="noopener">Australia</a> · <a href="https://www.amazon.co.jp/dp/B0HQCP4D81" target="_blank" rel="noopener">Japan</a></p>
+
+                <img
+                    class="book-cover"
+                    src="css/images/MHM.jpeg"
+                    alt="Cover of RastaAsian Sanctuary Presents: Mental Health Matters">
+
+                <h2 class="event-title">
+                    RastaAsian Sanctuary Presents: Mental Health Matters
+                </h2>
+
+                <p class="book-meta">
+                    Adult colouring book · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    Step inside RastaAsian Sanctuary Presents: Mental Health Matters,
+                    a meaningful adult colouring journey created to celebrate
+                    neurodivergent minds, mental health, healing, and self-expression.
+                </p>
+
+                <a
+                    href="https://www.amazon.com/dp/B0HQCP4D81"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ghost">
+                    Get it on Amazon
+                </a>
+
+                <p class="book-meta">
+                    Also on Amazon:
+
+                    <a
+                        href="https://www.amazon.ca/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Canada
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.co.uk/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        United Kingdom
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.de/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Germany
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.fr/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        France
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.es/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Spain
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.it/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Italy
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.com.au/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Australia
+                    </a>
+
+                    ·
+
+                    <a
+                        href="https://www.amazon.co.jp/dp/B0HQCP4D81"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Japan
+                    </a>
+
+                </p>
+
             </article>
+
+
+            <!-- BOOK 2 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
-                <img class="book-cover" src="css/images/HFTHM.jpeg" alt="Cover of High For The Holidays: Munchies Edition">
-                <h2 class="event-title">High For The Holidays: Munchies Edition</h2>
-                <p class="book-meta">Adult colouring book · The Munchies Adventures · 56 pages · Oct 2026</p>
-                <p class="event-desc">High For The Holidays: Munchies Edition is a hilarious stoner-inspired adult colouring book that sends the Munchies crew headfirst into holiday chaos. Pizza, Donut, Broccoli, Pretzel, Taco, Hot Cocoa, Gingerbread, and the rest of the gang take on everything the season throws their way.</p>
-                <a href="https://www.amazon.com/dp/B0HQ3HVXHN" target="_blank" rel="noopener" class="btn-ghost">Get it on Amazon</a>
+
+                <img
+                    class="book-cover"
+                    src="css/images/HFTHM.jpeg"
+                    alt="Cover of High For The Holidays: Munchies Edition">
+
+                <h2 class="event-title">
+                    High For The Holidays: Munchies Edition
+                </h2>
+
+                <p class="book-meta">
+                    Adult colouring book · The Munchies Adventures · 56 pages · Oct 2026
+                </p>
+
+                <p class="event-desc">
+                    High For The Holidays: Munchies Edition is a hilarious
+                    stoner-inspired adult colouring book that sends the Munchies
+                    crew headfirst into holiday chaos. Pizza, Donut, Broccoli,
+                    Pretzel, Taco, Hot Cocoa, Gingerbread, and the rest of the gang
+                    take on everything the season throws their way.
+                </p>
+
+                <a
+                    href="https://www.amazon.com/dp/B0HQ3HVXHN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ghost">
+                    Get it on Amazon
+                </a>
+
             </article>
+
+
+            <!-- BOOK 3 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
-                <img class="book-cover" src="css/images/MGW.jpeg" alt="Cover of Munchies Gone Wild: A 420 Colouring Book for Adults">
-                <h2 class="event-title">Munchies Gone Wild</h2>
-                <p class="book-meta">A 420 colouring book for adults · The Munchies Adventures · by Chastity Chong</p>
-                <p class="event-desc">Welcome to the Munchieverse, where the snacks have personalities, the adventures get ridiculous, and the munchies have officially gone WILD! Munchies Gone Wild is a hilarious 420-themed adult colouring book that transforms your favourite snacks into an unforgettable cast of quirky characters.</p>
-                <a href="https://www.amazon.com/dp/B0HQFNTHH8" target="_blank" rel="noopener" class="btn-ghost">Get it on Amazon</a>
+
+                <img
+                    class="book-cover"
+                    src="css/images/MGW.jpeg"
+                    alt="Cover of Munchies Gone Wild: A 420 Colouring Book for Adults">
+
+                <h2 class="event-title">
+                    Munchies Gone Wild
+                </h2>
+
+                <p class="book-meta">
+                    A 420 colouring book for adults · The Munchies Adventures · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    Welcome to the Munchieverse, where the snacks have personalities,
+                    the adventures get ridiculous, and the munchies have officially
+                    gone WILD! Munchies Gone Wild is a hilarious 420-themed adult
+                    colouring book that transforms your favourite snacks into an
+                    unforgettable cast of quirky characters.
+                </p>
+
+                <a
+                    href="https://www.amazon.com/dp/B0HQFNTHH8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ghost">
+                    Get it on Amazon
+                </a>
+
             </article>
-            <!-- Book 4 -->
+
+
+            <!-- BOOK 4 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
-                <img class="book-cover" src="css/images/WOTO.png" alt="Cover of RastaAsian Sanctuary Presents: Whispers of the Owl">
-                <h2 class="event-title">RastaAsian Sanctuary Presents: Whispers of the Owl</h2>
-                <p class="book-meta">Adult colouring book · by Chastity Chong</p>
-                <p class="event-desc">Welcome to <em>RastaAsian Sanctuary Presents: Whispers of the Owl</em>, a cozy coloring journey created for quiet moments, creative escapes, and the days when you simply need to slow everything down. Follow a wise little owl and a curious cat through a whimsical world of enchanted gardens, cozy corners, woodland adventures, moonlit moments, and peaceful places waiting for your color and imagination.</p>
-                <a href="https://www.amazon.ca/dp/B0HQGM8NRH" target="_blank" rel="noopener" class="btn-ghost">Get it on Amazon Canada</a>
+
+                <img
+                    class="book-cover"
+                    src="css/images/WOTO.png"
+                    alt="Cover of RastaAsian Sanctuary Presents: Whispers of the Owl">
+
+                <h2 class="event-title">
+                    RastaAsian Sanctuary Presents: Whispers of the Owl
+                </h2>
+
+                <p class="book-meta">
+                    Adult colouring book · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    Welcome to
+                    <em>RastaAsian Sanctuary Presents: Whispers of the Owl</em>,
+                    a cozy coloring journey created for quiet moments, creative
+                    escapes, and the days when you simply need to slow everything
+                    down. Follow a wise little owl and a curious cat through a
+                    whimsical world of enchanted gardens, cozy corners, woodland
+                    adventures, moonlit moments, and peaceful places waiting for
+                    your color and imagination.
+                </p>
+
+                <a
+                    href="https://www.amazon.ca/dp/B0HQGM8NRH"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ghost">
+                    Get it on Amazon Canada
+                </a>
+
             </article>
+
+
+            <!-- BOOK 5 -->
+            <article class="event-card pillar-card glow-animate ripple-hover book-card">
+
+                <img
+                    class="book-cover"
+                    src="css/images/MITS.png"
+                    alt="Cover of Manifesting In The Sanctuary: A Neurodivergent-Friendly Journal for Dreams, Intentions & Becoming That Bitch">
+
+                <h2 class="event-title">
+                    Manifesting In The Sanctuary
+                </h2>
+
+                <p class="book-meta">
+                    A Neurodivergent-Friendly Journal for Dreams, Intentions &amp;
+                    Becoming That Bitch · 120-page guided manifestation journal · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    Manifestation without the toxic positivity, impossible routines,
+                    or pressure to pretend everything is fine.
+                    <br><br>
+
+                    <em>
+                        Manifesting in the Sanctuary: A Neurodivergent-Friendly Journal
+                        for Dreams, Intentions &amp; Becoming That Bitch
+                    </em>
+                    is a 120-page guided manifestation journal for anyone who wants
+                    to dream bigger while staying grounded in real life.
+                    <br><br>
+
+                    Inside the Sanctuary, manifestation isn't about sitting around
+                    waiting for the universe to magically deliver everything you want.
+                    It's about reflection, intention, action, noticing what is changing,
+                    and taking the next step your actual brain and energy can handle.
+                    <br><br>
+
+                    Start anywhere. Skip what doesn't serve you. Change your mind.
+                    Come back when you're ready.
+                </p>
+
+                <a
+                    href="https://www.amazon.ca/dp/B0HR1R8C8V"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-ghost">
+                    Get it on Amazon Canada
+                </a>
+
+            </article>
+
+
         </section>
+
+
         <div class="gothic-ornament">✦</div>
-        <section class="event-card glow-animate ripple-hover"><p class="event-footer">✦ Questions about a book? <a href="contact.html" class="text-link">Reach out through the Sanctuary →</a></p></section>
+
+
+        <!-- LIBRARY CONTACT -->
+        <section class="event-card glow-animate ripple-hover">
+
+            <p class="event-footer">
+                ✦ Questions about a book?
+
+                <a href="contact.html" class="text-link">
+                    Reach out through the Sanctuary →
+                </a>
+            </p>
+
+        </section>
+
     </main>
-    <footer class="site-footer"><div class="gothic-ornament">✦</div><p>&copy; <span id="year"></span> RastaAsian Sanctuary · Built with chaos, comfort, and charisma.</p><p class="footer-links"><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="promos.html">Promos</a> · <a href="games.html">Games</a> · <a href="contact.html">Contact</a></p></footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="gothic-ornament">✦</div>
+
+        <p>
+            &copy; <span id="year"></span> RastaAsian Sanctuary ·
+            Built with chaos, comfort, and charisma.
+        </p>
+
+        <p class="footer-links">
+            <a href="index.html">Home</a>
+            ·
+            <a href="services.html">Services</a>
+            ·
+            <a href="promos.html">Promos</a>
+            ·
+            <a href="games.html">Games</a>
+            ·
+            <a href="contact.html">Contact</a>
+        </p>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
     <script src="bats.js"></script>
     <script src="visualizer.js"></script>
-    <script>window.addEventListener("DOMContentLoaded",()=>{document.body.classList.add("loaded");});</script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+
 </body>
 </html>
