@@ -25,10 +25,14 @@
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
+            align-items: stretch;
         }
 
         .library-page .book-card {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .library-page .book-cover {
@@ -65,6 +69,106 @@
             text-align: center;
             padding: 0 1rem;
         }
+
+        .library-page .amazon-actions {
+            width: 100%;
+            max-width: 280px;
+            margin: auto auto 0;
+            padding-top: 1rem;
+        }
+
+        .library-page .amazon-actions .btn-ghost {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .library-page .marketplace-menu {
+            position: relative;
+            z-index: 6;
+            width: 100%;
+            margin-top: 0.75rem;
+        }
+
+        .library-page .marketplace-menu summary {
+            position: relative;
+            z-index: 7;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.7rem 0.85rem;
+            border: 1px solid rgba(191, 174, 232, 0.55);
+            border-radius: 8px;
+            color: #d9cdf3;
+            background: rgba(10, 5, 20, 0.75);
+            cursor: pointer;
+            list-style: none;
+            font-size: 0.9rem;
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .library-page .marketplace-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .library-page .marketplace-menu summary::after {
+            content: " ▾";
+            color: #bfaee8;
+        }
+
+        .library-page .marketplace-menu[open] summary::after {
+            content: " ▴";
+        }
+
+        .library-page .marketplace-menu summary:hover,
+        .library-page .marketplace-menu summary:focus-visible {
+            border-color: #bfaee8;
+            background: rgba(45, 25, 75, 0.92);
+            box-shadow: 0 0 12px rgba(160, 120, 255, 0.3);
+            outline: none;
+        }
+
+        .library-page .marketplace-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem;
+            margin-top: 0.6rem;
+            padding: 0.65rem;
+            border: 1px solid rgba(191, 174, 232, 0.35);
+            border-radius: 8px;
+            background: rgba(10, 5, 20, 0.92);
+        }
+
+        .library-page .marketplace-links a {
+            display: block;
+            padding: 0.5rem 0.35rem;
+            border-radius: 6px;
+            color: #d9cdf3;
+            background: rgba(80, 50, 115, 0.35);
+            text-decoration: none;
+            font-size: 0.86rem;
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .library-page .marketplace-links a:hover,
+        .library-page .marketplace-links a:focus-visible {
+            color: #ffffff;
+            background: rgba(130, 90, 185, 0.55);
+            box-shadow: 0 0 8px rgba(160, 120, 255, 0.3);
+            outline: none;
+        }
+
+        @media (max-width: 420px) {
+            .library-page .marketplace-links {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -80,7 +184,6 @@
         id="visualizer-canvas"
         style="width:100%;max-width:900px;height:260px;margin:2rem auto;border-radius:16px;background:rgba(10,5,20,.9);box-shadow:0 0 25px rgba(160,120,255,.5);">
     </canvas>
-
 
     <!-- HEADER -->
     <header class="site-header">
@@ -106,7 +209,7 @@
                 <span></span>
             </label>
 
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="games.html">Games</a>
@@ -114,7 +217,7 @@
                 <a href="events.html">Events</a>
                 <a href="services.html">Services</a>
                 <a href="promos.html">Promos</a>
-                <a href="library.html" class="active">Library</a>
+                <a href="library.html" class="active" aria-current="page">Library</a>
                 <a href="contact.html">Contact</a>
             </nav>
 
@@ -123,7 +226,6 @@
         <div class="gothic-ornament">✦</div>
 
     </header>
-
 
     <!-- MAIN LIBRARY -->
     <main class="library-page fade-in">
@@ -139,10 +241,8 @@
 
         <div class="gothic-ornament">❖</div>
 
-
         <!-- BOOK GRID -->
-        <section class="book-grid">
-
+        <section class="book-grid" aria-label="Books by Chastity Chong">
 
             <!-- BOOK 1 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
@@ -150,7 +250,8 @@
                 <img
                     class="book-cover"
                     src="css/images/MHM.jpeg"
-                    alt="Cover of RastaAsian Sanctuary Presents: Mental Health Matters">
+                    alt="Cover of RastaAsian Sanctuary Presents: Mental Health Matters"
+                    loading="lazy">
 
                 <h2 class="event-title">
                     RastaAsian Sanctuary Presents: Mental Health Matters
@@ -166,91 +267,35 @@
                     neurodivergent minds, mental health, healing, and self-expression.
                 </p>
 
-                <a
-                    href="https://www.amazon.com/dp/B0HQCP4D81"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-ghost">
-                    Get it on Amazon
-                </a>
-
-                <p class="book-meta">
-                    Also on Amazon:
+                <div class="amazon-actions">
 
                     <a
-                        href="https://www.amazon.ca/dp/B0HQCP4D81"
+                        href="https://www.amazon.com/dp/B0HQCP4D81"
                         target="_blank"
-                        rel="noopener noreferrer">
-                        Canada
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
                     </a>
 
-                    ·
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
 
-                    <a
-                        href="https://www.amazon.co.uk/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        United Kingdom
-                    </a>
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HQCP4D81" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
 
-                    ·
-
-                    <a
-                        href="https://www.amazon.de/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Germany
-                    </a>
-
-                    ·
-
-                    <a
-                        href="https://www.amazon.fr/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        France
-                    </a>
-
-                    ·
-
-                    <a
-                        href="https://www.amazon.es/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Spain
-                    </a>
-
-                    ·
-
-                    <a
-                        href="https://www.amazon.it/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Italy
-                    </a>
-
-                    ·
-
-                    <a
-                        href="https://www.amazon.com.au/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Australia
-                    </a>
-
-                    ·
-
-                    <a
-                        href="https://www.amazon.co.jp/dp/B0HQCP4D81"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Japan
-                    </a>
-
-                </p>
+                </div>
 
             </article>
-
 
             <!-- BOOK 2 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
@@ -258,14 +303,15 @@
                 <img
                     class="book-cover"
                     src="css/images/HFTHM.jpeg"
-                    alt="Cover of High For The Holidays: Munchies Edition">
+                    alt="Cover of High For The Holidays: Munchies Edition"
+                    loading="lazy">
 
                 <h2 class="event-title">
                     High For The Holidays: Munchies Edition
                 </h2>
 
                 <p class="book-meta">
-                    Adult colouring book · The Munchies Adventures · 56 pages · Oct 2026
+                    Adult colouring book · The Munchies Adventures · 56 pages · by Chastity Chong
                 </p>
 
                 <p class="event-desc">
@@ -276,16 +322,35 @@
                     take on everything the season throws their way.
                 </p>
 
-                <a
-                    href="https://www.amazon.com/dp/B0HQ3HVXHN"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-ghost">
-                    Get it on Amazon
-                </a>
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.com/dp/B0HQ3HVXHN"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HQ3HVXHN" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
 
             </article>
-
 
             <!-- BOOK 3 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
@@ -293,7 +358,8 @@
                 <img
                     class="book-cover"
                     src="css/images/MGW.jpeg"
-                    alt="Cover of Munchies Gone Wild: A 420 Colouring Book for Adults">
+                    alt="Cover of Munchies Gone Wild"
+                    loading="lazy">
 
                 <h2 class="event-title">
                     Munchies Gone Wild
@@ -306,21 +372,39 @@
                 <p class="event-desc">
                     Welcome to the Munchieverse, where the snacks have personalities,
                     the adventures get ridiculous, and the munchies have officially
-                    gone WILD! Munchies Gone Wild is a hilarious 420-themed adult
-                    colouring book that transforms your favourite snacks into an
-                    unforgettable cast of quirky characters.
+                    gone wild. Munchies Gone Wild transforms favourite snacks into
+                    an unforgettable cast of quirky characters.
                 </p>
 
-                <a
-                    href="https://www.amazon.com/dp/B0HQFNTHH8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-ghost">
-                    Get it on Amazon
-                </a>
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.com/dp/B0HQFNTHH8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HQFNTHH8" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
 
             </article>
-
 
             <!-- BOOK 4 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
@@ -328,7 +412,8 @@
                 <img
                     class="book-cover"
                     src="css/images/WOTO.png"
-                    alt="Cover of RastaAsian Sanctuary Presents: Whispers of the Owl">
+                    alt="Cover of RastaAsian Sanctuary Presents: Whispers of the Owl"
+                    loading="lazy">
 
                 <h2 class="event-title">
                     RastaAsian Sanctuary Presents: Whispers of the Owl
@@ -341,24 +426,42 @@
                 <p class="event-desc">
                     Welcome to
                     <em>RastaAsian Sanctuary Presents: Whispers of the Owl</em>,
-                    a cozy coloring journey created for quiet moments, creative
+                    a cozy colouring journey created for quiet moments, creative
                     escapes, and the days when you simply need to slow everything
-                    down. Follow a wise little owl and a curious cat through a
-                    whimsical world of enchanted gardens, cozy corners, woodland
-                    adventures, moonlit moments, and peaceful places waiting for
-                    your color and imagination.
+                    down. Follow a wise little owl and a curious cat through
+                    enchanted gardens, woodland adventures, moonlit moments, and
+                    peaceful places waiting for colour and imagination.
                 </p>
 
-                <a
-                    href="https://www.amazon.ca/dp/B0HQGM8NRH"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-ghost">
-                    Get it on Amazon Canada
-                </a>
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.ca/dp/B0HQGM8NRH"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HQGM8NRH" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
 
             </article>
-
 
             <!-- BOOK 5 -->
             <article class="event-card pillar-card glow-animate ripple-hover book-card">
@@ -366,7 +469,8 @@
                 <img
                     class="book-cover"
                     src="css/images/MITS.png"
-                    alt="Cover of Manifesting In The Sanctuary: A Neurodivergent-Friendly Journal for Dreams, Intentions & Becoming That Bitch">
+                    alt="Cover of Manifesting In The Sanctuary"
+                    loading="lazy">
 
                 <h2 class="event-title">
                     Manifesting In The Sanctuary
@@ -374,48 +478,191 @@
 
                 <p class="book-meta">
                     A Neurodivergent-Friendly Journal for Dreams, Intentions &amp;
-                    Becoming That Bitch · 120-page guided manifestation journal · by Chastity Chong
+                    Becoming That Bitch · 120-page guided manifestation journal ·
+                    by Chastity Chong
                 </p>
 
                 <p class="event-desc">
-                    Manifestation without the toxic positivity, impossible routines,
+                    Manifestation without toxic positivity, impossible routines,
                     or pressure to pretend everything is fine.
                     <br><br>
 
                     <em>
-                        Manifesting in the Sanctuary: A Neurodivergent-Friendly Journal
-                        for Dreams, Intentions &amp; Becoming That Bitch
+                        Manifesting in the Sanctuary: A Neurodivergent-Friendly
+                        Journal for Dreams, Intentions &amp; Becoming That Bitch
                     </em>
-                    is a 120-page guided manifestation journal for anyone who wants
-                    to dream bigger while staying grounded in real life.
+                    is a guided manifestation journal for anyone who wants to dream
+                    bigger while staying grounded in real life.
                     <br><br>
 
-                    Inside the Sanctuary, manifestation isn't about sitting around
-                    waiting for the universe to magically deliver everything you want.
-                    It's about reflection, intention, action, noticing what is changing,
-                    and taking the next step your actual brain and energy can handle.
-                    <br><br>
-
-                    Start anywhere. Skip what doesn't serve you. Change your mind.
-                    Come back when you're ready.
+                    Start anywhere. Skip what does not serve you. Change your mind.
+                    Come back when you are ready.
                 </p>
 
-                <a
-                    href="https://www.amazon.ca/dp/B0HR1R8C8V"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-ghost">
-                    Get it on Amazon Canada
-                </a>
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.ca/dp/B0HR1R8C8V"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HR1R8C8V" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
 
             </article>
 
+            <!-- BOOK 6 -->
+            <article class="event-card pillar-card glow-animate ripple-hover book-card">
+
+                <img
+                    class="book-cover"
+                    src="css/images/GHNC.png"
+                    alt="Cover of Grief Has No Curfew"
+                    loading="lazy">
+
+                <h2 class="event-title">
+                    Grief Has No Curfew
+                </h2>
+
+                <p class="book-meta">
+                    For Those Left in the Wake of the Angel of Death ·
+                    grief and healing companion · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    <strong>
+                        Grief does not check the clock. It does not follow a timeline.
+                        And it certainly does not ask permission before showing up.
+                    </strong>
+                    <br><br>
+
+                    <em>Grief Has No Curfew</em> is a compassionate companion for
+                    the unpredictable reality of living with loss, created for the
+                    moments when grief arrives without warning: in the quiet of the
+                    night, during an ordinary afternoon, in the middle of a familiar
+                    song, or long after the rest of the world seems to think you
+                    should be “okay.”
+                </p>
+
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.ca/dp/B0HRSX1WHY?spcref=PRINT_LISTING"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HRSX1WHY" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
+
+            </article>
+
+            <!-- BOOK 7 -->
+            <article class="event-card pillar-card glow-animate ripple-hover book-card">
+
+                <img
+                    class="book-cover"
+                    src="css/images/NSZF.png"
+                    alt="Cover of NeuroSpicy and Zero Fucks"
+                    loading="lazy">
+
+                <h2 class="event-title">
+                    NeuroSpicy &amp; Zero Fucks
+                </h2>
+
+                <p class="book-meta">
+                    An AuDHD activity book for the “What the Fuck Was I Doing?”
+                    kind of day · by Chastity Chong
+                </p>
+
+                <p class="event-desc">
+                    <strong>Two brains. One skull. Perpetual renegotiation.</strong>
+                    <br><br>
+
+                    Welcome to
+                    <em>
+                        NeuroSpicy &amp; Zero Fucks: An AuDHD Activity Book for the
+                        “What the Fuck Was I Doing?” Kind of Day
+                    </em>,
+                    an unapologetically adult trip through the hilarious,
+                    exhausting, strangely brilliant reality of living with both
+                    autistic and ADHD traits.
+                    <br><br>
+
+                    This is not a clinical therapy manual. It is not a diagnostic
+                    tool. And it definitely is not another workbook demanding that
+                    you fix yourself, build the perfect routine, or complete every
+                    page like it is homework.
+                </p>
+
+                <div class="amazon-actions">
+
+                    <a
+                        href="https://www.amazon.ca/NeuroSpicy-Zero-Fucks-Adult-Activity/dp/B0HR4T9MLD?ref_=ast_author_dp_rw&amp;th=1&amp;psc=1&amp;dib=eyJ2IjoiMSJ9.swEuaaGmzG37oyBUXA3dsPl4B8gcI3RdInwu0AcfYuN5q1e0OLUpd0EOiLOerGutID4EyhCqCZ4R9Zn2uLKDyOAP6F8yfJGh-XGjBQPyg7g.TI-ajRSQLjUDhCF48pxpl2FKYHtDPb1QZO-B9QXsOQ0&amp;dib_tag=AUTHOR"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-ghost">
+                        Get it on Amazon
+                    </a>
+
+                    <details class="marketplace-menu">
+                        <summary>Choose your Amazon marketplace</summary>
+
+                        <div class="marketplace-links">
+                            <a href="https://www.amazon.com/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">United States</a>
+                            <a href="https://www.amazon.ca/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Canada</a>
+                            <a href="https://www.amazon.co.uk/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">United Kingdom</a>
+                            <a href="https://www.amazon.de/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Germany</a>
+                            <a href="https://www.amazon.fr/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">France</a>
+                            <a href="https://www.amazon.es/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Spain</a>
+                            <a href="https://www.amazon.it/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Italy</a>
+                            <a href="https://www.amazon.com.au/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Australia</a>
+                            <a href="https://www.amazon.co.jp/dp/B0HR4T9MLD" target="_blank" rel="noopener noreferrer">Japan</a>
+                        </div>
+                    </details>
+
+                </div>
+
+            </article>
 
         </section>
 
-
         <div class="gothic-ornament">✦</div>
-
 
         <!-- LIBRARY CONTACT -->
         <section class="event-card glow-animate ripple-hover">
@@ -431,7 +678,6 @@
         </section>
 
     </main>
-
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -457,20 +703,17 @@
 
     </footer>
 
-
     <!-- SCRIPTS -->
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        window.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded");
+        });
     </script>
 
     <script src="bats.js"></script>
     <script src="visualizer.js"></script>
-
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("loaded");
-        });
-    </script>
 
 </body>
 </html>
